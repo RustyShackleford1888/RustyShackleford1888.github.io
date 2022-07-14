@@ -1,0 +1,1219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Diablo 2 - Resurgence (unofficial 1.13 mod) - Armory</title>
+  <meta name="description" content="Diablo 2 Resurgence mod - Item Armory">
+  <meta name="author" content="freeb0rn">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+    /*** Copyright 2013 Teun Duynstee Licensed under the Apache License, Version 2.0 ***/
+    !function(n,t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?module.exports=t():n.firstBy=t()}(this,function(){var n=function(){function n(n){return n}function t(n){return"string"==typeof n?n.toLowerCase():n}function e(e,r){if(r="number"==typeof r?{direction:r}:r||{},"function"!=typeof e){var i=e;e=function(n){return n[i]?n[i]:""}}if(1===e.length){var o=e,f=r.ignoreCase?t:n;e=function(n,t){return f(o(n))<f(o(t))?-1:f(o(n))>f(o(t))?1:0}}return r.direction===-1?function(n,t){return-e(n,t)}:e}function r(n,t){var i="function"==typeof this&&this,o=e(n,t),f=i?function(n,t){return i(n,t)||o(n,t)}:o;return f.thenBy=r,f}return r}();return n});
+
+    // arrays for sorting criteria
+    var itemQuest = ["Quest Items"];
+    var itemTypes = ["armor", "weapon", "Quivers", "Rings", "Amulets", "Jewels", "Charms", "misc"];
+    // var classes = ["Barbarian", "Amazon", "Assassin", "Druid", "Sorceress", "Paladin", "Necromancer"];
+    // var armorTypes = ["Helms", "Armor", "Shields", "Gloves", "Boots", "Belts"];
+    // var weaponTypes = ["Axes", "Bows", "Crossbows", "Quivers", "Daggers", "Javelins", "Maces", "Clubs", "Polearms", "Scepters", "Spears", "Staves", "Hammers", "Maces", "Polearms", "Staves", "Swords", "Throwing Axes", "Throwing Knives", "Wands"];
+    var itemTiers = ["Normal", "Exceptional", "Elite", "Uber"]
+  
+    $(document).scroll(function() {
+        if ($(this).scrollTop() <= 400) {
+            $("#floating-nav-content").slideUp(400);
+        } else {
+            $("#floating-nav-content").slideDown(600);
+        }
+
+    });
+
+    $("document").ready(function () {
+        $.getJSON("js/armory.json", function (data) {
+            $.each(data.itemCats, function (key, value) {
+              //console.log(value); //TODO: REMOVE (for debugging)
+              $("#armoryMainNav").append("<li><a href=\"javascript:loadSubMenu('" + value.itemCatID + "')\">" + value.itemCatName + "</a></li>");
+            });
+        });
+    });
+
+    function loadSubMenu(cat) {
+        $("#armorySubNav").empty();
+
+        switch (cat) {
+          case "basicItems":
+            $.getJSON("js/armory.json", function (data) {
+                var returnedData = $.grep(data.itemCats, function (element, index) {
+                  return element.itemCatID == "basicItems";
+                });
+                
+                var html = "";
+                html = html + "Base Items <a href=\"javascript:loadItems('baseItems', 'all', 'all')\">[Show All]</a><br />";
+
+                html = html + "By tier:<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].tier, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'tier', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
+                  if (value.itemCatMeleeRanged == "melee")
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br /><ul>";
+                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
+                  if (value.itemCatMeleeRanged == "ranged")
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul>";
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].armor, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'armor', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+                
+                html = html + "<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(returnedData[0].itemCatSubItems[0].class, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'class', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].other, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'other', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);
+            });
+            break;
+
+          case "uniqueItems":
+            $.getJSON("js/armory.json", function (data) {
+                var returnedData = $.grep(data.itemCats, function (element, index) {
+                  return element.itemCatID == "uniqueItems";
+                });
+                // console.log(returnedData[0].itemCatSubItems) // TODO: REMOVE
+                // console.log(returnedData[0].itemCatSubItems[0].class) // TODO: REMOVE
+                
+                var html = "";
+                html = html + "Uniques <a href=\"javascript:loadItems('uniqueItems', 'all', 'all')\">[Show All]</a><br />";
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
+                  if (value.itemCatMeleeRanged == "melee")
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br /><ul>";
+                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
+                  if (value.itemCatMeleeRanged == "ranged")
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul>";
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].armor, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'armor', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                // html = html + "Jewelry:<ul style=\"display: inline; padding-left: 10px; \">";
+                // $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
+                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                // });
+                // html = html + "</ul><br />";
+                
+                html = html + "<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(returnedData[0].itemCatSubItems[0].class, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'class', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                // html = html + "By tier:<ul style=\"display: inline; padding-left: 10px; \">";
+                // $.each(returnedData[0].itemCatSubItems[0].tier, function (key, value) {
+                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'tier', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                // });
+                // html = html + "</ul><br />";
+
+
+                // html = html + "<div style=\"display: inline; padding-left: 10px; \">";
+                // $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
+                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                // });
+
+                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
+                $.each(returnedData[0].itemCatSubItems[0].other, function (key, value) {
+                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'other', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);
+            });
+            break;
+            
+          case "sets":
+            $.getJSON("js/setItems.json", function (data) {
+                // console.log(data); DEBUG
+                var html = "";
+                html = html + "Sets <a href=\"javascript:loadItems('setItems', 'set', 'all')\">[Show All]</a><br />";
+                
+                html = html + "By Set:<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  html = html + "<li><a href=\"javascript:loadItems('setItems', 'set', '" + value.index + "')\">" + value.name + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;
+
+          case "affixes":
+            $.getJSON("js/affixes.json", function (data) {
+                // console.log(data); DEBUG
+                var affixTypes = new Array();
+                var affixItems = new Array();
+                var affixColors = new Array();
+
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  if ($.inArray(value.affType, affixTypes) == -1) {
+                    affixTypes.push(value.affType);
+                  }
+                });
+                affixTypes.sort();
+
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  $.each(value.items, function (i, val) {
+                    if ($.inArray(val, affixItems) == -1) {
+                      affixItems.push(val);
+                    }
+                  });               
+                });
+                affixItems.sort();
+
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  if ($.inArray(value.color, affixColors) == -1) {
+                    affixColors.push(value.color);
+                  }           
+                });
+                affixColors.sort();
+
+                var html = "";
+                html = html + "Affixes <a href=\"javascript:loadItems('affixes', 'all', 'all')\">[Show All]</a><br />";
+
+                html = html + "By Type:<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(affixTypes, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixTypes', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+
+                html = html + "By Item:<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(affixItems, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixItems', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+
+                html = html + "By Rarity:<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(affixColors, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixColors', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;            
+
+          case "runes":
+            $.getJSON("js/runes.json", function (data) {
+                // console.log(data); DEBUG
+                var html = "";
+                html = html + "Runes <a href=\"javascript:loadItems('runes', 'rune', 'all')\">[Show All]</a><br />";
+                
+                html = html + "By Rune:<ul style=\"display: inline; padding-left: 10px;\">";
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  html = html + "<li><a href=\"javascript:loadItems('runes', 'rune', '" + value.name + "')\">" + value.name + "</a></li>";
+                });
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;
+
+          case "gems":
+            $.getJSON("js/gems.json", function (data) {
+                // console.log(data); DEBUG
+                var html = "";
+                html = html + "Gems <a href=\"javascript:loadItems('gems', 'gem', 'all')\">[Show All]</a><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;
+
+          case "augments":
+            $.getJSON("js/augments.json", function (data) {
+                // console.log(data); DEBUG
+                var html = "";
+                html = html + "Augments <a href=\"javascript:loadItems('augments', 'augments', 'all')\">[Show All]</a><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;
+
+          case "charmComponents":
+            $.getJSON("js/charmComponents.json", function (data) {
+                // console.log(data); DEBUG
+                var html = "";
+                html = html + "Charm Components <a href=\"javascript:loadItems('charmComponents', 'charm', 'all')\">[Show All]</a><br />";
+                
+                html = html + "By charm slot:<ul style=\"display: inline; padding-left: 10px;\">";
+                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Primary')\">Primary</a></li>";
+                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Secondary')\">Secondary</a></li>";
+                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Tertiary')\">Tertiary</a></li>";
+                
+                html = html + "</ul><br />";
+
+                $("#armorySubNav").html(html);                
+            });
+            break;                 
+          
+          case "runewords":
+            $.getJSON("js/runewords.json", function (data) {
+                // console.log(data); DEBUG
+                var cleanitems = new Array();
+                var html = "";
+                html = html + "Runewords <a href=\"javascript:loadItems('runewords', 'all', 'all')\">[Show All]</a><br />";
+                
+                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+                
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  $.each(value.items, function (i, val) {
+                    if ($.inArray(val, cleanitems) == -1) {
+                      cleanitems.push(val);
+                    }
+                  });               
+                });
+
+                cleanitems.sort();
+                $.each(cleanitems, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'itemtype', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+
+                html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
+
+                data.sort(firstBy("name"));
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'runeword', '" + value.index + "')\">" + value.name + "</a></li>";
+                });
+                html = html + "</ul><br />";                
+
+
+                //TODO: allow for selection of runes and then "can make / can almost make"
+
+                $("#armorySubNav").html(html);                
+            });
+            break;
+
+          default:
+            break;
+        }
+    }
+
+    function loadItems(source, filterGroup, filters) {
+        $("#armoryContent").empty();
+
+        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"https://resurgence.slashgaming.net/images/chaos-barbhireable.gif\" /></div>";
+        $("#armoryContent").html(loading_html);
+
+        var html = "";
+
+        $.getJSON("js/" + source + ".json", function (data) {
+            // "Parent category" processing/output if necessary
+            switch (source) { 
+              case "setItems":
+                // Filter the data if needed
+                if (filters != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    return element.index == filters;
+                  });
+                }
+
+                $.each(data, function (key, jsonItem) {
+                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
+                  html = html + "<div class=\"item row setItems \">";
+                  html = html + "<h5 class=\"diablo_green\" style=\"text-align: center; width: 100%\">" + jsonItem.name + "</h6>";
+
+                  // partial properties (sets only)
+                  html = html + "<span class=\"item-property\" style=\"display:block; text-align: center; font-weight: bold;\">Partial Set Bonus</span>";
+                  html = html + "<div class=\"diablo_green\" style=\"text-align: center;\">";
+                  $.each(jsonItem.partialProps, function (key, value) {
+                    html = html + value + "<br />";
+                  });
+                  html = html + "</div>";
+
+                  // full properties (sets only)
+                  html = html + "<span class=\"item-property\" style=\"margin-top: 10px; display:block; text-align: center; font-weight: bold;\">Complete Set Bonus</span>";
+                  html = html + "<div class=\"diablo_gold\" style=\"text-align: center;\">";
+                  $.each(jsonItem.fullProps, function (key, value) {
+                    html = html + value + "<br />";
+                  });
+                  html = html + "</div>";
+
+                  $.each(jsonItem.items, function (key, setItem) {
+                    html = html + "<hr>";
+                    html = html + "<div class=\"set-item row\">";
+                    html = html + "<div class=\"item-left four columns\">";
+                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
+                    html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
+                    html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
+                    html = html + "</div>";
+                    html = html + "<div class=\"item-right eight columns\">";
+                    html = printItem(html, setItem);
+                    html = html + "</div></div>";
+                    
+                  });
+                  
+                  html = html + "</div>";
+                  // close the divs
+
+                });
+                break;
+
+              case "runes":
+                // Filter the data if needed
+                if (filters != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    return element.name == filters;
+                  });
+                }
+                
+                // TODO: sort by level
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
+
+              case "gems":
+                // Filter the data if needed
+                if (filters != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    return element.name == filters;
+                  });
+                }
+                
+                // TODO: sort by level
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
+
+              case "augments":
+                // Filter the data if needed
+                if (filters != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    return element.name == filters;
+                  });
+                }
+                
+                // TODO: sort by level
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<span> Can be applied to: </span>";
+                  $.each(jsonItem.items, function (key, item) {
+                    html = html + "<span>" + item + "</span>"
+                  })
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
+
+              case "charmComponents":
+                // Filter the data if needed
+                if (filters != "all") {
+                  // todo: make this a switch (either straight to component or by tier)
+                  if (filterGroup == "slot") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.slot == filters;
+                    });
+                  }
+                }
+                
+                // TODO: sort by level
+                data.sort(firstBy("index"));
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
+                  html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
+                  html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;                      
+
+              case "runewords":
+                // Filter the data if needed
+                if (filterGroup != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    switch (filterGroup) {
+                      case "itemtype":
+                        return $.inArray(filters, element.items) !== -1; 
+                        break;
+
+                      case "runeword":
+                        return element.index == filters;
+                        break;                        
+
+                      default:
+                        break;
+                    }                
+                  });
+                }
+
+                // TODO: Sort results
+                $.each(data, function (key, jsonItem) {
+                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
+                    $.each(jsonItem.runes, function (i, value) {
+                      html = html + value;
+                      if (i+1 != jsonItem.runes.length) 
+                        html = html + ", ";
+                    });
+                  html = html + "</span></div>";
+                  html = html + "<span class=\"diablo_white\">Sockets: " + jsonItem.runes.length + "</span>";
+                  html = html + "<span class=\"diablo_white\">cLvl Req: " + jsonItem.lvlreq + "</span>";
+                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Items: ";
+                    $.each(jsonItem.items, function (i, value) {
+                      html = html + value;
+                      if (i+1 != jsonItem.items.length) 
+                        html = html + ", ";
+                    });
+                  html = html + "</span></div>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);
+
+                  // close the divs
+                  html = html + "</div></div>";
+                });
+              break;
+
+              case "affixes":
+                // Filter the data if needed
+                if (filterGroup != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    switch (filterGroup) {
+                      case "affixTypes":
+                        return element.affType == filters;
+                        break;
+
+                      case "affixItems":
+                        return $.inArray(filters, element.items) !== -1; 
+                        break;
+
+                      case "affixColors":
+                        return element.color == filters;
+                        break;
+
+                      default:
+                        break;
+                    }                
+                  });
+                }
+
+                data.sort(firstBy("affType").thenBy("group"));
+
+                html = html + "<div class=\"expando\">";
+                html = html + "<h6>Terminology</h6>";
+                html = html + `
+Group: Similar affixes are grouped. Only one prefix or suffix can be picked from a group by the randomizer.<br />
+*alvl:  Affix level.<br />
+rlvl: Required level.<br />
+Freq: The spawn frequency for affixes in the same group. Higher Freq affixes will spawn more often.<br />
+Items: List of items that can spawn this affix.<br />
+Excluded Items: List of items that cannot spawn this affix.<br />
+ilvl: Item level.<br />
+qlvl: Quality level.<br />
+mlvl: Magic level.<br /><br />
+
+*Affix level of an item is determined using the following routine (using integer numbers only):<br />
+If (ilvl > 99) then ilvl=99.<br />
+If (qlvl > ilvl) then ilvl=qlvl.<br />
+If (mlvl > 0) then alvl=ilvl+mlvl; skip to step 5.<br />
+If (ilvl < (99-qlvl/2)) then alvl=ilvl-qlvl/2, else alvl=2*ilvl-99<br />
+If (alvl > 99) then alvl=99<br />`;
+                html = html + "</div>";
+
+
+                html = html + "<table style=\"table-layout: fixed; border-collapse: collapse;\">";
+                html = html + "<thead><tr>";
+                html = html + "<th>Name</th>";
+                html = html + "<th>Type</th>";
+                html = html + "<th>Group</th>";
+                html = html + "<th>Property</th>";
+                html = html + "<th>aLvl</th>";
+                html = html + "<th>rLvl</th>";
+                html = html + "<th>Freq</th>";
+                html = html + "<th>Items</th>";
+                html = html + "<th>Excluded Items</th>";
+                html = html + "</thead></tr>";
+                html = html + "<tbody>";
+
+                $.each(data, function (key, jsonItem) {
+                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
+                  html = html + "<tr class=\"diablo_" + jsonItem.color +"\">";
+                  html = html + "<td> " + jsonItem.name +"</td>";
+                  html = html + "<td>" + jsonItem.affType +"</td>";
+                  html = html + "<td>" + jsonItem.group +"</td>";
+                  html = html + "<td>";
+                  $.each(jsonItem.props, function (key, prop) {
+                    html = html + prop + "<br />";
+                  });
+                  html = html + "</td>";
+                  html = html + "<td>" + jsonItem.alvl +"</td>";
+                  html = html + "<td>" + jsonItem.rlvl +"</td>";
+                  html = html + "<td>" + jsonItem.freq +"</td>";
+                  html = html + "<td>";
+                  $.each(jsonItem.items, function (key, item) {
+                    html = html + item + "<br />";
+                  });
+                  html = html + "</td>";
+                  html = html + "<td>";
+                  $.each(jsonItem.eItems, function (key, eitem) {
+                    html = html + eitem + "<br />";
+                  });
+                  html = html + "</td>";
+                  html = html + "</tr>";
+                });
+                html = html + "</tbody></table>";
+              break;              
+
+              case "baseItems":
+                // Filter the data if needed
+                if (filterGroup != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    switch (filterGroup) {
+                      case "armor":
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Shield":
+                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
+                          
+                          default:
+                            filters = filters;
+                          break;
+                        }
+                      case "weapon":
+                        // special cases
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Quiver":
+                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
+                          
+                          default:
+                            filters = filters;
+                          break;
+                        }
+
+                        return $.inArray(filters, element.subCategories) !== -1;
+                        break;
+                      
+                      case "jewelry":
+                        return element.category == filters;
+                        break;
+
+                      case "other":
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Nephalem Valors":
+                            return element.item == "Nephalem's Valour";
+                            break;
+
+                          default:
+                            return element.category == filters;
+                            break;
+                        }                    
+                        break;
+
+                      default:
+                        return element[filterGroup] == filters;
+                        break;
+                    }                
+                  });
+                }
+                else {
+                  
+                }
+                // Sort results
+                // TODO: Figure out how to sort by sub-category (move the sorting into each of the sub-areas and sort accordingly?)
+                var s = firstBy(function (v1, v2) { return itemQuest.indexOf(v1.category) - itemQuest.indexOf(v2.category) })
+                        .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
+                        .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
+                        .thenBy("ilvl")
+                        .thenBy("Name");
+                data.sort(s);
+                // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
+                //     .thenBy("lvlreq")
+
+
+                $.each(data, function (key, jsonItem) {
+                  // print the left side of the item info
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\">(" + jsonItem.code + ")</span></span>";
+                  html = html + "</div>";
+                  
+                  // print the right side of the item info
+                  html =  html + "<div class=\"item-right eight columns\">";
+
+                  html = html + "<div class=\"no-wrap diablo_white\">";
+                  $.each(jsonItem.baseProps, function (key, value) {
+                    html = html + "<span class=\"item-property\">" + value + "</span>";
+                  });
+                  html = html + "</div>";
+
+                  // built-in properties (automods)
+                  html = html + "<div class=\"diablo_magic\" style=\"text-align: center;\">";
+                  $.each(jsonItem.props, function (key, value) {
+                    html = html + "<span class=\"item-property\">" + value + "</span>";
+                  });
+                  html = html + "</div>";
+
+
+                  html = html + "</div></div>";
+                  html = html + "</div></div>";
+
+
+                  // close the divs
+
+                  html = html + "</div></div>";
+                  
+                });
+                break;
+
+              case "uniqueItems":
+                // Filter the data if needed
+                if (filterGroup != "all") {
+                  var data = $.grep(data, function (element, index) {
+                    switch (filterGroup) {
+                      case "armor":
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Shield":
+                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
+                          
+                          default:
+                            filters = filters;
+                          break;
+                        }
+                      case "weapon":
+                        // special cases
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Quiver":
+                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
+                          
+                          default:
+                            filters = filters;
+                          break;
+                        }
+
+                        return $.inArray(filters, element.subCategories) !== -1;
+                        break;
+                      
+                      case "jewelry":
+                        return element.category == filters;
+                        break;
+
+                      case "other":
+                        switch (filters) { // todo: change this when filters can later be stacked
+                          case "Nephalem Valors":
+                            return element.item == "Nephalem's Valour";
+                            break;
+
+                          default:
+                            return element.category == filters;
+                            break;
+                        }                    
+                        break;
+
+                      default:
+                        return element[filterGroup] == filters;
+                        break;
+                    }                
+                  });
+                }
+                else {
+                  
+                }
+                // Sort results
+                // TODO: Figure out how to sort by sub-category (move the sorting into each of the sub-areas and sort accordingly?)
+                var s = firstBy(function (v1, v2) { return itemQuest.indexOf(v1.category) - itemQuest.indexOf(v2.category) })
+                        .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
+                        .thenBy(function (v1, v2) { return parseInt(v1.ilvl) - parseInt(v2.ilvl) })
+                        // .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
+                        // .thenBy("ilvl")
+                        // .thenBy("Name");
+                data.sort(s);
+                // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
+                //     .thenBy("lvlreq")
+
+
+                html = html + "<div class=\"item row\" style=\"padding-bottom: 0px\">";
+                html = html + "<ul class=\"upgradeItems\">";
+                html = html + `<li><a id="showOnlyBA">Show only Basic</a></li>`;
+                html = html + `<li><a id="showOnlyEX">Show only Exceptional</a></li>`;
+                html = html + `<li><a id="showOnlyEL">Show only Elite</a></li>`;
+                html = html + "</ul>";
+                html = html + "<p style='text-align: center; margin-bottom: 0; font-size:0.8em;'>NOTE: Currently only these work on Safari, the per-item tabs do not.</p>";
+                html = html + "</div>";
+                html = html + `
+                <script type="text/javascript">
+                  $('a#showOnlyBA').on("click", function() {
+                    $('div[id*=BAS]').show();
+                    $('div[id*=EXC]').hide();
+                    $('div[id*=ELI]').hide();
+                  });
+                  $('a#showOnlyEX').on("click", function() {
+                    $('div[id*=BAS]').hide();
+                    $('div[id*=EXC]').show();
+                    $('div[id*=ELI]').hide();
+                  });
+                  $('a#showOnlyEL').on("click", function() {
+                    $('div[id*=BAS]').hide();
+                    $('div[id*=EXC]').hide();
+                    $('div[id*=ELI]').show();
+                  });
+                <\/script>`;
+
+                $.each(data, function (key, jsonItem) {
+                  // don't render upgrades, but do render them if we've filtered by tier
+                  // todo: replace this with root once asd's done with it
+                  if (filterGroup !== "tier" && jsonItem.root == false) {
+                    return;
+                  } else if (filterGroup == "tier") {
+                    html = html + "<div class=\"item row\">";
+
+                    // print the left side of the item info
+                    html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                    html = html + "<div class=\"item-left four columns\">";
+                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                    if (jsonItem.version == "108") {
+                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
+                    }
+                    else {
+                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                    }
+                    html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
+                    html = html + "</div>";
+                    
+                    // print the right side of the item info
+                    html =  html + "<div class=\"item-right eight columns\">";
+                    html = printItem(html, jsonItem);
+                    html = html + "</div></div>";
+                    html = html + "</div></div>";
+                  } else {
+                    // get the upgrades
+                    var subItem1
+                    var subItem2
+                    // console.log('current item: ' + jsonItem.name) //DEBUG
+                    if (jsonItem.upgradeIndex !== "") {
+                      subItem1 = $.grep(data, function(e){ return e.index == jsonItem.upgradeIndex; });
+                      if (subItem1[0].upgradeIndex !== "") {
+                        subItem2 = $.grep(data, function(e){ return e.index == subItem1[0].upgradeIndex; });
+                      }
+                    }
+
+                    
+                    html = html + "<div class=\"item row\">";
+                    html = html + "<div class=\"row\">";
+                    html = html + "<ul class=\"upgradeItems\">";
+                    html = html + `<li><a onclick="$('[id^=\\'${jsonItem.index.substring(0, jsonItem.index.length-4)}\\'').hide();$('[id=\\'${jsonItem.index}\\']').show();">${jsonItem.name}</a><br />${jsonItem.tier}</li>`;
+                    
+                    if (typeof subItem1 !== 'undefined') 
+                      html = html + `<li><a onclick="$('[id^=\\'${subItem1[0].index.substring(0, subItem1[0].index.length-4)}\\'').hide();$('[id=\\'${subItem1[0].index}\\']').show();">${subItem1[0].name}</a><br />${subItem1[0].tier}</li>`;
+                    if (typeof subItem2 !== 'undefined') 
+                      html = html + `<li><a onclick="$('[id^=\\'${subItem2[0].index.substring(0, subItem2[0].index.length-4)}\\'').hide();$('[id=\\'${subItem2[0].index}\\']').show();">${subItem2[0].name}</a><br />${subItem2[0].tier}</li>`;
+                    html = html + "</ul>";
+                    html = html + "</div>";
+
+                    // print the left side of the item info
+                    html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                    html = html + "<div class=\"item-left four columns\">";
+                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                    if (jsonItem.version == "108") {
+                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
+                    }
+                    else {
+                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                    }
+                    html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
+                    html = html + "</div>";
+                    
+                    // print the right side of the item info
+                    html =  html + "<div class=\"item-right eight columns\">";
+                    html = printItem(html, jsonItem);
+                    html = html + "</div></div>";
+                    
+
+                    if (jsonItem.upgradeIndex !== "") {
+                    // print the left side of the item info
+                      html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
+                      html = html + "<div class=\"item-left four columns\">";
+                      html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + subItem1[0].imageFile + "\"></span>";
+                      if (subItem1[0].version == "108") {
+                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
+                      }
+                      else {
+                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + "</span>";
+                      }
+                      html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
+                      html = html + "</div>";
+    
+                      
+                      // print the right side of the item info
+                      html =  html + "<div class=\"item-right eight columns\">";
+                      html = printItem(html, subItem1[0]);
+                      html = html + "</div></div>";
+
+                      if (subItem1[0].upgradeIndex !== "") {
+                        // print the left side of the item info
+                        html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
+                        html = html + "<div class=\"item-left four columns\">";
+                        html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + subItem2[0].imageFile + "\"></span>";
+                        if (subItem2[0].version == "108") {
+                          html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
+                      }
+                      else {
+                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + "</span>";
+                      }
+                      html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
+                      html = html + "</div>";
+    
+                      
+                      // print the right side of the item info
+                      html =  html + "<div class=\"item-right eight columns\">";
+                      html = printItem(html, subItem2[0]);
+                      html = html + "</div></div>";
+                      }
+                    }
+
+                    // close the divs
+
+                    html = html + "</div></div>";
+                  }
+                });
+                break;
+          }
+          
+            
+
+          
+          $("#armoryContent").html(html);
+      });
+    }
+
+    function printItem(html, jsonItem) {
+            // base properties
+            $.each(jsonItem.baseProps, function (key, value) {
+              html = html + "<span class=\"item-property\">";
+              $.each(value, function (key, value) {
+                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                {
+                  switch(value)
+                  {
+                    case "white":
+                      html = html + "<span class=\"no-wrap diablo_white\">";
+                      break;
+
+                    case "blue":
+                      html = html + "<span class=\"no-wrap diablo_blue\">";
+                      break;
+
+                    case "red":
+                      html = html + "<span class=\"no-wrap diablo_red\">";
+                      break;
+
+                    case "amber":
+                      html = html + "<span class=\"no-wrap diablo_amber\">";
+                      break;
+                      
+                    case "yellow":
+                      html = html + "<span class=\"no-wrap diablo_yellow\">";
+                      break;
+                      
+                    case "green":
+                      html = html + "<span class=\"no-wrap diablo_green\">";
+                      break;
+
+                    case "orange":
+                    html = html + "<span class=\"no-wrap orange\">";
+                    break;
+
+                    case "gray":
+                      html = html + "<span class=\"no-wrap gray\">";
+                      break;    
+                    
+                  }
+                }
+                else /* index is odd ==> asdlogic dictatates this is a property */ 
+                {
+                  html = html + value + "</span>";
+                }
+              });
+              html = html + "</span>";
+            });
+
+            // extra properties
+            $.each(jsonItem.props, function (key, value) {
+              html = html + "<span class=\"item-property\">";
+              $.each(value, function (key, value) {
+                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                {
+                  switch(value)
+                  {
+                    case "white":
+                      html = html + "<span class=\"no-wrap diablo_white\">";
+                      break;
+
+                    case "blue":
+                      html = html + "<span class=\"no-wrap diablo_blue\">";
+                      break;
+
+                    case "red":
+                      html = html + "<span class=\"no-wrap diablo_red\">";
+                      break;
+
+                    case "amber":
+                      html = html + "<span class=\"no-wrap diablo_amber\">";
+                      break;                    
+                      
+                    case "green":
+                      html = html + "<span class=\"no-wrap diablo_green\">";
+                      break;
+
+                    case "orange":
+                    html = html + "<span class=\"no-wrap orange\">";
+                    break;
+
+                    case "yellow":
+                      html = html + "<span class=\"no-wrap diablo_yellow\">";
+                      break;
+
+                    case "gray":
+                      html = html + "<span class=\"no-wrap gray\">";
+                      break;    
+                    
+                  }
+                }
+                else /* index is odd ==> asdlogic dictatates this is a property */ 
+                {
+                  html = html + value + "</span>";
+                }
+              });
+              html = html + "</span>";  
+            });
+
+            // extra properties ** RUNEWORD ONLY
+            if (typeof jsonItem.weaponProps !== "undefined" && jsonItem.weaponProps.length > 0) {
+              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Weapon</span>";
+              $.each(jsonItem.weaponProps, function (key, value) {
+                html = html + "<span class=\"item-property\">";
+                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
+                html = html + "</span>";  
+              });
+            }
+
+            // extra properties ** RUNEWORD ONLY
+            if (typeof jsonItem.armorHelmProps !== "undefined" && jsonItem.armorHelmProps.length > 0) {
+              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Armor / Helm</span>";            
+              $.each(jsonItem.armorHelmProps, function (key, value) {
+                html = html + "<span class=\"item-property\">";
+                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
+                html = html + "</span>";  
+              });
+            }
+
+            // extra properties ** RUNEWORD ONLY
+            if (typeof jsonItem.shieldProps !== "undefined" && jsonItem.shieldProps.length > 0) {
+              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Shield</span>";            
+              $.each(jsonItem.shieldProps, function (key, value) {
+                html = html + "<span class=\"item-property\">";
+                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
+                html = html + "</span>";  
+              });
+            }
+
+      return html;
+    }
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="https://resurgence.slashgaming.net/images/icon32-32.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row" style="position: relative; left:-32px;">
+      <div class="u-full-width" id="topbar" style="position: fixed;">
+      </div>
+    </div>
+    <div class="row" style="position: relative; left:-32px;">
+      <div class="u-full-width" id="banner">
+      </div>
+    </div>
+    <div class="row">
+      <div class="u-full-width">
+        <h1 style="text-align: center;">Resurgence Armory</h1>
+        <div id="armoryNav">
+          <ul id="armoryMainNav">
+          </ul>
+        </div>
+          <div id="armorySubNav">
+          </div>
+      </div>
+
+         <div id="floating-nav-content">
+          <div style="width:100%; text-align:center;">
+            <ul class="intro_navbar">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="https://www.reddit.com/r/Diablo2Resurgence/comments/5p75ey/resurgence_13_how_to_install_launch_the_game/">Download Launcher</a></li>
+              <li><a href="https://discord.gg/0cDYwWrMLIImycvz">Discord</a></li>
+              <li><a href="https://www.reddit.com/r/Diablo2Resurgence">Subreddit</a></li>
+              <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia">Wiki</a></li>
+              <li><a href="armory.html">Armory</a></li>
+              <li><a href="crafting.html">Crafting</a></li>
+            </ul>
+          </div>
+        </div>
+
+    </div>
+
+
+    <div class="row separator"></div>
+
+    <div class="row" style="text-align: center;"></div>
+    <div class="row">
+      <div class="u-full-width">
+        <div id="armoryContent">
+        </div>
+      </div> 
+    </div>       
+
+
+    <div class="row separator" ></div>
+
+
+    <div class="row" style="text-align: center; font-size:1rem;">
+        <div>
+          <p>
+            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br /> 
+          All trademarks referenced herein are the properties of their respective owners.
+          <p>
+            Battle.net®<br />
+            ©1996 - 2014 Blizzard Entertainment, Inc. All rights reserved. Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+          </p>
+          <p>
+            Diablo® II<br />
+            ©2000 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+          </p>
+          <p>
+            Diablo® II: Lord of Destruction®<br />
+            ©2001 Blizzard Entertainment, Inc. All rights reserved. Diablo, Lord of Destruction and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+          </p>
+        </div>
+      </div>
+    <div class="row" style="position: relative; left:-32px;">
+      <div class="u-full-width" id="footer" >
+      </div>
+    </div>
+
+
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
