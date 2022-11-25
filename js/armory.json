@@ -441,6 +441,11 @@
     "itemCatSubItems":""
     },
     {
+    "itemCatID":"Corruptions",
+    "itemCatName":"Corruptions",
+    "itemCatSubItems":""
+    },
+    {
     "itemCatID":"runes",
     "itemCatName":"Runes",
     "itemCatSubItems":""
