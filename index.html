@@ -545,7 +545,35 @@
                   html = html + "</div></div>";
                     
                 });
-                break;                      
+                break; 
+
+              case "Corruptions":
+                // Filter the data if needed
+                if (filters != "all") {
+                  // todo: make this a switch (either straight to component or by tier)
+                  if (filterGroup == "slot") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.slot == filters;
+                    });
+                  }
+                }
+                
+                // TODO: sort by level
+                data.sort(firstBy("index"));
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;                                
 
               case "runewords":
                 // Filter the data if needed
