@@ -24,22 +24,16 @@
   <script src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript">
     
-    function copyToClipboard() {
-  // Create a new textarea element
-  var textarea = document.createElement("textarea");
-  // Set the value of the textarea to jsonItem.code
-  textarea.value = jsonItem.code;
-  // Append the textarea element to the document
-  document.body.appendChild(textarea);
-  // Select the contents of the textarea
-  textarea.select();
-  // Copy the selected contents to the clipboard
-  document.execCommand('copy');
-  // Remove the textarea element from the document
-  document.body.removeChild(textarea);
-  // Alert or notify the user that the code has been copied
-      alert("Code copied to clipboard: " + jsonItem.code);
-  }
+function copyToClipboard(event) {
+  var element = event.target; // Get the clicked element
+  var range = document.createRange(); // Create a new range object
+  range.selectNodeContents(element); // Select the contents of the element
+  var selection = window.getSelection(); // Get the current selection
+  selection.removeAllRanges(); // Remove any existing selections
+  selection.addRange(range); // Add the new range to the selection
+  document.execCommand('copy'); // Copy the selected contents to the clipboard
+  selection.removeAllRanges(); // Remove the range from the selection
+ }
     
     
     /*** Copyright 2013 Teun Duynstee Licensed under the Apache License, Version 2.0 ***/
@@ -808,7 +802,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard()\">(" + jsonItem.code + ")</span></span>";
+                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">(" + jsonItem.code + ")</span></span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
@@ -952,7 +946,7 @@ If (alvl > 99) then alvl=99<br />`;
                     }
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
-                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard()\">(" + jsonItem.code + ")</span>";
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">(" + jsonItem.code + ")</span>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -997,7 +991,7 @@ If (alvl > 99) then alvl=99<br />`;
                     }
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
-                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard()\">(" + jsonItem.code + ")</span>";
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">(" + jsonItem.code + ")</span>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -1019,7 +1013,7 @@ If (alvl > 99) then alvl=99<br />`;
                       }
                      
                       html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard()\">(" + jsonItem.code + ")</span>";
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">(" + jsonItem.code + ")</span>";
                       html = html + "</div>";
     
                       
@@ -1039,7 +1033,7 @@ If (alvl > 99) then alvl=99<br />`;
                       else {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + "</span>";
                       }
-                        html = html + "<span class=\"gray\" onclick=\"copyToClipboard()\">(" + jsonItem.code + ")</span>";
+                        html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">(" + jsonItem.code + ")</span>";
                       html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
                       html = html + "</div>";
     
