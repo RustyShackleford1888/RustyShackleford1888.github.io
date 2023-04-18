@@ -1018,7 +1018,7 @@ If (alvl > 99) then alvl=99<br />`;
                      
                       html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem1[0].code + "</span>";
                     }
                       html = html + "</div>";
     
@@ -1039,10 +1039,11 @@ If (alvl > 99) then alvl=99<br />`;
                       else {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + "</span>";
                       }
+	html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem2[0].code + "</span>";
                     }
-                      html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
+                      
                       html = html + "</div>";
     
                       
