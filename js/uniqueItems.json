@@ -4683,7 +4683,8 @@
         "red",
         "Restricted Drop - Baal (Hell)"
       ]
-    ]
+    ],
+    "code": "au6"
   },
   {
     "index": "Eye of Hatred ELI",
@@ -4738,7 +4739,8 @@
         "red",
         "Restricted Drop - Mephisto (Hell)"
       ]
-    ]
+    ],
+    "code": "au6"
   },
   {
     "index": "Eye of Terror ELI",
@@ -4793,7 +4795,8 @@
         "red",
         "Restricted Drop - Diablo (Hell)"
       ]
-    ]
+    ],
+    "code": "au6"
   },
   {
     "index": "Highlords Wrath 108 ELI",
@@ -16195,7 +16198,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm0"
   },
   {
     "index": "Horadric Raiment ELI",
@@ -17790,7 +17794,8 @@
         "red",
         "Restricted Drop - Horadric Cube"
       ]
-    ]
+    ],
+    "code": "ua6"
   },
   {
     "index": "The Wretched ELI",
@@ -20825,7 +20830,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm2"
   },
   {
     "index": "The Indomitable ELI",
@@ -23525,7 +23531,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm6"
   },
   {
     "index": "Goldstrike Fletch ELI",
@@ -34772,7 +34779,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm3"
   },
   {
     "index": "Odiscopeles ELI",
@@ -37109,7 +37117,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm5"
   },
   {
     "index": "Edict of the Vipermagi ELI",
@@ -39837,7 +39846,8 @@
         "blue",
         "+1 to Cyclone"
       ]
-    ]
+    ],
+    "code": "sj3"
   },
   {
     "index": "Hrikalegt BAS",
@@ -39881,7 +39891,8 @@
         "blue",
         "+1 to Heavy Blows"
       ]
-    ]
+    ],
+    "code": "sj1"
   },
   {
     "index": "Hryllingi BAS",
@@ -39925,7 +39936,8 @@
         "blue",
         "+1 to Triple Strike"
       ]
-    ]
+    ],
+    "code": "sj0"
   },
   {
     "index": "Hraedilegt BAS",
@@ -39969,7 +39981,8 @@
         "blue",
         "+1 to Double Strike"
       ]
-    ]
+    ],
+    "code": "sj2"
   },
   {
     "index": "Grand Spectrum BAS",
@@ -43581,7 +43594,8 @@
         "red",
         "Restricted Drop - Lilith, Duriel, Izual (Uber)"
       ]
-    ]
+    ],
+    "code": "uw4"
   },
   {
     "index": "Butchers Pupil ELI",
@@ -55488,7 +55502,8 @@
         "red",
         "Restricted Drop - Horadric Cube"
       ]
-    ]
+    ],
+    "code": "rg6"
   },
   {
     "index": "First Dawn ELI",
@@ -56771,7 +56786,8 @@
         "red",
         "Restricted Drop - Pestilent Lich (Hell)"
       ]
-    ]
+    ],
+    "code": "li3"
   },
   {
     "index": "Voidflame ELI",
@@ -56830,7 +56846,8 @@
         "red",
         "Restricted Drop - Infernal Lich (Hell)"
       ]
-    ]
+    ],
+    "code": "li0"
   },
   {
     "index": "Voidfrost ELI",
@@ -56889,7 +56906,8 @@
         "red",
         "Restricted Drop - Frost Lich (Hell)"
       ]
-    ]
+    ],
+    "code": "li1"
   },
   {
     "index": "Voidheart ELI",
@@ -56940,7 +56958,8 @@
         "red",
         "Restricted Drop - Ancient Lich (Hell)"
       ]
-    ]
+    ],
+    "code": "li4"
   },
   {
     "index": "Voidshock ELI",
@@ -56999,7 +57018,8 @@
         "red",
         "Restricted Drop - Empowered Lich (Hell)"
       ]
-    ]
+    ],
+    "code": "li2"
   },
   {
     "index": "Constriction Ring ELI",
@@ -60786,7 +60806,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm1"
   },
   {
     "index": "Ghaas Guide ELI",
@@ -61567,7 +61588,8 @@
         "red",
         "Restricted Drop - Augerer's Chest"
       ]
-    ]
+    ],
+    "code": "ua3"
   },
   {
     "index": "Effigy of Dialon ELI",
@@ -63647,7 +63669,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf3"
   },
   {
     "index": "Samades Promise BAS",
@@ -63707,7 +63730,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "Edyrem Artifice BAS",
@@ -63767,7 +63791,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf4"
   },
   {
     "index": "Fedres Dynamo EXC",
@@ -63827,7 +63852,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "Witchs Glare EXC",
@@ -63887,7 +63913,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf3"
   },
   {
     "index": "Dream Fragment EXC",
@@ -63947,7 +63974,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf3"
   },
   {
     "index": "Samades Promise EXC",
@@ -64007,7 +64035,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "Edyrem Artifice EXC",
@@ -64067,7 +64096,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf4"
   },
   {
     "index": "Heart of Fire EXC",
@@ -64127,7 +64157,8 @@
         "blue",
         ""
       ]
-    ]
+    ],
+    "code": "sf2"
   },
   {
     "index": "Dragon Tamer ELI",
@@ -64177,7 +64208,8 @@
         "blue",
         "+(20 - 30)% Magic Find"
       ]
-    ]
+    ],
+    "code": "sf2"
   },
   {
     "index": "Atta Kroma ELI",
@@ -64239,7 +64271,8 @@
         "gray",
         ")"
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "Fedres Dynamo ELI",
@@ -64293,7 +64326,8 @@
         "blue",
         "+(40 - 50) Lightning Absorption"
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "Witchs Glare ELI",
@@ -64347,7 +64381,8 @@
         "blue",
         "6% of Mana replenished on kill"
       ]
-    ]
+    ],
+    "code": "sf3"
   },
   {
     "index": "Heart of Fire ELI",
@@ -64405,7 +64440,8 @@
         "blue",
         "Attacker takes Fire damage of 1000"
       ]
-    ]
+    ],
+    "code": "sf2"
   },
   {
     "index": "Dream Fragment ELI",
@@ -64459,7 +64495,8 @@
         "blue",
         "Cannot Be Frozen"
       ]
-    ]
+    ],
+    "code": "sf3"
   },
   {
     "index": "Tear of Elyssia ELI",
@@ -64513,7 +64550,8 @@
         "blue",
         "+(20 - 30)% Elemental Resistances"
       ]
-    ]
+    ],
+    "code": "sf4"
   },
   {
     "index": "Edyrem Artifice ELI",
@@ -64567,7 +64605,8 @@
         "blue",
         "+1 to Arcane Blast"
       ]
-    ]
+    ],
+    "code": "sf4"
   },
   {
     "index": "Samades Promise ELI",
@@ -64625,7 +64664,8 @@
         "blue",
         "+(10 - 20)% Lightning Resistance"
       ]
-    ]
+    ],
+    "code": "sf1"
   },
   {
     "index": "The Kelpies Noose BAS",
@@ -67631,7 +67671,8 @@
         "red",
         "Restricted Drop - Lilith, Duriel, Izual (Uber)"
       ]
-    ]
+    ],
+    "code": "uw2"
   },
   {
     "index": "Ribcracker ELI",
@@ -70912,7 +70953,8 @@
         "red",
         "Restricted Drop - Mendeln (Hell)"
       ]
-    ]
+    ],
+    "code": "nm4"
   },
   {
     "index": "Bonesnap ELI",
@@ -72808,7 +72850,8 @@
         "red",
         "Restricted Drop - Lilith, Duriel, Izual (Uber)"
       ]
-    ]
+    ],
+    "code": "uw3"
   },
   {
     "index": "Shadowfang ELI",
@@ -72994,7 +73037,8 @@
         "red",
         "Restricted Drop - Lilith, Duriel, Izual (Uber)"
       ]
-    ]
+    ],
+    "code": "uw6"
   },
   {
     "index": "The Answerer ELI",
