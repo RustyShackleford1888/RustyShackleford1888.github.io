@@ -815,7 +815,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span><span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span></span>";
+                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span></span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
@@ -961,7 +961,6 @@ If (alvl > 99) then alvl=99<br />`;
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
-		      html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                     html = html + "</div>";
                     
@@ -1009,7 +1008,6 @@ If (alvl > 99) then alvl=99<br />`;
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
-	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                     html = html + "</div>";
                     
@@ -1034,7 +1032,6 @@ If (alvl > 99) then alvl=99<br />`;
                       html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem1[0].code + "</span>";
-	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                       html = html + "</div>";
     
@@ -1058,7 +1055,6 @@ If (alvl > 99) then alvl=99<br />`;
 	html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem2[0].code + "</span>";
-	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                       
                       html = html + "</div>";
