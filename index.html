@@ -33,6 +33,19 @@ function copyToClipboard(event) {
   selection.addRange(range); // Add the new range to the selection
   document.execCommand('copy'); // Copy the selected contents to the clipboard
   selection.removeAllRanges(); // Remove the range from the selection
+	  var popup = document.createElement("div");
+  popup.textContent = "Copied!";
+  popup.style.color = "#c7b377";
+  popup.style.padding = "7px";
+  popup.style.position = "absolute";
+  popup.style.top = event.clientY + "px";
+  popup.style.left = event.clientX + "px";
+  popup.style.transform = "translate(-50%, -50%)";
+  popup.style.zIndex = "9999";
+  document.body.appendChild(popup);
+  setTimeout(function() {
+    document.body.removeChild(popup);
+  }, 300);
  }
     
     
@@ -802,7 +815,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span></span>";
+                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span><span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span></span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
@@ -948,6 +961,7 @@ If (alvl > 99) then alvl=99<br />`;
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
+		      html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                     html = html + "</div>";
                     
@@ -995,6 +1009,7 @@ If (alvl > 99) then alvl=99<br />`;
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
+	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                     html = html + "</div>";
                     
@@ -1019,6 +1034,7 @@ If (alvl > 99) then alvl=99<br />`;
                       html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem1[0].code + "</span>";
+	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                       html = html + "</div>";
     
@@ -1042,6 +1058,7 @@ If (alvl > 99) then alvl=99<br />`;
 	html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem2[0].code + "</span>";
+	        html = html + "<span class=\"item-graphic \"><img src=\"css/copy-icon.png"\"></span>";
                     }
                       
                       html = html + "</div>";
