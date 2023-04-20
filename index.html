@@ -547,6 +547,7 @@ function copyToClipboard(event) {
 
               case "charmComponents":
                 // Filter the data if needed
+                // Filter the data if needed
                 if (filters != "all") {
                   // todo: make this a switch (either straight to component or by tier)
                   if (filterGroup == "slot") {
@@ -554,7 +555,12 @@ function copyToClipboard(event) {
                       return element.slot == filters;
                     });
                   }
-                }
+                                    if (filterGroup == "area") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.area == filters;
+                    });
+                  }
+                                  }
                 
                 // TODO: sort by level
                 data.sort(firstBy("index"));
