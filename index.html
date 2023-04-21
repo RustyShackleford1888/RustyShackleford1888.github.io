@@ -313,6 +313,7 @@ function copyToClipboard(event) {
                 // console.log(data); DEBUG
                 var html = "";
                 html = html + "Augments <a href=\"javascript:loadItems('augments', 'augments', 'all')\">[Show All]</a><br />";
+		    html = html + "Augments <a href=\"javascript:loadItems('augments', 'area', '1')\">[Show Only Killing Field Augments]</a><br />";
 
                 $("#armorySubNav").html(html);                
             });
@@ -521,6 +522,11 @@ function copyToClipboard(event) {
                 if (filters != "all") {
                   var data = $.grep(data, function (element, index) {
                     return element.name == filters;
+			                                     if (filterGroup == "area") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.area == filters;
+                    });
+                    });
                   });
                 }
                 
