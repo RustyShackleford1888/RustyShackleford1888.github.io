@@ -523,13 +523,10 @@ function copyToClipboard(event) {
                   var data = $.grep(data, function (element, index) {
                     return element.name == filters;
                   });
-			 if (filterGroup == "area") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.area == filters;
-                    });
+
                 }
 		}  
-	    }
+	    
                 
                 // TODO: sort by level
 
