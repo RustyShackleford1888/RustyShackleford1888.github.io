@@ -523,11 +523,12 @@ function copyToClipboard(event) {
                   var data = $.grep(data, function (element, index) {
                     return element.name == filters;
                   });
-                }
-                                                    if (filterGroup == "area") {
+			 if (filterGroup == "area") {
                     var data = $.grep(data, function (element, index) {
                       return element.area == filters;
                     });
+                }
+		}                   
                 
                 // TODO: sort by level
 
@@ -551,7 +552,6 @@ function copyToClipboard(event) {
                 break;
 
               case "charmComponents":
-                // Filter the data if needed
                 // Filter the data if needed
                 if (filters != "all") {
                   // todo: make this a switch (either straight to component or by tier)
