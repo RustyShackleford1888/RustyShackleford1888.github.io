@@ -518,14 +518,16 @@ function copyToClipboard(event) {
                 break;
 
               case "augments":
+                // Filter the data if needed
                 if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                                    if (filterGroup == "area") {
+                  var data = $.grep(data, function (element, index) {
+                    return element.name == filters;
+                  });
+                }
+                                                    if (filterGroup == "area") {
                     var data = $.grep(data, function (element, index) {
                       return element.area == filters;
                     });
-                  }
-                                  }
                 
                 // TODO: sort by level
 
