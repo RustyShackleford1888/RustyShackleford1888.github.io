@@ -30,20 +30,30 @@
         }
 
     });
-    var tableOffset = $("#crystal-crafting-table").offset().top;
-var $header = $("#crystal-crafting-table > thead").clone();
-var $fixedHeader = $("#header-fixed").append($header);
-
-$(window).bind("scroll", function() {
-    var offset = $(this).scrollTop();
     
-    if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
-        $fixedHeader.show();
+    
+    function moveScroll(){
+    var scroll = $(window).scrollTop();
+    var anchor_top = $("#crystal-crafting-table").offset().top;
+    var anchor_bottom = $("#bottom_anchor").offset().top;
+    if (scroll>anchor_top && scroll<anchor_bottom) {
+    clone_table = $("#clone");
+    if(clone_table.length == 0){
+        clone_table = $("#crystal-crafting-table").clone();
+        clone_table.attr('id', 'clone');
+        clone_table.css({position:'fixed',
+                 'pointer-events': 'none',
+                 top:0});
+        clone_table.width($("#crystal-crafting-table").width());
+        $("#table-container").append(clone_table);
+        $("#clone").css({visibility:'hidden'});
+        $("#clone thead").css({visibility:'visible', 'pointer-events':'auto'});
     }
-    else if (offset < tableOffset) {
-        $fixedHeader.hide();
+    } else {
+    $("#clone").remove();
     }
-});
+}
+$(window).scroll(moveScroll);
   </script>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -165,7 +175,7 @@ $(window).bind("scroll", function() {
             In addition to up to four magic affixes Crafted items spawn with, three bonus properties are granted in accordance with the Gem you have used (excluding Ring, Amulet and Quiver crafts which only get two bonus properties). The following section lists the specific bonuses granted to different item types for each Gem. Note that the magnitude of these bonuses can change (doubled, tripled!) depending on the type of crystal you have used.
 
           </p>
-          <div class="row">
+         <div id="table-container" class="row">
             <table id="crystal-crafting-table" style="width: 100%;">
               <thead>
                 <tr id="crystal-crafting-header-row">
@@ -463,8 +473,7 @@ $(window).bind("scroll", function() {
               </tr>
               </tbody>
             </table>
-            <table id="header-fixed"></table>
-          </div>
+           </div>
         </div>
       </div>
     </div>    
