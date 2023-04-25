@@ -577,14 +577,6 @@ table#crystal-crafting-table tr#crystal-crafting-header-row th  {
   text-align: center;
 }
 
-#header-fixed { 
-  text-align: center;
-    position: fixed; 
-    top: 0px; display:none;
-    background-color:black;
-    color:white;
-    width: 100%;
-}
 table#crystal-crafting-table td {
   font-size: 0.9em;
   line-height: 1.3em;
