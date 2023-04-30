@@ -417,7 +417,7 @@ div#topbar, div#footer  {
   position: relative;
   width: 1024px;
   height: 81px;
-  background-image: url("https://resurgence.slashgaming.net/images/topbar.png");
+  background-image: url("/images/topbar.png");
   background-repeat: no-repeat; 
   z-index: 15 !important; }
 
@@ -426,7 +426,7 @@ div#banner  {
   top: -62px;
   width: 1024px;
   height: 320px;
-  background-image: url("https://resurgence.slashgaming.net/images/banner.png");
+  background-image: url("/images/banner.png");
   background-repeat: no-repeat; 
   z-index: 1 !important; }
 
@@ -562,7 +562,7 @@ div.neph_valor_row {
 
 div.horadric_cube_container {
   position: relative; 
-  background: url("https://resurgence.slashgaming.net/images/cube.gif");
+  background: url("/images/cube.gif");
   width: 322px;
   height: 434px; }
 

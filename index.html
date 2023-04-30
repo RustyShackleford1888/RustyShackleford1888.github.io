@@ -409,7 +409,7 @@ function copyToClipboard(event) {
     function loadItems(source, filterGroup, filters) {
         $("#armoryContent").empty();
 
-        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"https://resurgence.slashgaming.net/images/chaos-barbhireable.gif\" /></div>";
+        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
         $("#armoryContent").html(loading_html);
 
         var html = "";
@@ -450,7 +450,7 @@ function copyToClipboard(event) {
                     html = html + "<hr>";
                     html = html + "<div class=\"set-item row\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
                     html = html + "</div>";
@@ -479,7 +479,7 @@ function copyToClipboard(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -505,7 +505,7 @@ function copyToClipboard(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -534,7 +534,7 @@ function copyToClipboard(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Can be applied to: </span>";
                   $.each(jsonItem.items, function (key, item) {
@@ -572,7 +572,7 @@ function copyToClipboard(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
                   html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
@@ -824,7 +824,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span></span>";
                   html = html + "</div>";
                   
@@ -960,7 +960,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1007,7 +1007,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1031,7 +1031,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                       html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
                       html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + subItem1[0].imageFile + "\"></span>";
+                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
                       if (subItem1[0].version == "108") {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
                       }
@@ -1055,7 +1055,7 @@ If (alvl > 99) then alvl=99<br />`;
                         // print the left side of the item info
                         html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
                         html = html + "<div class=\"item-left four columns\">";
-                        html = html + "<span class=\"item-graphic \"><img src=\"https://resurgence.slashgaming.net/images/items/" + subItem2[0].imageFile + "\"></span>";
+                        html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
                         if (subItem2[0].version == "108") {
                           html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
                       }
@@ -1233,7 +1233,7 @@ If (alvl > 99) then alvl=99<br />`;
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="https://resurgence.slashgaming.net/images/icon32-32.png">
+  <link rel="icon" type="image/png" href="/images/icon32-32.png">
 
 </head>
 <body>
