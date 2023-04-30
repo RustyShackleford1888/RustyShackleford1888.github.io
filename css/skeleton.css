@@ -739,3 +739,9 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+@media screen and (max-width: 767px) {
+  #floating-nav-content {
+    max-width: 100%;
+  }
+}
