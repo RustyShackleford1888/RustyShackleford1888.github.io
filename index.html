@@ -60,15 +60,6 @@ function copyToClipboard(event) {
     // var weaponTypes = ["Axes", "Bows", "Crossbows", "Quivers", "Daggers", "Javelins", "Maces", "Clubs", "Polearms", "Scepters", "Spears", "Staves", "Hammers", "Maces", "Polearms", "Staves", "Swords", "Throwing Axes", "Throwing Knives", "Wands"];
     var itemTiers = ["Normal", "Exceptional", "Elite", "Uber"]
   
-    $(document).scroll(function() {
-        if ($(this).scrollTop() <= 400) {
-            $("#floating-nav-content").slideUp(400);
-        } else {
-            $("#floating-nav-content").slideDown(600);
-        }
-
-    });
-
     $("document").ready(function () {
         $.getJSON("js/armory.json", function (data) {
             $.each(data.itemCats, function (key, value) {

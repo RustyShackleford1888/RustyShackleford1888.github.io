@@ -400,7 +400,7 @@ h1, h2, h3, h4, h5, h6, th {
     background-color: #000;
     margin-left: -32px;
     position: fixed;
-    display: none;
+    display: block;
     color: #FFF;
     margin-top: 45px;
     padding-top: 35px;
@@ -423,7 +423,6 @@ div#topbar, div#footer  {
 
 div#banner  {
   position: relative;
-  top: -62px;
   width: 1024px;
   height: 320px;
   background-image: url("https://resurgence.slashgaming.net/images/banner.png");
