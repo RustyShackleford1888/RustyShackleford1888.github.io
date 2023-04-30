@@ -453,7 +453,7 @@ function copyToClipboard(event) {
                     html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
-	            html = html + "<span class=\"item-type\">"+ setItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + setItem.code + "</span></span>";
+	            html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + setItem.code + "</span></span>";
                     html = html + "</div>";
                     html = html + "<div class=\"item-right eight columns\">";
                     html = printItem(html, setItem);
