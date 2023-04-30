@@ -59,6 +59,20 @@ $(window).scroll(moveScroll);
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <style>
+    .scrollable-table {
+      max-height: 400px; /* Adjust this value to fit your desired table height */
+      overflow-y: auto; /* Makes the table scrollable on the y-axis */
+      display: block; /* Makes the table behave like a block element */
+    }
+
+    #crystal-crafting-table thead th {
+      position: sticky;
+      top: 0;
+      background-color: black; /* Or any other color you prefer */
+      z-index: 100; /* To make sure the header stays on top */
+    }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -175,7 +189,7 @@ $(window).scroll(moveScroll);
             In addition to up to four magic affixes Crafted items spawn with, three bonus properties are granted in accordance with the Gem you have used (excluding Ring, Amulet and Quiver crafts which only get two bonus properties). The following section lists the specific bonuses granted to different item types for each Gem. Note that the magnitude of these bonuses can change (doubled, tripled!) depending on the type of crystal you have used.
 
           </p>
-          <div class="row" id="table-container">
+          <div class="row scrollable-table" id="table-container">
             <table id="crystal-crafting-table" style="width: 100%;">
               <thead>
                 <tr id="crystal-crafting-header-row">
