@@ -1,0 +1,180 @@
+[
+  {
+    "index": "",
+    "name": "Caster Weapons",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Caster Weapons",
+    "props": [
+      ["white", "4% Chance to Gain 6 Seconds of Empower On Kill"],
+      ["white", "Cooldown Reduced By 6-7%"],
+      ["white", "15-18% Faster Cast Rate"],
+      ["white", "4% Mana Replenished on Kill"],
+      ["white", "Pierce 7-9% of Enemy Elemental Resistances"],
+      ["white", "+1 To All Skills"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Weapons",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Weapons",
+    "props": [
+      ["white", "40-50% Enhanced Damage"],
+      ["white", "15-18% Increased Attack Speed"],
+      ["white", "10-13% Crushing Blow"],
+      ["white", "4% Life Replenished on Kill"],
+      ["white", "Damage pierces 7-9% Physical Resistance"],
+      ["white", "+400-500 Attack Rating and Attacks ignore Defense rating"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Shields",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Shields",
+    "props": [
+      ["white", "15-20 Physical Damage reduction"],
+      ["white", "4% Maximum Fire Resistance"],
+      ["white", "4% Maximum Cold Resistance"],
+      ["white", "4% Maximum Lightning Resistance"],
+      ["white", "4% Maximum Poison Resistance"],
+      ["white", "15-20% Chance to Block and 12-15% Physical Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Armor",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Armor",
+    "props": [
+      ["white", "6-8% Increased Maximum Life and 6-8% Increased Maximum Mana"],
+      ["white", "8-10% Faster Run/Walk and -33% Item Attribute Requirements"],
+      ["white", "10-12% Magic Resistance"],
+      ["white", "2% Maximum Elemental Resistances"],
+      ["white", "2% Life Regenerated Per Second"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Helms",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Helms",
+    "props": [
+      ["white", "5-7% Life Leech and 5-7% Mana Leech"],
+      ["white", "10-13% Faster Cast Rate"],
+      ["white", "+1 To All Skills"],
+      ["white", "+6-8% Magic Resistance"],
+      ["white", "30-40% Magic Find"],
+      ["white", "3% Maximum Fire Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Gloves",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Gloves",
+    "props": [
+      ["white", "10-13% Increased Attack Speed"],
+      ["white", "Pierce 4-6% of Enemy Elemental Resistances"],
+      ["white", "+30-50 Damage"],
+      ["white", "+20-25 Magic Damage Reduction"],
+      ["white", "+6-8% Magic Resistance"],
+      ["white", "3% Maximum Lightning Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Boots",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Boots",
+    "props": [
+      ["white", "+6-8% Faster Run/Walk"],
+      ["white", "3-4% Increased Maximum Life and 3-4% Increased Maximum Mana"],
+      ["white", "+7-10 Physical Damage Reduction"],
+      ["white", "+5-7% Increased Elemental Damage"],
+      ["white", "15-20% Bonus to Attack Rating"],
+      ["white", "3% Maximum Cold Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Belts",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Belts",
+    "props": [
+      ["white", "1% Life Regenerated Per Second"],
+      ["white", "Cooldown Reduced By 4-5%"],
+      ["white", "20-25% Faster Hit Recovery"],
+      ["white", "25-30 to Life"],
+      ["white", "3% Maximum Poison Resistance"],
+      ["white", "4-6% Physical Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Amulets",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Amulets",
+    "props": [
+      ["white", "+8-12 To All Attributes"],
+      ["white", "5-7% Magic Resistance"],
+      ["white", "Cannot Be Frozen"],
+      ["white", "Pierce 5-7% of Enemy Elemental Resistances"],
+      ["white", "30-35% Reduced duration of Curses on you"],
+      ["white", "+1 To All Skills"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Rings",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Rings",
+    "props": [
+      ["white", "7-9% Elemental Resistances"],
+      ["white", "3% Physical Resistance"],
+      ["white", "40-50% Magic Find"],
+      ["white", "3% to Experience Gained"],
+      ["white", "+2 to random Class Skill from any of the class trees"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Arrows",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Arrows",
+    "props": [
+      ["white", "10-15% Increased Attack Speed"],
+      ["white", "4-6 Mana gained on striking and 10-15 Life gained on striking"],
+      ["white", "10-15% Elemental Resistances"],
+      ["white", "Pierce 4-6% of Enemy Elemental Resistances"],
+      ["white", "Attacks ignore Defense rating and 200-300 Attack Rating"],
+      ["white", "Damage pierces 4-6% Physical Resistance"]
+    ]
+  },
+  {
+    "index": "",
+    "name": "Bolts",
+    "color": "blue",
+    "imageFile": "",
+    "slot": "Bolts",
+    "props": [
+      ["white", "10-15% Crushing Blow"],
+      ["white", "+6-8% Faster Run/Walk"],
+      ["white", "+25-50 Damage"],
+      ["white", "10-15% Physical Resistance"],
+      ["white", "+1 To All Skills"],
+      ["white", "25-35% Projectile Pierce Chance"]
+    ]
+  }
+]
