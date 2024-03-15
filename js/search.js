@@ -5,7 +5,7 @@ async function searchItems() {
     searchResults.innerHTML = ''; // Clear previous results
   
     try {
-      const response = await fetch('/js/uniqueitems.json');
+      const response = await fetch('/js/uniqueItems.json');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
