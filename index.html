@@ -313,7 +313,6 @@ function copyToClipboard(event) {
                 // console.log(data); DEBUG
                 var html = "";
                 html = html + "Augments <a href=\"javascript:loadItems('augments', 'augments', 'all')\">[Show All]</a><br />";
-		html = html + "<a href=\"javascript:loadItems('augments', 'area', '1')\">[Show Only Area Specific]</a><br />";
 		
 
                 $("#armorySubNav").html(html);                
@@ -542,6 +541,7 @@ function copyToClipboard(event) {
                   $.each(jsonItem.items, function (key, item) {
                     html = html + "<span>" + item + "</span>"
                   })
+                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + JsonItem.index + "</span></span>";
                   html = html + "</div>";
                   html = html + "<div class=\"item-right eight columns\">";
                   html = printItem(html, jsonItem);    
