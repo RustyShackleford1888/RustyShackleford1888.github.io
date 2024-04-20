@@ -311,9 +311,38 @@ function copyToClipboard(event) {
           case "augments":
             $.getJSON("js/augments.json", function (data) {
                 // console.log(data); DEBUG
+                var cleanitems = new Array();
                 var html = "";
-                html = html + "Augments <a href=\"javascript:loadItems('augments', 'augments', 'all')\">[Show All]</a><br />";
-		
+                html = html + "Augments <a href=\"javascript:loadItems('augments', 'all', 'all')\">[Show All]</a><br />";
+                
+                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+                
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  $.each(value.items, function (i, val) {
+                    if ($.inArray(val, cleanitems) == -1) {
+                      cleanitems.push(val);
+                    }
+                  });               
+                });
+
+                cleanitems.sort();
+                $.each(cleanitems, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('augments', 'itemtype', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+
+                html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
+
+                data.sort(firstBy("name"));
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  html = html + "<li><a href=\"javascript:loadItems('augments', 'augment', '" + value.index + "')\">" + value.name + "</a></li>";
+                });
+                html = html + "</ul><br />";                
+
+
+                //TODO: allow for selection of runes and then "can make / can almost make"
 
                 $("#armorySubNav").html(html);                
             });
@@ -522,12 +551,20 @@ function copyToClipboard(event) {
                 case "augments":
                 // Filter the data if needed
                 if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                  if (filterGroup == "items") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.items == filters;
-                    });
-                  }
+                  var data = $.grep(data, function (element, index) {
+                    switch (filterGroup) {
+                      case "itemtype":
+                        return $.inArray(filters, element.items) !== -1; 
+                        break;
+
+                      case "augment":
+                        return element.index == filters;
+                        break;                        
+
+                      default:
+                        break;
+                    }                
+                  });
                 }
 
 		 
