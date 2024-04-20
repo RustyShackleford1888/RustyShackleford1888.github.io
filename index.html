@@ -522,6 +522,7 @@ function copyToClipboard(event) {
               case "augments":
                 // Filter the data if needed
                 if (filters != "all") {
+                  if (filterGroup == "items") {
                     var data = $.grep(data, function (element, index) {
                       return element.area == filters;
                     });
