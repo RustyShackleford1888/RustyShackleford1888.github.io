@@ -334,13 +334,7 @@ function copyToClipboard(event) {
 
                 html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
 
-                data.sort(firstBy("name"));
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  html = html + "<li><a href=\"javascript:loadItems('augments', 'augment', '" + value.index + "')\">" + value.name + "</a></li>";
-                });
-                html = html + "</ul><br />";                
-
+              
 
                 //TODO: allow for selection of runes and then "can make / can almost make"
 
