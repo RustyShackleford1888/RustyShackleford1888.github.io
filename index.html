@@ -519,15 +519,16 @@ function copyToClipboard(event) {
                 });
                 break;
 
-              case "augments":
+                case "augments":
                 // Filter the data if needed
                 if (filters != "all") {
+                  // todo: make this a switch (either straight to component or by tier)
                   if (filterGroup == "items") {
                     var data = $.grep(data, function (element, index) {
                       return element.items == filters;
                     });
                   }
-                  }
+                }
 
 		 
 	    
