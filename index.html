@@ -524,8 +524,9 @@ function copyToClipboard(event) {
                 if (filters != "all") {
                   if (filterGroup == "items") {
                     var data = $.grep(data, function (element, index) {
-                      return element.area == filters;
+                      return element.slot == filters;
                     });
+                  }
                   }
 
 		 
