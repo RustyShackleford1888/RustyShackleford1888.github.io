@@ -541,7 +541,7 @@ function copyToClipboard(event) {
                   $.each(jsonItem.items, function (key, item) {
                     html = html + "<span>" + item + "</span>"
                   })
-                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + index + "</span></span>";
+                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.index + "</span>";
                   html = html + "</div>";
                   html = html + "<div class=\"item-right eight columns\">";
                   html = printItem(html, jsonItem);    
