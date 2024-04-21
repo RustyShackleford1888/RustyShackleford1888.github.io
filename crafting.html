@@ -61,7 +61,7 @@ $(window).scroll(moveScroll);
   <link rel="stylesheet" href="css/skeleton.css">
   <style>
     .scrollable-table {
-      max-height: 400px; /* Adjust this value to fit your desired table height */
+      max-height: 75vh; /* Adjust this value to fit your desired table height */
       overflow-y: auto; /* Makes the table scrollable on the y-axis */
       display: block; /* Makes the table behave like a block element */
     }
@@ -71,6 +71,11 @@ $(window).scroll(moveScroll);
       top: 0;
       background-color: black; /* Or any other color you prefer */
       z-index: 100; /* To make sure the header stays on top */
+    }
+
+    div.separator {
+      margin-top:10px;
+      margin-bottom:20px;
     }
   </style>
 
@@ -105,13 +110,6 @@ $(window).scroll(moveScroll);
     <div class="row">
       <div class="u-full-width">
         <h1 style="text-align: center;">Resurgence Crafting Compendium</h1>
-        <div id="armoryNav">
-          <ul id="armoryMainNav">
-            <li>Crystal Crafting</li>
-            <li>Augmenting (coming soon)</li>
-            <li>(coming soon)</li>
-          </ul>
-        </div>
       </div>
 
          <div id="floating-nav-content">
@@ -504,27 +502,6 @@ $(window).scroll(moveScroll);
     </div>    
 
     <div class="row separator" ></div>
-
-
-    <div class="row" style="text-align: center; font-size:1rem;">
-        <div>
-          <p>
-            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br /> 
-          All trademarks referenced herein are the properties of their respective owners.
-          <p>
-            Battle.net®<br />
-            ©1996 - 2014 Blizzard Entertainment, Inc. All rights reserved. Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-          <p>
-            Diablo® II<br />
-            ©2000 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-          <p>
-            Diablo® II: Lord of Destruction®<br />
-            ©2001 Blizzard Entertainment, Inc. All rights reserved. Diablo, Lord of Destruction and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-        </div>
-      </div>
     <div class="row" style="position: relative; left:-32px;">
       <div class="u-full-width" id="footer" >
       </div>
