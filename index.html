@@ -567,6 +567,12 @@ function copyToClipboard(event) {
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
+                    $.each(jsonItem.runes, function (i, value) {
+                      html = html + value;
+                      if (i+1 != jsonItem.runes.length) 
+                        html = html + ", ";
+                    });
                   html = html + "<span> Can be applied to: </span>";
                   $.each(jsonItem.items, function (key, item) {
                     html = html + "<span>" + item + "</span>"
