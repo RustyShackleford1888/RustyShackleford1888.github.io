@@ -338,6 +338,7 @@ function copyToClipboard(event) {
             
             case "Corruptions":
             $.getJSON("js/Corruptions.json", function (data) {
+              var cleanitems = new Array();
                 // console.log(data); DEBUG
                 var html = "";
                 html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'Corruptions', 'all')\">[Show All]</a><br />";
@@ -345,10 +346,10 @@ function copyToClipboard(event) {
 
                 html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
                 
-                $.each(data, function (key, value) {
+               $.each(data, function (key, value) {
                   // console.log(value); DEBUG
-                  $.each(value.slot, function (i, val) {
-                    if ($.inArray(val, cleanitems) == -1) {
+                 $.each(value.slot, function (i, val) {
+                  if ($.inArray(val, cleanitems) == -1) {
                       cleanitems.push(val);
                     }
                   });               
