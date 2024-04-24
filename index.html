@@ -338,35 +338,29 @@ function copyToClipboard(event) {
 
 
             case "Corruptions":
-            $.getJSON("js/Corruptions.json", function (data) {
-                // console.log(data); DEBUG
-                var cleanitems = new Array();
-                var html = "";
-                html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+    $.getJSON("js/Corruptions.json", function (data) {
+        var cleanitems = [];
+        var html = "";
+        html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
+        
+        html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
 
+        $.each(data, function (index, item) {
+            var val = item.slot;
+            if ($.inArray(val, cleanitems) == -1) {
+                cleanitems.push(val);
+            }
+        });
 
-              
-                
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  $.each(value.slot, function (i, val) {
-                    if ($.inArray(val, cleanitems) == -1) {
-                      cleanitems.push(val);
-                    }
-                  });               
-                });
-
-                cleanitems.sort();
-                $.each(cleanitems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-              
-                $("#armorySubNav").html(html);                
-            });
-            break;
+        cleanitems.sort();
+        $.each(cleanitems, function (i, val) {
+            html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
+        });                 
+        html = html + "</ul><br />";
+        
+        $("#armorySubNav").html(html);                
+    });
+    break;
             
 
           case "charmComponents":
