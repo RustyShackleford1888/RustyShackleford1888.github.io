@@ -10,37 +10,22 @@
 
  <style>
   body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  .centered-content {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
   }
-  .itemSearchForm {
-      margin: 20px 10%;
-    }
-
-    .itemSearch {
-      width: 60%;
-      color: #222;
-    }
 </style>
 </head>
-<div class="centered-content">
-  <!-- Using the itemSearchForm class for the form -->
-  <form class="itemSearchForm">
-    <!-- Using the itemSearch class for the input field -->
-    <input type="text" id="searchInput" class="itemSearch" placeholder="Search for properties">
-    <button onclick="searchItems()">Search</button>
-  </form>
-  <p>Search items by their properties: * are wildcards or # will match any number.</p>
-  <ul id="searchResults"></ul>
-</div>
+
+<!-- HTML structure for displaying search results -->
+<input type="text" id="searchInput" placeholder="Search for properties">
+<button onclick="searchItems()">Search</button>
+<!-- Instruction for using search -->
+<p>Search items by their properties: * are wildcards or # will match any number.</p>
+<ul id="searchResults"></ul>
+
 <!-- Script to load data and perform search -->
 <script src="js/search.js"></script>
-</body>
