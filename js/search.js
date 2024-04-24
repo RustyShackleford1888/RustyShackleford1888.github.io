@@ -12,9 +12,16 @@ async function searchItems() {
 
     const items = await response.json();
 
+    // Convert search input to a regex pattern
+    // Escape special regex characters, replace * with .*, and # with \d+
+    let pattern = searchInput.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // Escape special characters
+                              .replace(/\\\*/g, '.*') // Replace * with .*
+                              .replace(/#/g, '\\d+'); // Replace # with \d+
+    const regex = new RegExp(pattern, 'i'); // 'i' for case-insensitive
+
     const matchingItems = items.filter(item => {
-      // Check if any property of the item matches the search input
-      return item.props.some(prop => prop.join('').toLowerCase().includes(searchInput));
+      // Check if any property of the item matches the search input using regex
+      return item.props.some(prop => regex.test(prop.join('')));
     });
 
     if (matchingItems.length === 0) {
