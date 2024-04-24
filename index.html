@@ -573,6 +573,7 @@ function copyToClipboard(event) {
                       if (i+1 != jsonItem.runes.length) 
                         html = html + ", ";
                     });
+                  html = html + "</span></div>";
                   html = html + "<span> Can be applied to: </span>";
                   $.each(jsonItem.items, function (key, item) {
                     html = html + "<span>" + item + "</span>"
