@@ -347,7 +347,7 @@ function copyToClipboard(event) {
                 
                 $.each(data, function (key, value) {
                   // console.log(value); DEBUG
-                  $.each(value.items, function (i, val) {
+                  $.each(value.slot, function (i, val) {
                     if ($.inArray(val, cleanitems) == -1) {
                       cleanitems.push(val);
                     }
