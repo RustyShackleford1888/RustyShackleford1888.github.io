@@ -335,35 +335,18 @@ function copyToClipboard(event) {
                 $("#armorySubNav").html(html);                
             });
             break;
-            
+
+
             case "Corruptions":
             $.getJSON("js/Corruptions.json", function (data) {
-              var cleanitems = new Array();
                 // console.log(data); DEBUG
+                var cleanitems = new Array();
                 var html = "";
-                html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'Corruptions', 'all')\">[Show All]</a><br />";
-
-
-                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+                html = html + "Augments <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
                 
-               $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                 $.each(value.slot, function (i, val) {
-                  if ($.inArray(val, cleanitems) == -1) {
-                      cleanitems.push(val);
-                    }
-                  });               
-                });
+                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
 
-                cleanitems.sort();
-                $.each(cleanitems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-
-              
-                // html = html + "By Item Type:<ul style=\"display: inline; padding-left: 10px;\">";
+                                  // html = html + "By Item Type:<ul style=\"display: inline; padding-left: 10px;\">";
 			        	// html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Caster Weapons')\">Caster Weapons</a></li>";
                 // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Weapons')\">Weapons</a></li>";
                 // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Armor')\">Armor</a></li>";
@@ -377,10 +360,32 @@ function copyToClipboard(event) {
                 // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Arrows')\">Arrows</a></li>";
                 // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Bolts')\">Bolts</a></li>";
               
+                
+                $.each(data, function (key, value) {
+                  // console.log(value); DEBUG
+                  $.each(value.slot, function (i, val) {
+                    if ($.inArray(val, cleanitems) == -1) {
+                      cleanitems.push(val);
+                    }
+                  });               
+                });
 
+                cleanitems.sort();
+                $.each(cleanitems, function (i, val) {
+                  html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
+                });                 
+                html = html + "</ul><br />";
+              
                 $("#armorySubNav").html(html);                
             });
             break;
+            
+
+
+
+              
+
+
 
           case "charmComponents":
             $.getJSON("js/charmComponents.json", function (data) {
