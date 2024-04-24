@@ -342,23 +342,11 @@ function copyToClipboard(event) {
                 // console.log(data); DEBUG
                 var cleanitems = new Array();
                 var html = "";
-                html = html + "Augments <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
+                html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
                 
                 html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
 
-                                  // html = html + "By Item Type:<ul style=\"display: inline; padding-left: 10px;\">";
-			        	// html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Caster Weapons')\">Caster Weapons</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Weapons')\">Weapons</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Armor')\">Armor</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Helms')\">Helms</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Boots')\">Boots</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Gloves')\">Gloves</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Belts')\">Belts</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Shields')\">Shields</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Rings')\">Rings</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Amulets')\">Amulets</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Arrows')\">Arrows</a></li>";
-                // html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', 'Bolts')\">Bolts</a></li>";
+
               
                 
                 $.each(data, function (key, value) {
@@ -380,12 +368,6 @@ function copyToClipboard(event) {
             });
             break;
             
-
-
-
-              
-
-
 
           case "charmComponents":
             $.getJSON("js/charmComponents.json", function (data) {
