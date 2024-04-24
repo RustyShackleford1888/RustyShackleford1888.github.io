@@ -4,7 +4,7 @@
     "name": "Caster Weapons",
     "color": "blue",
     "imageFile": "",
-    "slot": "Caster Weapons",
+    "slot": "CasterWeapons",
     "props": [
       ["white", "4% Chance to Gain 6 Seconds of Empower On Kill"],
       ["white", "Cooldown Reduced By 6-7%"],
