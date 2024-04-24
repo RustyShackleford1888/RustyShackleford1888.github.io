@@ -8,9 +8,23 @@
   <link rel="icon" type="image/png" href="/images/icon32-32.png">
  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
+ <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+</style>
+</head>
+
 <!-- HTML structure for displaying search results -->
 <input type="text" id="searchInput" placeholder="Search for properties">
 <button onclick="searchItems()">Search</button>
+<!-- Instruction for using search -->
+<p>Search items by their properties: * are wildcards or # will match any number.</p>
 <ul id="searchResults"></ul>
 
 <!-- Script to load data and perform search -->
