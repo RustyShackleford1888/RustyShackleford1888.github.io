@@ -9,7 +9,7 @@
       ["white", "4% Chance to Gain 6 Seconds of Empower On Kill"],
       ["white", "Cooldown Reduced By 6-7%"],
       ["white", "15-18% Faster Cast Rate"],
-      ["white", "4% Mana Replenished on Kill"],
+      ["white", "4% Mana Replenished on Kill and 30-40 to Mana"],
       ["white", "Pierce 7-9% of Enemy Elemental Resistances"],
       ["white", "+1 To All Skills"]
     ]
@@ -24,7 +24,7 @@
       ["white", "40-50% Enhanced Damage"],
       ["white", "15-18% Increased Attack Speed"],
       ["white", "10-13% Crushing Blow"],
-      ["white", "4% Life Replenished on Kill"],
+      ["white", "4% Life Replenished on Kill and 30-40 to Health"],
       ["white", "Damage pierces 7-9% Physical Resistance"],
       ["white", "+400-500 Attack Rating and Attacks ignore Defense rating"]
     ]
