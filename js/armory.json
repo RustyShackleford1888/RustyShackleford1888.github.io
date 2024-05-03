@@ -464,6 +464,11 @@
     "itemCatID":"affixes",
     "itemCatName":"Magic and Rare Prefixes and Suffixes",
     "itemCatSubItems":""
-    }
+    },
+    {
+        "itemCatID":"skills",
+        "itemCatName":"Skill IDS for BH",
+        "itemCatSubItems":""
+        }
     ]
 }
