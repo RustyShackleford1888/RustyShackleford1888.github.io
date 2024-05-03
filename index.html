@@ -688,7 +688,6 @@ function copyToClipboard(event) {
                   // todo: make this a switch (either straight to component or by tier)
                   if (filterGroup == "class") {
                     var data = $.grep(data, function (element, index) {
-                      return element.slot == filters;
                       return element.class == filters;
                     });
                   }
