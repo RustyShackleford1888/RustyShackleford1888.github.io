@@ -364,16 +364,16 @@ function copyToClipboard(event) {
     });
     break;
 
-    case "Skills":
+    case "skills":
     $.getJSON("js/skills.json", function (data) {
         var cleanitems = [];
         var html = "";
         html = html + "Skills <a href=\"javascript:loadItems('skills', 'all', 'all')\">[Show All]</a><br />";
         
-        html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
 
         $.each(data, function (index, item) {
-            var val = item.slot;
+            var val = item.class;
             if ($.inArray(val, cleanitems) == -1) {
                 cleanitems.push(val);
             }
