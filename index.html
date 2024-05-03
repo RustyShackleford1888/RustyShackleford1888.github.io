@@ -689,6 +689,7 @@ function copyToClipboard(event) {
                   if (filterGroup == "class") {
                     var data = $.grep(data, function (element, index) {
                       return element.slot == filters;
+                      return element.class == filters;
                     });
                   }
                 }
