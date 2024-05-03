@@ -696,7 +696,7 @@ function copyToClipboard(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
+                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.class + "</span>";
                   html = html + "</div>";
                   html = html + "<div class=\"item-right eight columns\">";
                   html = printItem(html, jsonItem);    
