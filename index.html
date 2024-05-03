@@ -363,6 +363,31 @@ function copyToClipboard(event) {
         $("#armorySubNav").html(html);                
     });
     break;
+
+    case "Skills":
+    $.getJSON("js/skills.json", function (data) {
+        var cleanitems = [];
+        var html = "";
+        html = html + "Skills <a href=\"javascript:loadItems('skills', 'all', 'all')\">[Show All]</a><br />";
+        
+        html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+
+        $.each(data, function (index, item) {
+            var val = item.slot;
+            if ($.inArray(val, cleanitems) == -1) {
+                cleanitems.push(val);
+            }
+        });
+
+        cleanitems.sort();
+        $.each(cleanitems, function (i, val) {
+            html = html + "<li><a href=\"javascript:loadItems('skills', 'class', '" + val + "')\">" + val + "</a></li>";
+        });                 
+        html = html + "</ul><br />";
+        
+        $("#armorySubNav").html(html);                
+    });
+    break;
             
 
           case "charmComponents":
@@ -655,7 +680,32 @@ function copyToClipboard(event) {
                   html = html + "</div></div>";
                     
                 });
-                break;                                
+                break;
+
+                case "skills":
+                // Filter the data if needed
+                if (filters != "all") {
+                  // todo: make this a switch (either straight to component or by tier)
+                  if (filterGroup == "class") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.slot == filters;
+                    });
+                  }
+                }
+                
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;                                      
 
               case "runewords":
                 // Filter the data if needed
