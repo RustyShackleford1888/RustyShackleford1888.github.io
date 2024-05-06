@@ -22,17 +22,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript">
-    $(document).scroll(function() {
-        if ($(this).scrollTop() <= 300) {
-            $("#floating-nav-content").slideUp(400);
-        } else {
-            $("#floating-nav-content").slideDown(600);
-        }
-
-    });
-    
-    function moveScroll(){
-    var scroll = $(window).scrollTop();
     var anchor_top = $("#crystal-crafting-table").offset().top;
     var anchor_bottom = $("#bottom_anchor").offset().top;
     if (scroll>anchor_top && scroll<anchor_bottom) {
@@ -89,42 +78,25 @@ $(window).scroll(moveScroll);
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row" style="position: relative; left:-32px;">
-      <div class="u-full-width" id="topbar" style="position: fixed;">
+    <div class="row">
+      <div class="u-full-width" id="topbar">
       </div>
     </div>
-    <div class="row" style="position: relative; left:-32px;">
+    <div class="row">
       <div class="u-full-width" id="banner">
       </div>
     </div>
-              <div style="width:100%; text-align:center;">
-            <ul class="intro_navbar">
-              <li><a href="index.html">Armory</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence/comments/5p75ey/resurgence_13_how_to_install_launch_the_game/">Download Launcher</a></li>
-              <li><a href="https://discord.gg/0cDYwWrMLIImycvz">Discord</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence">Subreddit</a></li>
-              <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia">Wiki</a></li>
-              <li><a href="crafting.html">Crafting</a></li>
-            </ul>
-          </div>
     <div class="row">
-      <div class="u-full-width">
-        <h1 style="text-align: center;">Resurgence Crafting Compendium</h1>
+      <div id="navbar">
+        <ul class="intro_navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="armory.html">Armory</a></li>
+          <li><a href="crafting.html">Crafting</a></li>
+          <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia" target="_blank">Wiki</a></li>
+          <li><a href="https://discord.gg/0cDYwWrMLIImycvz" target="_blank">Discord</a></li>
+          <li><a href="https://github.com/DoctorWoot420/resurgence-launcher/releases/download/v1.0.0/Resurgence.Launcher.msi" target="_blank">Download</a></li>
+        </ul>
       </div>
-
-         <div id="floating-nav-content">
-          <div style="width:100%; text-align:center;">
-            <ul class="intro_navbar">
-              <li><a href="index.html">Armory</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence/comments/5p75ey/resurgence_13_how_to_install_launch_the_game/">Download Launcher</a></li>
-              <li><a href="https://discord.gg/0cDYwWrMLIImycvz">Discord</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence">Subreddit</a></li>
-              <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia">Wiki</a></li>
-              <li><a href="crafting.html">Crafting</a></li>
-            </ul>
-          </div>
-        </div>
-
     </div>
 
     <div class="row separator"></div>
@@ -500,17 +472,37 @@ $(window).scroll(moveScroll);
         </div>
       </div>
     </div>    
-
-    <div class="row separator" ></div>
-    <div class="row" style="position: relative; left:-32px;">
-      <div class="u-full-width" id="footer" >
-      </div>
-    </div>
-
-
   </div>
+  <div class="row separator"></div>
+</div>
+</div>    
+<div id="footer">
+</div>
 
+<!-- Sticky the navigation -->
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var content = document.getElementById("content");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky - 40) {
+    navbar.classList.add("sticky")
+    content.classList.add("stickycontent")
+  } else {
+    navbar.classList.remove("sticky");
+    content.classList.remove("stickycontent")
+  }
+}
+
+function transmute_crafting() {
+  document.getElementById("crafting_cube_ingredients").style.display = "none";
+  document.getElementById("crafting_cube_results").style.display = "block";
+}
+</script>
 <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

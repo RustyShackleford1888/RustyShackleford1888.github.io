@@ -1,15 +1,14 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Diablo 2 - Resurgence (unofficial 1.13 mod) - Armory</title>
-  <meta name="description" content="Diablo 2 Resurgence mod - Item Armory">
+  <title>Diablo 2 - Resurgence (unofficial 1.13 mod)</title>
+  <meta name="description" content="Landing page for Diablo 2 Resurgence mod">
   <meta name="author" content="freeb0rn">
-  <meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
-<meta http-equiv='pragma' content='no-cache'>
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -22,1366 +21,7 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript">
-
-
-    
-function copyToClipboard(event) {
-  var element = event.target; // Get the clicked element
-  var range = document.createRange(); // Create a new range object
-  range.selectNodeContents(element); // Select the contents of the element
-  var selection = window.getSelection(); // Get the current selection
-  selection.removeAllRanges(); // Remove any existing selections
-  selection.addRange(range); // Add the new range to the selection
-  document.execCommand('copy'); // Copy the selected contents to the clipboard
-  selection.removeAllRanges(); // Remove the range from the selection
-	  var popup = document.createElement("div");
-  popup.textContent = "Copied!";
-  popup.style.color = "#c7b377";
-  popup.style.padding = "7px";
-  popup.style.position = "fixed";
-  popup.style.top = event.clientY-7 + "px";
-  popup.style.left = event.clientX + "px";
-  popup.style.transform = "translate(-50%, -50%)";
-  popup.style.zIndex = "9999";
-  document.body.appendChild(popup);
-  setTimeout(function() {
-    document.body.removeChild(popup);
-  }, 300);
- }
-  // Function to parse URL parameters
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-// Function to load items based on URL parameters
-function loadItemsFromURL() {
-    var source = getParameterByName('source');
-    var filterGroup = getParameterByName('filterGroup');
-    var filters = getParameterByName('filters');
-
-    // Call the loadItems function with the parsed parameters
-    loadItems(source, filterGroup, filters);
-}
-
-// Call loadItemsFromURL when the document is ready
-$(document).ready(function() {
-    loadItemsFromURL();
-});  
-    
-    /*** Copyright 2013 Teun Duynstee Licensed under the Apache License, Version 2.0 ***/
-    !function(n,t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?module.exports=t():n.firstBy=t()}(this,function(){var n=function(){function n(n){return n}function t(n){return"string"==typeof n?n.toLowerCase():n}function e(e,r){if(r="number"==typeof r?{direction:r}:r||{},"function"!=typeof e){var i=e;e=function(n){return n[i]?n[i]:""}}if(1===e.length){var o=e,f=r.ignoreCase?t:n;e=function(n,t){return f(o(n))<f(o(t))?-1:f(o(n))>f(o(t))?1:0}}return r.direction===-1?function(n,t){return-e(n,t)}:e}function r(n,t){var i="function"==typeof this&&this,o=e(n,t),f=i?function(n,t){return i(n,t)||o(n,t)}:o;return f.thenBy=r,f}return r}();return n});
-
-    // arrays for sorting criteria
-    var itemQuest = ["Quest Items"];
-    var itemTypes = ["armor", "weapon", "Quivers", "Rings", "Amulets", "Jewels", "Charms", "misc"];
-    // var classes = ["Barbarian", "Amazon", "Assassin", "Druid", "Sorceress", "Paladin", "Necromancer"];
-    // var armorTypes = ["Helms", "Armor", "Shields", "Gloves", "Boots", "Belts"];
-    // var weaponTypes = ["Axes", "Bows", "Crossbows", "Quivers", "Daggers", "Javelins", "Maces", "Clubs", "Polearms", "Scepters", "Spears", "Staves", "Hammers", "Maces", "Polearms", "Staves", "Swords", "Throwing Axes", "Throwing Knives", "Wands"];
-    var itemTiers = ["Normal", "Exceptional", "Elite", "Uber"]
   
-    $(document).scroll(function() {
-        if ($(this).scrollTop() <= 300) {
-            $("#floating-nav-content").slideUp(400);
-        } else {
-            $("#floating-nav-content").slideDown(600);
-        }
-
-    });
-
-    $("document").ready(function () {
-        $.getJSON("js/armory.json", function (data) {
-            $.each(data.itemCats, function (key, value) {
-              //console.log(value); //TODO: REMOVE (for debugging)
-              $("#armoryMainNav").append("<li><a href=\"javascript:loadSubMenu('" + value.itemCatID + "')\">" + value.itemCatName + "</a></li>");
-            });
-        });
-    });
-
-    function loadSubMenu(cat) {
-        $("#armorySubNav").empty();
-
-        switch (cat) {
-          case "basicItems":
-            $.getJSON("js/armory.json", function (data) {
-                var returnedData = $.grep(data.itemCats, function (element, index) {
-                  return element.itemCatID == "basicItems";
-                });
-                
-                var html = "";
-                html = html + "Base Items <a href=\"javascript:loadItems('baseItems', 'all', 'all')\">[Show All]</a><br />";
-
-                html = html + "By tier:<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].tier, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'tier', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
-                  if (value.itemCatMeleeRanged == "melee")
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br /><ul>";
-                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
-                  if (value.itemCatMeleeRanged == "ranged")
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul>";
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].armor, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'armor', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-                
-                html = html + "<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(returnedData[0].itemCatSubItems[0].class, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'class', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].other, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('baseItems', 'other', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);
-            });
-            break;
-
-          case "uniqueItems":
-            $.getJSON("js/armory.json", function (data) {
-                var returnedData = $.grep(data.itemCats, function (element, index) {
-                  return element.itemCatID == "uniqueItems";
-                });
-                // console.log(returnedData[0].itemCatSubItems) // TODO: REMOVE
-                // console.log(returnedData[0].itemCatSubItems[0].class) // TODO: REMOVE
-                
-                var html = "";
-                html = html + "Uniques <a href=\"javascript:loadItems('uniqueItems', 'all', 'all')\">[Show All]</a><br />";
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
-                  if (value.itemCatMeleeRanged == "melee")
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br /><ul>";
-                $.each(returnedData[0].itemCatSubItems[0].weapon, function (key, value) {
-                  if (value.itemCatMeleeRanged == "ranged")
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'weapon', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul>";
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].armor, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'armor', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                // html = html + "Jewelry:<ul style=\"display: inline; padding-left: 10px; \">";
-                // $.each(returnedData[0].itemCatSubItems[0].jewelry, function (key, value) {
-                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'jewelry', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                // });
-                // html = html + "</ul><br />";
-                
-                html = html + "<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(returnedData[0].itemCatSubItems[0].class, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'class', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                // html = html + "By tier:<ul style=\"display: inline; padding-left: 10px; \">";
-                // $.each(returnedData[0].itemCatSubItems[0].tier, function (key, value) {
-                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'tier', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                // });
-                // html = html + "</ul><br />";
-
-
-                // html = html + "<div style=\"display: inline; padding-left: 10px; \">";
-                // $.each(returnedData[0].itemCatSubItems[0].circlet, function (key, value) {
-                //   html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'circlet', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                // });
-
-                html = html + "<ul style=\"display: inline; padding-left: 10px; \">";
-                $.each(returnedData[0].itemCatSubItems[0].other, function (key, value) {
-                  html = html + "<li><a href=\"javascript:loadItems('uniqueItems', 'other', '" + value.itemCatName + "')\">" + value.itemCatName + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);
-            });
-            break;
-            
-          case "sets":
-            $.getJSON("js/setItems.json", function (data) {
-                // console.log(data); DEBUG
-                var html = "";
-                html = html + "Sets <a href=\"javascript:loadItems('setItems', 'set', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By Set:<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  html = html + "<li><a href=\"javascript:loadItems('setItems', 'set', '" + value.index + "')\">" + value.name + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);                
-            });
-            break;
-
-          case "affixes":
-            $.getJSON("js/affixes.json", function (data) {
-                // console.log(data); DEBUG
-                var affixTypes = new Array();
-                var affixItems = new Array();
-                var affixColors = new Array();
-
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  if ($.inArray(value.affType, affixTypes) == -1) {
-                    affixTypes.push(value.affType);
-                  }
-                });
-                affixTypes.sort();
-
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  $.each(value.items, function (i, val) {
-                    if ($.inArray(val, affixItems) == -1) {
-                      affixItems.push(val);
-                    }
-                  });               
-                });
-                affixItems.sort();
-
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  if ($.inArray(value.color, affixColors) == -1) {
-                    affixColors.push(value.color);
-                  }           
-                });
-                affixColors.sort();
-
-                var html = "";
-                html = html + "Affixes <a href=\"javascript:loadItems('affixes', 'all', 'all')\">[Show All]</a><br />";
-
-                html = html + "By Type:<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(affixTypes, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixTypes', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-                html = html + "By Item:<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(affixItems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixItems', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-                html = html + "By Rarity:<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(affixColors, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('affixes', 'affixColors', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);                
-            });
-            break;            
-
-          case "runes":
-            $.getJSON("js/runes.json", function (data) {
-                // console.log(data); DEBUG
-                var html = "";
-                html = html + "Runes <a href=\"javascript:loadItems('runes', 'rune', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By Rune:<ul style=\"display: inline; padding-left: 10px;\">";
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  html = html + "<li><a href=\"javascript:loadItems('runes', 'rune', '" + value.name + "')\">" + value.name + "</a></li>";
-                });
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);                
-            });
-            break;
-
-          case "gems":
-            $.getJSON("js/gems.json", function (data) {
-                // console.log(data); DEBUG
-                var html = "";
-                html = html + "Gems <a href=\"javascript:loadItems('gems', 'gem', 'all')\">[Show All]</a><br />";
-
-                $("#armorySubNav").html(html);                
-            });
-            break;
-
-          case "augments":
-            $.getJSON("js/augments.json", function (data) {
-                // console.log(data); DEBUG
-                var cleanitems = new Array();
-                var html = "";
-                html = html + "Augments <a href=\"javascript:loadItems('augments', 'all', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
-                
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  $.each(value.items, function (i, val) {
-                    if ($.inArray(val, cleanitems) == -1) {
-                      cleanitems.push(val);
-                    }
-                  });               
-                });
-
-                cleanitems.sort();
-                $.each(cleanitems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('augments', 'itemtype', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-                html = html + "<img src=\"images/new_augments_example.png\">";
-              
-                $("#armorySubNav").html(html);                
-            });
-            break;
-
-
-            case "Corruptions":
-    $.getJSON("js/Corruptions.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
-
-        $.each(data, function (index, item) {
-            var val = item.slot;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
-
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
-
-    case "nv":
-    $.getJSON("js/nv.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Nephalem Valors <a href=\"javascript:loadItems('nv', 'other', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
-
-        $.each(data, function (index, item) {
-            var val = item.class;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
-
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('nv', 'class', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
-
-    case "skills":
-    $.getJSON("js/skills.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Skills <a href=\"javascript:loadItems('skills', 'all', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
-
-        $.each(data, function (index, item) {
-            var val = item.class;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
-
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('skills', 'class', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
-            
-
-          case "charmComponents":
-            $.getJSON("js/charmComponents.json", function (data) {
-                // console.log(data); DEBUG
-                var html = "";
-                html = html + "Charm Components <a href=\"javascript:loadItems('charmComponents', 'charm', 'all')\">[Show All]</a><br />";
-                html = html + "<a href=\"javascript:loadItems('charmComponents', 'area', '1')\">[Show Only Area Specific]</a><br />";
-                html = html + "By charm slot:<ul style=\"display: inline; padding-left: 10px;\">";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Primary')\">Primary</a></li>";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Secondary')\">Secondary</a></li>";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Tertiary')\">Tertiary</a></li>";
-                
-                html = html + "</ul><br />";
-
-                $("#armorySubNav").html(html);                
-            });
-            break;                 
-          
-          case "runewords":
-            $.getJSON("js/runewords.json", function (data) {
-                // console.log(data); DEBUG
-                var cleanitems = new Array();
-                var html = "";
-                html = html + "Runewords <a href=\"javascript:loadItems('runewords', 'all', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
-                
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  $.each(value.items, function (i, val) {
-                    if ($.inArray(val, cleanitems) == -1) {
-                      cleanitems.push(val);
-                    }
-                  });               
-                });
-
-                cleanitems.sort();
-                $.each(cleanitems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'itemtype', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
-
-                html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
-
-                data.sort(firstBy("name"));
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'runeword', '" + value.index + "')\">" + value.name + "</a></li>";
-                });
-                html = html + "</ul><br />";                
-
-
-                //TODO: allow for selection of runes and then "can make / can almost make"
-
-                $("#armorySubNav").html(html);                
-            });
-            break;
-
-          default:
-            break;
-        }
-    }
-
-    function loadItems(source, filterGroup, filters) {
-        $("#armoryContent").empty();
-
-        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
-        $("#armoryContent").html(loading_html);
-
-        var html = "";
-
-        $.getJSON("js/" + source + ".json", function (data) {
-            // "Parent category" processing/output if necessary
-            switch (source) { 
-              case "setItems":
-                // Filter the data if needed
-                if (filters != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    return element.index == filters;
-                  });
-                }
-
-                $.each(data, function (key, jsonItem) {
-                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
-                  html = html + "<div class=\"item row setItems \">";
-                  html = html + "<h5 class=\"diablo_green\" style=\"text-align: center; width: 100%\">" + jsonItem.name + "</h6>";
-
-                  // partial properties (sets only)
-                  html = html + "<span class=\"item-property\" style=\"display:block; text-align: center; font-weight: bold;\">Partial Set Bonus</span>";
-                  html = html + "<div class=\"diablo_green\" style=\"text-align: center;\">";
-                  $.each(jsonItem.partialProps, function (key, value) {
-                    html = html + value + "<br />";
-                  });
-                  html = html + "</div>";
-
-                  // full properties (sets only)
-                  html = html + "<span class=\"item-property\" style=\"margin-top: 10px; display:block; text-align: center; font-weight: bold;\">Complete Set Bonus</span>";
-                  html = html + "<div class=\"diablo_gold\" style=\"text-align: center;\">";
-                  $.each(jsonItem.fullProps, function (key, value) {
-                    html = html + value + "<br />";
-                  });
-                  html = html + "</div>";
-
-                  $.each(jsonItem.items, function (key, setItem) {
-                    html = html + "<hr>";
-                    html = html + "<div class=\"set-item row\">";
-                    html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
-                    html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
-                    html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
-	            html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + setItem.code + "</span></span>";
-                    html = html + "</div>";
-                    html = html + "<div class=\"item-right eight columns\">";
-                    html = printItem(html, setItem);
-                    html = html + "</div></div>";
-                    
-                  });
-                  
-                  html = html + "</div>";
-                  // close the divs
-
-                });
-                break;
-
-              case "runes":
-                // Filter the data if needed
-                if (filters != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    return element.name == filters;
-                  });
-                }
-                
-                // TODO: sort by level
-
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break;
-
-              case "gems":
-                // Filter the data if needed
-                if (filters != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    return element.name == filters;
-                  });
-                }
-                
-                // TODO: sort by level
-
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break;
-
-                case "augments":
-                // Filter the data if needed
-                if (filters != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    switch (filterGroup) {
-                      case "itemtype":
-                        return $.inArray(filters, element.items) !== -1; 
-                        break;
-
-                      case "augment":
-                        return element.index == filters;
-                        break;                        
-
-                      default:
-                        break;
-                    }                
-                  });
-                }
-
-		 
-	    
-                
-                // TODO: sort by level
-
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  if (jsonItem.runes && jsonItem.runes.length > 0) {
-                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
-                  $.each(jsonItem.runes, function (i, value) {
-                  html = html + value;
-                    if (i+1 != jsonItem.runes.length) 
-                  html = html + ", ";
-                  });
-                  html = html + "</span></div>";
-                  }
-                  html = html + "<span> Can be applied to: </span>";
-                  $.each(jsonItem.items, function (key, item) {
-                    html = html + "<span>" + item + "</span>"
-                  })
-                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.index + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break;
-
-              case "charmComponents":
-                // Filter the data if needed
-                if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                  if (filterGroup == "slot") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.slot == filters;
-                    });
-                  }
-                                    if (filterGroup == "area") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.area == filters;
-                    });
-                  }
-                                  }
-                
-                // TODO: sort by level
-                data.sort(firstBy("index"));
-
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
-                  html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
-                  html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break; 
-
-              case "Corruptions":
-                // Filter the data if needed
-                if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                  if (filterGroup == "slot") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.slot == filters;
-                    });
-                  }
-                }
-
-              case "nv":
-                // Filter the data if needed
-                if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                  if (filterGroup == "class") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.class == filters;
-                    });
-                  }
-                }
-
-                    // TODO: sort by level
-                    data.sort(firstBy("index"));
-
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break;
-                
-              case "skills":
-                // Filter the data if needed
-                if (filters != "all") {
-                  // todo: make this a switch (either straight to component or by tier)
-                  if (filterGroup == "class") {
-                    var data = $.grep(data, function (element, index) {
-                      return element.class == filters;
-                    });
-                  }
-                }
-                
-                $.each(data, function (key, jsonItem) {
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.class + "</span>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);    
-
-                  // close the divs
-                  html = html + "</div></div>";
-                    
-                });
-                break;                                      
-
-              case "runewords":
-                // Filter the data if needed
-                if (filterGroup != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    switch (filterGroup) {
-                      case "itemtype":
-                        return $.inArray(filters, element.items) !== -1; 
-                        break;
-
-                      case "runeword":
-                        return element.index == filters;
-                        break;                        
-
-                      default:
-                        break;
-                    }                
-                  });
-                }
-
-                // TODO: Sort results
-                $.each(data, function (key, jsonItem) {
-                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
-                    $.each(jsonItem.runes, function (i, value) {
-                      html = html + value;
-                      if (i+1 != jsonItem.runes.length) 
-                        html = html + ", ";
-                    });
-                  html = html + "</span></div>";
-                  html = html + "<span class=\"diablo_white\">Sockets: " + jsonItem.runes.length + "</span>";
-                  html = html + "<span class=\"diablo_white\">cLvl Req: " + jsonItem.lvlreq + "</span>";
-                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Items: ";
-                    $.each(jsonItem.items, function (i, value) {
-                      html = html + value;
-                      if (i+1 != jsonItem.items.length) 
-                        html = html + ", ";
-                    });
-                  html = html + "</span></div>";
-                  html = html + "</div>";
-                  html = html + "<div class=\"item-right eight columns\">";
-                  html = printItem(html, jsonItem);
-
-                  // close the divs
-                  html = html + "</div></div>";
-                });
-              break;
-
-              case "affixes":
-                // Filter the data if needed
-                if (filterGroup != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    switch (filterGroup) {
-                      case "affixTypes":
-                        return element.affType == filters;
-                        break;
-
-                      case "affixItems":
-                        return $.inArray(filters, element.items) !== -1; 
-                        break;
-
-                      case "affixColors":
-                        return element.color == filters;
-                        break;
-
-                      default:
-                        break;
-                    }                
-                  });
-                }
-
-                data.sort(firstBy("affType").thenBy("group"));
-
-                html = html + "<div class=\"expando\">";
-                html = html + "<h6>Terminology</h6>";
-                html = html + `
-Group: Similar affixes are grouped. Only one prefix or suffix can be picked from a group by the randomizer.<br />
-*alvl:  Affix level.<br />
-rlvl: Required level.<br />
-Freq: The spawn frequency for affixes in the same group. Higher Freq affixes will spawn more often.<br />
-Items: List of items that can spawn this affix.<br />
-Excluded Items: List of items that cannot spawn this affix.<br />
-ilvl: Item level.<br />
-qlvl: Quality level.<br />
-mlvl: Magic level.<br /><br />
-
-*Affix level of an item is determined using the following routine (using integer numbers only):<br />
-If (ilvl > 99) then ilvl=99.<br />
-If (qlvl > ilvl) then ilvl=qlvl.<br />
-If (mlvl > 0) then alvl=ilvl+mlvl; skip to step 5.<br />
-If (ilvl < (99-qlvl/2)) then alvl=ilvl-qlvl/2, else alvl=2*ilvl-99<br />
-If (alvl > 99) then alvl=99<br />`;
-                html = html + "</div>";
-
-
-                html = html + "<table style=\"table-layout: fixed; border-collapse: collapse;\">";
-                html = html + "<thead><tr>";
-                html = html + "<th>Name</th>";
-                html = html + "<th>Type</th>";
-                html = html + "<th>Group</th>";
-                html = html + "<th>Property</th>";
-                html = html + "<th>aLvl</th>";
-                html = html + "<th>rLvl</th>";
-                html = html + "<th>Freq</th>";
-                html = html + "<th>Items</th>";
-                html = html + "<th>Excluded Items</th>";
-                html = html + "</thead></tr>";
-                html = html + "<tbody>";
-
-                $.each(data, function (key, jsonItem) {
-                  //console.log(jsonItem)  //TODO: REMOVE (for debugging)
-                  html = html + "<tr class=\"diablo_" + jsonItem.color +"\">";
-                  html = html + "<td> " + jsonItem.name +"</td>";
-                  html = html + "<td>" + jsonItem.affType +"</td>";
-                  html = html + "<td>" + jsonItem.group +"</td>";
-                  html = html + "<td>";
-                  $.each(jsonItem.props, function (key, prop) {
-                    html = html + prop + "<br />";
-                  });
-                  html = html + "</td>";
-                  html = html + "<td>" + jsonItem.alvl +"</td>";
-                  html = html + "<td>" + jsonItem.rlvl +"</td>";
-                  html = html + "<td>" + jsonItem.freq +"</td>";
-                  html = html + "<td>";
-                  $.each(jsonItem.items, function (key, item) {
-                    html = html + item + "<br />";
-                  });
-                  html = html + "</td>";
-                  html = html + "<td>";
-                  $.each(jsonItem.eItems, function (key, eitem) {
-                    html = html + eitem + "<br />";
-                  });
-                  html = html + "</td>";
-                  html = html + "</tr>";
-                });
-                html = html + "</tbody></table>";
-              break;              
-
-              case "baseItems":
-                // Filter the data if needed
-                if (filterGroup != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    switch (filterGroup) {
-                      case "armor":
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Shield":
-                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
-                          
-                          default:
-                            filters = filters;
-                          break;
-                        }
-                      case "weapon":
-                        // special cases
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Quiver":
-                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
-                          
-                          default:
-                            filters = filters;
-                          break;
-                        }
-
-                        return $.inArray(filters, element.subCategories) !== -1;
-                        break;
-                      
-                      case "jewelry":
-                        return element.category == filters;
-                        break;
-
-                      case "other":
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Nephalem Valors":
-                            return element.item == "Nephalem's Valour";
-                            break;
-
-                          default:
-                            return element.category == filters;
-                            break;
-                        }                    
-                        break;
-
-                      default:
-                        return element[filterGroup] == filters;
-                        break;
-                    }                
-                  });
-                }
-                else {
-                  
-                }
-                // Sort results
-                // TODO: Figure out how to sort by sub-category (move the sorting into each of the sub-areas and sort accordingly?)
-                var s = firstBy(function (v1, v2) { return itemQuest.indexOf(v1.category) - itemQuest.indexOf(v2.category) })
-                        .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
-                        .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
-                        .thenBy("ilvl")
-                        .thenBy("Name");
-                data.sort(s);
-                // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
-                //     .thenBy("lvlreq")
-
-
-                $.each(data, function (key, jsonItem) {
-                  // print the left side of the item info
-                  html = html + "<div class=\"item row\">";
-                  html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
-                  html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span></span>";
-                  html = html + "</div>";
-                  
-                  // print the right side of the item info
-                  html =  html + "<div class=\"item-right eight columns\">";
-
-                  html = html + "<div class=\"no-wrap diablo_white\">";
-                  $.each(jsonItem.baseProps, function (key, value) {
-                    html = html + "<span class=\"item-property\">" + value + "</span>";
-                  });
-                  html = html + "</div>";
-
-                  // built-in properties (automods)
-                  html = html + "<div class=\"diablo_magic\" style=\"text-align: center;\">";
-                  $.each(jsonItem.props, function (key, value) {
-                    html = html + "<span class=\"item-property\">" + value + "</span>";
-                  });
-                  html = html + "</div>";
-
-
-                  html = html + "</div></div>";
-                  html = html + "</div></div>";
-
-
-                  // close the divs
-
-                  html = html + "</div></div>";
-                  
-                });
-                break;
-
-              case "uniqueItems":
-                // Filter the data if needed
-                if (filterGroup != "all") {
-                  var data = $.grep(data, function (element, index) {
-                    switch (filterGroup) {
-                      case "armor":
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Shield":
-                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
-                          
-                          default:
-                            filters = filters;
-                          break;
-                        }
-                      case "weapon":
-                        // special cases
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Quiver":
-                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
-                          
-                          default:
-                            filters = filters;
-                          break;
-                        }
-
-                        return $.inArray(filters, element.subCategories) !== -1;
-                        break;
-                      
-                      case "jewelry":
-                        return element.category == filters;
-                        break;
-
-                      case "other":
-                        switch (filters) { // todo: change this when filters can later be stacked
-                          case "Nephalem Valors":
-                            return element.item == "Nephalem's Valour";
-                            break;
-
-                          default:
-                            return element.category == filters;
-                            break;
-                        }                    
-                        break;
-
-                      default:
-                        return element[filterGroup] == filters;
-                        break;
-                    }                
-                  });
-                }
-                else {
-                  
-                }
-                // Sort results
-                // TODO: Figure out how to sort by sub-category (move the sorting into each of the sub-areas and sort accordingly?)
-                var s = firstBy(function (v1, v2) { return itemQuest.indexOf(v1.category) - itemQuest.indexOf(v2.category) })
-                        .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
-                        .thenBy(function (v1, v2) { return parseInt(v1.ilvl) - parseInt(v2.ilvl) })
-                        // .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
-                        // .thenBy("ilvl")
-                        // .thenBy("Name");
-                data.sort(s);
-                // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
-                //     .thenBy("lvlreq")
-
-
-                html = html + "<div class=\"item row\" style=\"padding-bottom: 0px\">";
-                html = html + "<ul class=\"upgradeItems\">";
-                html = html + `<li><a id="showOnlyBA">Show only Basic</a></li>`;
-                html = html + `<li><a id="showOnlyEX">Show only Exceptional</a></li>`;
-                html = html + `<li><a id="showOnlyEL">Show only Elite</a></li>`;
-                html = html + "</ul>";
-                html = html + "<p style='text-align: center; margin-bottom: 0; font-size:0.8em;'>NOTE: Currently only these work on Safari, the per-item tabs do not.</p>";
-                html = html + "</div>";
-                html = html + `
-                <script type="text/javascript">
-                  $('a#showOnlyBA').on("click", function() {
-                    $('div[id*=BAS]').show();
-                    $('div[id*=EXC]').hide();
-                    $('div[id*=ELI]').hide();
-                  });
-                  $('a#showOnlyEX').on("click", function() {
-                    $('div[id*=BAS]').hide();
-                    $('div[id*=EXC]').show();
-                    $('div[id*=ELI]').hide();
-                  });
-                  $('a#showOnlyEL').on("click", function() {
-                    $('div[id*=BAS]').hide();
-                    $('div[id*=EXC]').hide();
-                    $('div[id*=ELI]').show();
-                  });
-                <\/script>`;
-
-                $.each(data, function (key, jsonItem) {
-                  // don't render upgrades, but do render them if we've filtered by tier
-                  // todo: replace this with root once asd's done with it
-                  if (filterGroup !== "tier" && jsonItem.root == false) {
-                    return;
-                  } else if (filterGroup == "tier") {
-                    html = html + "<div class=\"item row\">";
-
-                    // print the left side of the item info
-                    html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
-                    html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                    if (jsonItem.version == "108") {
-                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
-                    }
-                    else {
-                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                    }
-                    
-                    html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
-                    if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
-                    }
-                    html = html + "</div>";
-                    
-                    // print the right side of the item info
-                    html =  html + "<div class=\"item-right eight columns\">";
-                    html = printItem(html, jsonItem);
-                    html = html + "</div></div>";
-                    html = html + "</div></div>";
-                  } else {
-                    // get the upgrades
-                    var subItem1
-                    var subItem2
-                    // console.log('current item: ' + jsonItem.name) //DEBUG
-                    if (jsonItem.upgradeIndex !== "") {
-                      subItem1 = $.grep(data, function(e){ return e.index == jsonItem.upgradeIndex; });
-                      if (subItem1[0].upgradeIndex !== "") {
-                        subItem2 = $.grep(data, function(e){ return e.index == subItem1[0].upgradeIndex; });
-                      }
-                    }
-
-                    
-                    html = html + "<div class=\"item row\">";
-                    html = html + "<div class=\"row\">";
-                    html = html + "<ul class=\"upgradeItems\">";
-                    html = html + `<li><a onclick="$('[id^=\\'${jsonItem.index.substring(0, jsonItem.index.length-4)}\\'').hide();$('[id=\\'${jsonItem.index}\\']').show();">${jsonItem.name}</a><br />${jsonItem.tier}</li>`;
-                    
-                    if (typeof subItem1 !== 'undefined') 
-                      html = html + `<li><a onclick="$('[id^=\\'${subItem1[0].index.substring(0, subItem1[0].index.length-4)}\\'').hide();$('[id=\\'${subItem1[0].index}\\']').show();">${subItem1[0].name}</a><br />${subItem1[0].tier}</li>`;
-                    if (typeof subItem2 !== 'undefined') 
-                      html = html + `<li><a onclick="$('[id^=\\'${subItem2[0].index.substring(0, subItem2[0].index.length-4)}\\'').hide();$('[id=\\'${subItem2[0].index}\\']').show();">${subItem2[0].name}</a><br />${subItem2[0].tier}</li>`;
-                    html = html + "</ul>";
-                    html = html + "</div>";
-
-                    // print the left side of the item info
-                    html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
-                    html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                    if (jsonItem.version == "108") {
-                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
-                    }
-                    else {
-                      html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                    }
-                    
-                    html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
-                    if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
-                    }
-                    html = html + "</div>";
-                    
-                    // print the right side of the item info
-                    html =  html + "<div class=\"item-right eight columns\">";
-                    html = printItem(html, jsonItem);
-                    html = html + "</div></div>";
-                    
-
-                    if (jsonItem.upgradeIndex !== "") {
-                    // print the left side of the item info
-                      html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
-                      html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
-                      if (subItem1[0].version == "108") {
-                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
-                      }
-                      else {
-                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + "</span>";
-                      }
-                     
-                      html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
-                    if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem1[0].code + "</span>";
-                    }
-                      html = html + "</div>";
-    
-                      
-                      // print the right side of the item info
-                      html =  html + "<div class=\"item-right eight columns\">";
-                      html = printItem(html, subItem1[0]);
-                      html = html + "</div></div>";
-
-                      if (subItem1[0].upgradeIndex !== "") {
-                        // print the left side of the item info
-                        html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
-                        html = html + "<div class=\"item-left four columns\">";
-                        html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
-                        if (subItem2[0].version == "108") {
-                          html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
-                      }
-                      else {
-                        html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + "</span>";
-                      }
-	html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
-                    if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem2[0].code + "</span>";
-                    }
-                      
-                      html = html + "</div>";
-    
-                      
-                      // print the right side of the item info
-                      html =  html + "<div class=\"item-right eight columns\">";
-                      html = printItem(html, subItem2[0]);
-                      html = html + "</div></div>";
-                      }
-                    }
-
-                    // close the divs
-
-                    html = html + "</div></div>";
-                  }
-                });
-                break;
-          }
-          
-            
-
-          
-          $("#armoryContent").html(html);
-      });
-    }
-
-    function printItem(html, jsonItem) {
-            // base properties
-            $.each(jsonItem.baseProps, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
-
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
-
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
-
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;
-                      
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
-
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
-
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";
-            });
-
-            // extra properties
-            $.each(jsonItem.props, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
-
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
-
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
-
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;                    
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
-
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
-
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
-
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";  
-            });
-
-            // extra properties ** RUNEWORD ONLY
-            if (typeof jsonItem.weaponProps !== "undefined" && jsonItem.weaponProps.length > 0) {
-              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Weapon</span>";
-              $.each(jsonItem.weaponProps, function (key, value) {
-                html = html + "<span class=\"item-property\">";
-                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
-                html = html + "</span>";  
-              });
-            }
-
-            // extra properties ** RUNEWORD ONLY
-            if (typeof jsonItem.armorHelmProps !== "undefined" && jsonItem.armorHelmProps.length > 0) {
-              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Armor / Helm</span>";            
-              $.each(jsonItem.armorHelmProps, function (key, value) {
-                html = html + "<span class=\"item-property\">";
-                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
-                html = html + "</span>";  
-              });
-            }
-
-            // extra properties ** RUNEWORD ONLY
-            if (typeof jsonItem.shieldProps !== "undefined" && jsonItem.shieldProps.length > 0) {
-              html = html + "<br /><span class=\"no-wrap diablo_white\" style=\"display: block; text-align: center;\">Rune bonuses for: Shield</span>";            
-              $.each(jsonItem.shieldProps, function (key, value) {
-                html = html + "<span class=\"item-property\">";
-                html = html + "<span class=\"no-wrap diablo_blue\">" + value + "</span>";
-                html = html + "</span>";  
-              });
-            }
-
-      return html;
-    }
-  </script>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -1389,7 +29,7 @@ If (alvl > 99) then alvl=99<br />`;
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/icon32-32.png">
+  <link rel="icon" type="image/png" href="images/icon32-32.png">
 
 </head>
 <body>
@@ -1397,93 +37,995 @@ If (alvl > 99) then alvl=99<br />`;
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row" style="position: relative; left:-32px;">
-      <div class="u-full-width" id="topbar" style="position: fixed;">
+    <div class="row">
+      <div class="u-full-width" id="topbar">
       </div>
     </div>
-    <div class="row" style="position: relative; left:-32px;">
+    <div class="row">
       <div class="u-full-width" id="banner">
       </div>
     </div>
-              <div style="width:100%; text-align:center;">
-            <ul class="intro_navbar">
-              <li><a href="index.html">Armory</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence/comments/5p75ey/resurgence_13_how_to_install_launch_the_game/">Download Launcher</a></li>
-              <li><a href="https://discord.gg/0cDYwWrMLIImycvz">Discord</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence">Subreddit</a></li>
-              <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia">Wiki</a></li>
-              <li><a href="crafting.html">Crafting</a></li>
-            </ul>
-          </div>
     <div class="row">
-      <div class="u-full-width">
-        <h1 style="text-align: center;">Resurgence Armory</h1>
-        <div id="armoryNav">
-          <ul id="armoryMainNav">
+      <div id="navbar">
+        <ul class="intro_navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="armory.html">Armory</a></li>
+          <li><a href="crafting.html">Crafting</a></li>
+          <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia" target="_blank">Wiki</a></li>
+          <li><a href="https://discord.gg/0cDYwWrMLIImycvz" target="_blank">Discord</a></li>
+          <li><a href="https://github.com/DoctorWoot420/resurgence-launcher/releases/download/v1.0.0/Resurgence.Launcher.msi" target="_blank">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <div class="row">
+        <div class="u-full-width">
+          <h1 style="text-align: center;">Welcome to Resurgence</h1>
+          <div style="margin-left: 10%;margin-right: 10%; text-align: justify;">
+            <p>
+              Resurgence is a Diablo II mod that introduces many changes to promote character balance and diversity while staying true to the original Diablo feel.  Join us online for regular ladder resets and servers around the world.  Single player supported too.
+            </p>
+          </div>
+          <div id="play-container">
+            <a href="https://github.com/DoctorWoot420/resurgence-launcher/releases/download/v1.0.0/Resurgence.Launcher.msi" target="_blank"><div id="play-button">PLAY NOW</div></a>
+          </div>
+        </div>
+      </div>
+      <div class="row separator"></div>
+      <div class="row" style="text-align: center;"><h3>Same Feel, New Challenge</h3></div>
+      <div class="row">
+        <div class="six columns">
+          <iframe src='//gifs.com/embed/diablo-2-resurgence-launch-trailer-mZxMzr' frameborder='0' scrolling='no' width='480px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'' ></iframe>
+          <span class="caption">Necromancers get additional bone spears with points into Energy</span>
+        </div> 
+        <div class="six columns" style="text-align: justify">
+          <p>
+            Preserving the atmosphere of the original Diablo II game is a key element of Resurgence. The majority of changes are centered around providing a fair game for all skills and classes. Players shouldn’t feel bad for building non-traditional characters because ‘meta’ builds such as Blizzard Sorceress and Blessed Hammer Paladin are so much more powerful in comparison.
+          </p>
+          <p>
+            These changes are made through a number of ways:
+            <ul>
+              <li>Skill and synergy overhauls</li>
+              <li>Innovative new items and effects</li>
+              <li>New zones and end game content</li>
+              <li>Robust new crafting and charm systems</li>
+              <li>Storage and quality of life upgrades</li>
+            </ul>
+          </p>
+        </div>
+      </div>    
+      <div class="row separator" ></div>
+      <div class="row" style="text-align: center;"><h3>Innovative Itemization</h3></div>
+      <div class="row">
+        <div class="six columns" style="text-align: justify;">
+          <p>
+            Loot is fundamental to ARPGs, and Diablo II is no exception. As part of expanding the game and increasing the diversity of options open to the player, Resurgence introduces hundreds of new Unique items, over a dozen new Sets and countless tweaking and refinement of existing items and Runewords.
+          </p>
+          <p>
+            There are new exclusive item types for each class. The magic affix and crafting system has been overhauled thoughtfully and streamlined into something more rewarding for the player.
+          </p>
+          <p>
+            Affixes that spawn on Rare and Crafted items are no longer restricted to lower tier values. This combats the philosophy that every equipment slot is best be filled by a Unique or Runeword, as well-rolled Rare constitute some of the best gear in the game.
+          </p>
+          <p>
+            For more info check out the <a href="http://resurgence.slashgaming.net/crafting.html">Crafting Compendium</a> and 
+            <a href="http://diablo2resurgence.wikia.com/wiki/Crafting_Recipes" target="_blank">Wiki</a>.
+          </p>
+        </div>
+        <div class="six columns">
+          <iframe src='//gifs.com/embed/diablo-2-resurgence-launch-trailer-Z6MpGE' frameborder='0' scrolling='no' width='480px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'' ></iframe>
+          <span class="caption">New items enable new late-game builds such as this cold/fire multishot bow sorc.</span>
+        </div>      
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
+          <h3>&nbsp;</h3>
+          <div class="item_hover">
+          <div class="block">
+              <a href="javascript:void(0)" class="tooltip"><img src="images/shamanrod.png" />
+                <div>
+                  <span class="diablo_white block">
+                    Shaman Rod<br />
+                    Two-Hand Damage: 81-148<br />
+                    Durability: 61 of 100
+                  </span>
+                  <span class="diablo_red block">
+                    (Druid Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Strength: 93<br />
+                    Required Level: 41<br />
+                    Mace Class - Normal Attack Speed
+                  </span>
+                  <span class="diablo_blue block">
+                    +2% Experience Gained<br />
+                    +50% Damage to Undead
+                  </span>                            
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/templarbasinet.png" />
+                <div>
+                  <span class="diablo_white block">
+                    Superior Templar Basinet<br />
+                    Defense: 88<br />
+                    Durability: 110 of 110
+                  </span>
+                  <span class="diablo_red block">
+                    (Paladin Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Strength: 105<br />
+                    Required Level: 64<br />
+                  </span>
+                  <span class="diablo_blue block">
+                    +11% Increased Attack Speed<br />
+                    Increased Maximum Durability 10%
+                  </span>                            
+                </div>
+              </a>          
+              <a href="javascript:void(0)" class="tooltip"><img src="images/garnetring.png" />
+                <div>
+                  <span class="diablo_blue block">
+                    Platinum Garnet Ring
+                  </span>
+                  <span class="diablo_white block">
+                    Required Level: 45
+                  </span>
+                  <span class="diablo_blue block">
+                    +186 Attack Rating<br />
+                    3% Life Replenished on Kill
+                  </span>                          
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/sapphireamulet.png" />
+                <div>
+                  <span class="diablo_blue block">
+                    Golemlord's Sapphire Amulet'
+                  </span>
+                  <span class="diablo_white block">
+                    Required Level: 48
+                  </span>
+                  <span class="diablo_blue block">
+                    +3 Summoning Skills (Necromancer Only)<br />
+                    +26% Cold Resistance
+                  </span>                          
+                </div>
+              </a>           
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Mendelns_Rapture.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Mendeln's Rapture<br />
+                    Skull Cage
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">742</span><br />
+                    Durability: 70 of 75
+                  </span>
+                  <span class="diablo_red block">
+                    (Necromancer Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Strength: 83<br />
+                    Required Level: 53
+                  </span>
+                  <span class="diablo_blue block">
+                    +15% Faster Hit Recovery<br />
+                    +(150-180)% Enhanced Defense<br />
+                    You Can Summon 3 Additional Golems<br />
+                    You cannot summon Skeletons<br />
+                    +40% Cold Resistance<br />
+                    +8% Physical Resistance
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Voidbringer.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Voidbringer<br />
+                    Grand Matron Bow
+                  </span>
+                  <span class="diablo_white block">
+                    Two-Hand Damage: <span class="diablo_blue">116 to 745</span><br />
+                  </span>
+                  <span class="diablo_red block">
+                    (Amazon Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Dexterity: 152<br />
+                    Required Strength: 108<br />
+                    Required Level: 75
+                  </span>
+                  <span class="diablo_blue block">
+                    <span class="diablo_white">Bow Class - </span>Very Fast Attack Speed<br />
+                    8% chance to Cast Level 22 Hoarfrost On Striking<br />
+                    35% Increased Attack Speed<br />
+                    +315% Enhanced Damage<br />
+                    +160 to Maximum Damage (Based on Character Level)<br />              
+                    +58 to Dexterity
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Eon_Band.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Eon Band<br />
+                    Gold Ring
+                  </span>
+                  <span class="diablo_white block">
+                    Required Level: 78
+                  </span>
+                  <span class="diablo_blue block">
+                    +22 to all Attributes<br />
+                    +25% Elemental Resistances<br />
+                    2% Life Replenished per Second<br />
+                    Curse Immunity                
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Gretana.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Gretana<br />
+                    Vampirefang Belt
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">137</span><br />
+                    Durability: 77 of 100<br />
+                    Required Strength: 50<br />
+                    Required Level: 69
+                  </span>
+                  <span class="diablo_blue block">
+                    5% Chance to Gain 8 Seconds of Conduction On Kill<br />
+                    +115% Enhanced Defense<br />
+                    Increase Maximum Life 9%<br />
+                    -36% Lightning Resistance<br />
+                    Nearby enemies take Lightning damage per second<br /> equal to 50% of your Maximum Life                
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="block">
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Amms_Eclipse.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Amm's Eclipse<br />
+                    Demon Heart
+                  </span>
+                  <span class="diablo_white block">
+                    One-Hand Damage: 32 to 77<br />
+                    Durability: 90 of  150
+                  </span>
+                  <span class="diablo_red block">
+                    (Sorceress Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Level: 70<br />
+                    Staff Class - Fast Attack Speed
+                  </span>
+                  <span class="diablo_blue block">
+                    20% chance to Cast Level 6 Amplify Damage When Struck<br />
+                    +2 to Sorceress Skill Levels<br />
+                    +20% Faster Cast Rate<br />
+                    +38% Faster Hit Recovery<br />
+                    100% of Lightning Skill damage converted to Physical<br />
+                    Socketed (2)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Transcendence.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Transcendence<br />
+                    Diamond Bow
+                  </span>
+                  <span class="diablo_white block">
+                    Two-Hand Damage: <span class="diablo_blue">192-234</span><br />
+                    Required Dexterity: 132<br />
+                    Required Strength: 89<br />
+                    Required Level: 75<br />
+                    Bow Class - <span class="diablo_blue">Very Fast Attack Speed</span>
+                  </span>
+                  <span class="diablo_blue block">
+                    20% Increased Attack Speed<br />
+                    +200% Enhanced Damage<br />
+                    +5 to Cold Arrow<br />
+                    +5 to Fire Arrow<br />
+                    Cold Arrow Fires an Additional 10 Projectiles<br />
+                    Fire Arrow fires an additional 10 Projectiles<br />
+                    Socketed (3)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Steelrend.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Steelrend<br />
+                    Ogre Gauntlets
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">344</span><br />
+                    Durability: 95 of 100<br />
+                    Required Strength: 185<br />
+                    Required Level: 70
+                  </span>
+                  <span class="diablo_blue block">
+                    Melee Attacks Deal Splash Damage<br />                
+                    +48% Enhanced Damage<br />
+                    10% Chance of Crushing Blow<br />
+                    +273) Defense<br />
+                    +49 to Strength                
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Avatar_of_Fire.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Avatar of Fire<br />
+                    Conqueror Crown
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">438</span><br />
+                    Durability: 85 of 100
+                  </span>
+                  <span class="diablo_red block">
+                    (Barbarian Only)
+                  </span>
+                  <span class="diablo_white block">
+                    Required Strength: 174<br />
+                    Required Level:77
+                  </span>              
+                  <span class="diablo_blue block">
+                    +93 Minimum Fire Damage (Based on Strength)<br />
+                    +187 Maximum Fire Damage (Based on Strength)<br />
+                    +145% Enhanced Defense<br />
+                    +48% Fire Resistance<br />
+                    2% Life Regenerated per Second<br />
+                    -22% Enemy Fire Resistance (Based on Level)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/The_Gloaming.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    The Gloaming<br />
+                    Shadow Plate
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">1473</span><br />
+                    Durability: 61 of 100<br />
+                    Required Strength: 173<br />
+                    <span class="diablo_red">Required Level: 83</span>
+                  </span>
+                  <span class="diablo_blue block">
+                    5% Chance to Gain 6 Seconds of Grace On Kill<br />
+                    5% Chance to Gain 6 Seconds of Empower On Kill<br />                
+                    +164% Enhanced Defense<br />
+                    Lightning Absorb +13<br />
+                    Nearby Enemies have -35% Magic Resistance<br />
+                    Requirements -25%                
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Metalgrid.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Metalgrid<br />
+                    Ruby Amulet
+                  </span>
+                  <span class="diablo_white block">
+                    Level Requirement: 81
+                  </span>
+                  <span class="diablo_blue block">
+                    +461 to Attack Rating<br />
+                    +7 to IronGolem<br />
+                    +433 Defense<br />
+                    +32% Elemental Resistances <br />                
+                    +10% Physical Resistance
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/Templars_Might.gif" />
+                <div>
+                  <span class="diablo_unique block">
+                    Templar's Might<br />
+                    Sacred Armor
+                  </span>
+                  <span class="diablo_white block">
+                    Defense: <span class="diablo_blue">1887</span><br />
+                    Durability: 92 of 100<br />
+                    Required Strength: 232<br />
+                    Required Level: 74
+                  </span>
+                  <span class="diablo_blue block">
+                    Level 12 Might Aura When Equipped<br />
+                    +2 to Offensive Auras (Paladin Only)<br />
+                    +25% Faster Hit Recovery<br />
+                    +214% Enhanced Defense<br />
+                    +30 to Strength<br />
+                    +21 to Vitality
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <span class="caption">Hover over these items to see their description.</span>        
+                
+        </div>
+      </div>    
+      <div class="row separator" ></div>
+      <div class="row" style="text-align: center;"><h3>End-Game Content</h3></div>
+      <div class="row" style="margin-bottom: 25px">
+        <div class="twelve columns" style="text-align: justify;">
+          <p>
+            Beyond providing balance to the original game, Resurgence has a distinct focus on giving players a variety of new options for end-game content. This comes through new content and new combat mechanics. Act 5 Nightmare and Hell have received a significant monster overhaul and keep players thinking on their feet. Many non-essential side areas have also been made into zones for end-game activity, such as The Killing Fields which replaces The Hole Level 2. The area is aptly named and is the graveyard for many fallen heroes.
+          </p>
+          <p>
+            The bber system has been revised with a focus on making the uber portals more easily accessible but with more challenges and rewarding loot! The hellish red portals must also traversed if you wish to find Diablo’s Soulstone - a trinket that must be sold in order to summon Diablo Clone (instead of The Stone of Jordan as required in the original Diablo II).
+          </p>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 10px">
+        <div class="six columns">
+          <iframe src='//gifs.com/embed/diablo-2-resurgence-launch-trailer-zpOxDY' frameborder='0' scrolling='no' width='480px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'' ></iframe>
+          <span class="caption">Some monsters pose even more of a danger after their death, beware!</span>
+        </div>
+        <div class="six columns">
+          <iframe src='//gifs.com/embed/diablo-2-resurgence-launch-trailer-W6JjrJ' frameborder='0' scrolling='no' width='480px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'' ></iframe>
+          <span class="caption">A Frenzy Barb making his way through The Killing Fields</span>
+        </div>   
+      </div>    
+
+      <div class="row separator" ></div>
+
+      <div class="row" style="text-align: center;"><h3>Crystal Clear Crafting</h3></div>
+      <div class="row">
+        <div class="six columns" style="text-align: justify;">
+          <p>
+            Resurgence introduces a revamped crafting system which revolves around the use of specialized crafting items rather than Runes. Rather than having to keep a stock of various runes, these crystals enable efficient crafting which is available to the player as soon as they obtain the Horadric Cube. The three tiers of crafting Crystals are: Blessed (common), Regal (uncommon), Divine (rare), and Worldstone (exceedingly rare). These crystals are obtained as random enemy item drops from anywhere in any difficulty.        
+          </p>
+            Check out the recipes on the <a href="../crafting.html">Crafting Compendium</a> or the 
+            <a href="http://diablo2resurgence.wikia.com/wiki/Crafting_Recipes" target="_blank">Wiki</a>.
+        </div>
+        <div class="six columns">
+          <div class="five columns crafting_tooltips">
+              <a href="javascript:void(0)" class="tooltip"><img src="images/bcrystal.gif" />Blessed Crystal
+                <div>
+                  <span class="diablo_white block">
+                    Used to create basic crafted items.              
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/rcrystal.gif" />Regal Crystal
+                <div>
+                  <span class="diablo_white block">
+                    Used to create high-end crafted items.             
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/dcrystal.gif" />Divine Crystal
+                <div>
+                  <span class="diablo_white block">
+                    Used to create incredibly powerful crafted items.       
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/wcrystal.gif" />Worldstone Crystal
+                <div>
+                  <span class="diablo_white block">
+                    Used to create the ultimate tier of crafted items.       
+                  </span>
+                </div>
+              </a>
+          </div>
+          <div class="five columns crafting_tooltips">
+              <a href="javascript:void(0)" class="tooltip"><img src="images/astone.gif" />Alchemist's Cube
+                <div>
+                  <span class="diablo_white block">
+                    Upgrades a normal item to a random rarity.
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/scube.gif" />Strange Cube
+                <div>
+                  <span class="diablo_white block">
+                    Safely extracts the socketed runes and jewels from items.
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/cprism.gif" />Chaos Prism
+                <div>
+                  <span class="diablo_white block">
+                    Rerolls the random properties of a unique item.
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/aprism.png" />Angelic Prism
+                <div>
+                  <span class="diablo_white block">
+                    A chance to change the base of an item, or brick it.
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/dprism.png" />Demonic Prism
+                <div>
+                  <span class="diablo_white block">
+                    A chance to corrupt an additional modifier onto item, or brick it.
+                  </span>
+                </div>
+              </a>
+          </div>
+        </div>
+      </div>
+      <div class="row separator" ></div>
+
+      <div class="row" style="text-align: center;"><h3>Charming New Systems</h3></div>
+      <div class="row">
+        <div class="eight columns" style="text-align: justify;">
+          <p>
+              Instead of the frustrating trade-off between min-maxing of your character stats and having enough inventory space to handle loot, Resurgence restricts the player to only carry three different customizable unique charms. These charms are found by killing specific superunique monsters as you progress through the game. These Unique charms start off as blank slates - each having a set number of ‘free’ stat slots the player can fill by imbuing them with charm components they select. This enables incredible customization, with over one hundred different sigils, glyphs and ankhs providing an array of properties to empower your character.
+              <br />
+              <br />
+              To get an idea of how this process works, click "Transmute" in the cube to the right and watch the Charm gain a stat.  For further info check out the <a href="http://diablo2resurgence.wikia.com/wiki/Charms" target="_blank">charms page</a> on the wiki.
+            </p>
+            <div class="item_hover" style="padding-top:20px;">
+              <a href="javascript:void(0)" class="tooltip"><img src="images/glyph_garnet.png" />
+                <div>
+                  <span class="diablo_white block">
+                    Garnet Glyph
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  4-7% Fire Resistance<br />(Uses 1 Primary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/t2_fireres.png" />
+                <div>
+                  <span class="diablo_rare block">
+                    Ruby Glyph
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  10-13% Fire Resistance<br />(Uses 1 Primary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/freezingsigil.png" />
+                <div>
+                  <span class="diablo_blue block">
+                    Freezing Sigil
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  +36-48 Cold Damage<br />(Uses 1 Secondary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/sigil_magus.webp" />
+                <div>
+                  <span class="diablo_rare block">
+                    Magus' Sigil
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                    4-5% Faster Cast Rate<br />(Uses 1 Secondary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/ankh_puncture.webp" />
+                <div>
+                  <span class="diablo_rare block">
+                    Ankh of Puncture
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  3% Projectile Pierce<br />(Uses 1 Tertiary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/voidinnoc.png" />
+                <div>
+                  <span class="diablo_unique block">
+                    Void Innoculation
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  3% Chance to Gain 5 Seconds of Empower (+6 skills) on Kill<br />(Uses 1 Tertiary Stat Slot)
+                  </span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="tooltip"><img src="images/livinglava.png" />
+                <div>
+                  <span class="diablo_unique block">
+                    Living Lava
+                  </span>
+                  <span class="diablo_orange block">
+                    Charm Component
+                  </span>
+                  <span class="diablo_white block">
+                    Adds The Following Property to A Charm:
+                  </span>              
+                  <span class="diablo_blue block">
+                  2% Max Fire Resistance<br />(Uses 1 Tertiary Stat Slot)
+                  </span>
+                </div>
+              </a>
+          </div>
+          <span class="caption">Hover over these items to see their description.</span><br />       
+        </div>
+        <div class="four columns">
+          <div class="horadric_cube_container">'
+            <div id="crafting_cube_ingredients">
+                <div class="horadric_cube_ingredients" style= "top: 143px; left: 120px;">
+                  <a href="#" class="tooltip"><img src="images/gojes_talisman.png" />
+                    <div>
+                      <span class="diablo_unique block">
+                        Eldritch Knowledge<br />
+                        Small Charm
+                      </span>
+                      <span class="diablo_white block">
+                        Keep in Inventory to Gain Bonus
+                      </span>
+                      <span class="diablo_blue block">
+                        Available Primary Stat Slots: 2<br />
+                        Available Secondary Stat Slots: 1<br />
+                        Available Tertiary Stat Slots: 1<br />
+                      </span>
+                    </div>
+                  </a>            
+                </div>
+
+                <div class="horadric_cube_ingredients" style= "top: 171px; left: 150px;">
+                  <a href="#" class="tooltip"><img src="images/sigil_gheeds_fortune.png" />
+                    <div>
+                      <span class="diablo_unique block">
+                        Gheed's Fortune<br />
+                      </span>
+                      <span class="diablo_orange block">
+                        Charm Component
+                      </span>
+                      <span class="diablo_white block">
+                        Adds The Following Property to A Charm:
+                      </span>              
+                      <span class="diablo_blue block">
+                        30% Better Chance of Finding Magical Items<br />(Uses 1 Secondary Stat Slot)
+                      </span>
+                    </div>
+                  </a>            
+                </div>
+              </div>
+              
+              <div id="crafting_cube_results" class="horadric_cube_ingredients" style="display: none;">
+                <div class="horadric_cube_ingredients" style= "top: 143px; left: 120px;">
+                  <a href="#" class="tooltip"><img src="../images/gojes_talisman.png" />
+                    <div>
+                      <span class="diablo_unique block">
+                        Eldritch Knowledge<br />
+                        Small Charm
+                      </span>
+                      <span class="diablo_white block">
+                        Keep in Inventory to Gain Bonus
+                      </span>
+                      <span class="diablo_blue block">
+                        30% Better Chance of Finding Magical Items<br />
+                        Available Primary Stat Slots: 2<br />
+                        Available Secondary Stat Slots: 0<br />
+                        Available Tertiary Stat Slots: 1<br />
+                      </span>
+                    </div>
+                  </a>            
+                </div>
+              </div>
+
+            <div class="transmute" style= "width: 38px; height: 38px; top: 260px; left: 145px;" />
+            <a href="javascript:void(0)" onclick="javascript:transmute_crafting();" class="tooltip"><img src="images/transmute.gif" />
+              <div>
+                <span class="diablo_white block">
+                  Transmute
+                </span>              
+              </div>
+            </a>
+            </div>           
+          </div>
+        </div>      
+      </div>   
+
+      <div class="row separator" ></div>
+
+      <div class="row" style="text-align: center; margin-top: 50px;"><h3>Storage and Quality of Life</h3></div>
+      <div class="row">
+        <div class="nine columns" style="text-align: justify;">
+          <p>
+            Many quality of life upgrades are included within resurgence to help you spend more time farming:
+          </p>
+          <ul>
+            <li>Increased inventory, stash, and cube size</li>
+            <li>Stackable currency items</li>
+            <li>Built-in loot filter & maphack with many QOL features</li>
+            <li>The Horadric Catalyst</li>
           </ul>
+          <p>The Horadric Catalyst is a special item that allows you to disenchant uniques, sets, runes, and gems into essence.  This essence can be used to create different runes and gems, as introducing a unique item gambling mechanic.<Br />Learn more on the <a href="http://diablo2resurgence.wikia.com/wiki/Crafting_Quality_of_Life_Items" target="_blank">Quality of Life</a> wiki page.</a>
         </div>
-        
-          <div id="armorySubNav">
-          </div>
+        <div class="three columns" style="text-align: center;">
+              <a href="javascript:void(0)" class="tooltip" style="margin-right: 25px; margin-left: 25px;"><img src="images/stacked_prisms.png" />
+                <div>
+                  <span class="diablo_white block">
+                    All currency types are stackable
+                  </span>
+                </div>
+              </a>
+              <br /><br />
+              <a href="javascript:void(0)#" class="tooltip" style="margin-right: 25px; margin-left: 25px;"><img src="images/catalyst_new.png" />
+                <div>
+                  <span class="diablo_unique block">
+                    Horadric Catalyst
+                  </span>
+                  <span class="diablo_blue block">
+                    Transmutes Uniques, Sets, Runes, and Gems into Essence
+                  </span>
+                  <span class="diablo_white block">
+                    Radiant Essence: 1650<br />
+                    Gem Essence: 320<br />
+                    Greater Rune Essence: 5<br />
+                    Lesser Rune Essence: 1280<br />
+                  </span>
+                </div>
+              </a>
+        </div>
+      </div>        
+
+      <div class="row separator" ></div>
+
+      <div class="row" style="text-align: center;"><h3>Nephalem's Valour Sub-classes</h3></div>
+      <div class="row">
+        <div class="twelve columns">
+          <p>
+            After killing Baal in Hell, players can find a Nephalem’s Valour charm in the antechamber of the Worldstone. This charm allows the player to specialize their builds by selecting one of the unique subclasses available to their class. However, there is a cost. The player must offer up a powerful and relevant Unique item as a sacrifice as a sign of devotion to their selected path.       
+          </p>
+        </div>
+      </div>
+      
+      <div class="row neph_valor_row">
+        <div class="three columns">
+          <img src="images/Amazon.gif" />
+        </div>
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Matriarch</th>
+                <th>Huntress</th>
+                <th>Ranger</th>
+                <th>Shieldmaiden</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Summon 3 Valkyries<br />+20% Maximum Life<br />+75 Magic and Elemental Damage Reduction</td>
+                <td>35% Projectile Pierce Change<br />100% Increased Attack Rating<br />Knockback</td>
+                <td>+40% Faster Run/Walk<br />+10% Maximum Poison Resistance<br />100% Better Chance of Getting Magic Items</td>
+                <td>+30% Attack Speed<br />+30% Chance to Block<br />+30% Physical Resistance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-         <div id="floating-nav-content">
-          <div style="width:100%; text-align:center;">
-            <ul class="intro_navbar">
-              <li><a href="index.html">Armory</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence/comments/5p75ey/resurgence_13_how_to_install_launch_the_game/">Download Launcher</a></li>
-              <li><a href="https://discord.gg/0cDYwWrMLIImycvz">Discord</a></li>
-              <li><a href="https://www.reddit.com/r/Diablo2Resurgence">Subreddit</a></li>
-              <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia">Wiki</a></li>
-              <li><a href="crafting.html">Crafting</a></li>
-            </ul>
-          </div>
+      <div class="row neph_valor_row">
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Shadow</th>
+                <th>Reaper</th>
+                <th>Viper</th>
+                <th>Saboteur</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20% Chance to gain 4 seconds of Haste on kill<br />33% Deadly Strike<br />2000 to Attack Rating</td>
+                <td>+30% Increased Attack Speed<br />Adds 200-400 Damage<br />5% chance to reanimate slain enemies as Eternal Horror</td>
+                <td>Damage Pierces 10% Poison Resistance<br />10% Increased Poison Damage<br />+40 Life Gained on Striking<br />+10 Mana Gained on Striking</td>
+                <td>+100% Projectile Pierce Chance<br />+2 to Maximum Number of Traps<br />+10% Maximum Lightning Resistance<br />Replenish Life +125</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>      
+        <div class="three columns">
+          <img src="images/Assassin.gif" />
         </div>
+      </div>    
 
+      <div class="row neph_valor_row">
+        <div class="three columns">
+          <img src="images/Necromancer.gif" />
+        </div>
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Plaguelord</th>
+                <th>Occultist</th>
+                <th>Diabolist</th>
+                <th>Warlock</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+Damage Pierces 15% Poison Resistance<br />+1 Poison Explosion<br />3% Life Regenerated per Second</td>
+                <td>+30% Increased Curse Effect<br />Curse Immunity<br />Your Minions Have Curse Immunity</td>
+                <td>Damage Pierces 15% Magic Resistance<br />+1 Vampiric Spirits<br />+25% Magic Resistance</td>
+                <td>+30% Faster Cast Rate<br />80% Increased Minion Damage<br />Magic Skills Deal 50% Extra Damage as Physical</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row neph_valor_row">
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Warlord</th>
+                <th>Slayer</th>
+                <th>Titan</th>
+                <th>Conqueror</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Damage Pierces 15% Physical Resistances<br />20% Chance of Crushing Blow<br />+30 Physical Damage Reduction</td>
+                <td>Melee Attacks Deal Splash Damage<br />+25% Increased Attack Speed<br />7% Life Replenished on Kill</td>
+                <td>+1000 to Defense<br />+150 to Life<br />Cannot Be Frozen</td>
+                <td>6% Chance to Gain 4 Seconds of Resurgence on Kill<br />20% Increased Effect of War Cries<br />20% Increased Effect of Gained Buffs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="three columns">
+          <img src="images/Barbarian_diablo_II.gif" />
+        </div>
+      </div>   
+
+      <div class="row neph_valor_row">
+        <div class="three columns">
+          <img src="images/Paladin.gif" />
+        </div>
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Inquisitor</th>
+                <th>Templar</th>
+                <th>Guardian</th>
+                <th>Justicar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>8% Chance to Gain 4 Seconds of Empower on Kill<br />Slain Monsters Rest in Peace<br />Attacks Ignore Resistances of Undead</td>
+                <td>30% Chance to Cast Level 30 Fist of the Heavens When Struck<br />Adds 500-1000 Magic Damage<br />20% Increased Effect of Auras</td>
+                <td>Gain Fortify on Melee Attack<br />Attacks Slow Enemies by 20%<br />Poison Length Reduced by 50%<br />33% Reduced Duration of Curses on You</td>
+                <td>8% Chance to Gain 6 Seconds of Purity on Kill<br />Prevent Monster Heal<br />Attacks Ignore Resistances of Demons</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>    
+
+      <div class="row neph_valor_row">
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Cryomancer</th>
+                <th>Arcanist</th>
+                <th>Mage</th>
+                <th>Clairvoyant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5% Chance to Gain 8 Seconds of Fire Immunity on Kill<br />Damage Pierces 15% Cold Resistances<br />Freeze Nearby Enemies When Damaged</td>
+                <td>8% Chance to Cast Level 12 Elemental Weakness on Striking<br />+1 to Dancing Blade<br />7% Mana Replenished on Kill</td>
+                <td>+150 to Mana<br />50% Increased Mana Generation<br />+5% Maximum Elemental Resistances</td>
+                <td>-15% Reduced Skill Cooldown<br />+30% Faster Cast Rate<br />+20% Increased Energy Shield Efficiency</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="three columns">
+          <img src="images/Sorceress.gif" />
+        </div>
+      </div>
+
+      <div class="row neph_valor_row">
+        <div class="three columns">
+          <img src="images/Druid.gif" />
+        </div>
+        <div class="nine columns">
+          <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Hierophant</th>
+                <th>Destructionist</th>
+                <th>Shaman</th>
+                <th>Cerberus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+1 to Starfire<br />20% Magic Absorb<br />40% Faster Case Rate</td>
+                <td>Adds 1000-2000 Fire Damage<br />Damage Pierces 15% Fire Resistance<br />+10% Maximum Fire Resistance</td>
+                <td>+1 to Maximum Number of Spirits<br />30% Faster Cast Rate<br />+10% Maximum Fire Resistance</td>
+                <td>4% Chance to Gain 10 Seconds of Carnage on Kill<br />Damage Pierces 10% Physical Resistance<br />50% Faster Hit Recovery</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row separator"></div>
     </div>
-
-
-    <div class="row separator"></div>
-
-    <div class="row" style="text-align: center;"></div>
-    <div class="row">
-      <div class="u-full-width">
-        <div id="armoryContent">
-        </div>
-      </div> 
-    </div>       
-
-
-    <div class="row separator" ></div>
-
-
-    <div class="row" style="text-align: center; font-size:1rem;">
-        <div>
-          <p>
-            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br /> 
-          All trademarks referenced herein are the properties of their respective owners.
-          <p>
-            Battle.net®<br />
-            ©1996 - 2014 Blizzard Entertainment, Inc. All rights reserved. Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-          <p>
-            Diablo® II<br />
-            ©2000 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-          <p>
-            Diablo® II: Lord of Destruction®<br />
-            ©2001 Blizzard Entertainment, Inc. All rights reserved. Diablo, Lord of Destruction and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-          </p>
-        </div>
-      </div>
-    <div class="row" style="position: relative; left:-32px;">
-      <div class="u-full-width" id="footer" >
-      </div>
-    </div>
-
-
+  </div>    
+  <div id="footer">
   </div>
 
+  <!-- Sticky the navigation -->
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var content = document.getElementById("content");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky - 40) {
+        navbar.classList.add("sticky")
+        content.classList.add("stickycontent")
+      } else {
+        navbar.classList.remove("sticky");
+        content.classList.remove("stickycontent")
+      }
+    }
+
+    function transmute_crafting() {
+      document.getElementById("crafting_cube_ingredients").style.display = "none";
+      document.getElementById("crafting_cube_results").style.display = "block";
+    }
+    </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
