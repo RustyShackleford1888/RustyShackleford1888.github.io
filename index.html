@@ -700,6 +700,21 @@ function copyToClipboard(event) {
                     });
                   }
                 }
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
                 
                 // TODO: sort by level
                 data.sort(firstBy("index"));
