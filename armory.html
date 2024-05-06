@@ -46,7 +46,8 @@
         document.body.removeChild(popup);
       }, 300);
     }
-      // Function to parse URL parameters
+
+    // Function to parse URL parameters
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -63,17 +64,14 @@
         var filterGroup = getParameterByName('filterGroup');
         var filters = getParameterByName('filters');
 
-        // Call the loadItems function with the parsed parameters
+      // Call the loadItems function with the parsed parameters, if at least one exists
+      if(source || filterGroup || filters) {
         loadItems(source, filterGroup, filters);
+      }
     }
-
   
     $(document).ready(function() {
-    // Call the loadItems function with the parsed parameters
-    if(source || filterGroup || filters) {
-              loadItems(source, filterGroup, filters);
-            }
-    
+      loadItemsFromURL();
     });  
     
     /*** Copyright 2013 Teun Duynstee Licensed under the Apache License, Version 2.0 ***/
@@ -100,10 +98,10 @@
         $("#armorySubNav").empty();
 
         switch (cat) {
-          case "basicItems":
+          case "baseItems":
             $.getJSON("js/armory.json", function (data) {
                 var returnedData = $.grep(data.itemCats, function (element, index) {
-                  return element.itemCatID == "basicItems";
+                  return element.itemCatID == "baseItems";
                 });
                 
                 var html = "";
@@ -358,141 +356,145 @@
 
 
             case "Corruptions":
-    $.getJSON("js/Corruptions.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+              $.getJSON("js/Corruptions.json", function (data) {
+                  var cleanitems = [];
+                  var html = "";
+                  html = html + "Corruptions <a href=\"javascript:loadItems('Corruptions', 'all', 'all')\">[Show All]</a><br />";
+                  
+                  html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
 
-        $.each(data, function (index, item) {
-            var val = item.slot;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
+                  $.each(data, function (index, item) {
+                      var val = item.slot;
+                      if ($.inArray(val, cleanitems) == -1) {
+                          cleanitems.push(val);
+                      }
+                  });
 
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
+                  cleanitems.sort();
+                  $.each(cleanitems, function (i, val) {
+                      html = html + "<li><a href=\"javascript:loadItems('Corruptions', 'slot', '" + val + "')\">" + val + "</a></li>";
+                  });                 
+                  html = html + "</ul><br />";
+                  
+                  $("#armorySubNav").html(html);                
+              });
+              break;
 
-    case "nv":
-    $.getJSON("js/nv.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Nephalem Valors <a href=\"javascript:loadItems('nv', 'other', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
+              case "nv":
+              $.getJSON("js/nv.json", function (data) {
+                  var cleanitems = [];
+                  var html = "";
+                  html = html + "Nephalem Valors <a href=\"javascript:loadItems('nv', 'other', 'all')\">[Show All]</a><br />";
+                  
+                  html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
 
-        $.each(data, function (index, item) {
-            var val = item.class;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
+                  $.each(data, function (index, item) {
+                      var val = item.class;
+                      if ($.inArray(val, cleanitems) == -1) {
+                          cleanitems.push(val);
+                      }
+                  });
 
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('nv', 'class', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
+                  cleanitems.sort();
+                  $.each(cleanitems, function (i, val) {
+                      html = html + "<li><a href=\"javascript:loadItems('nv', 'class', '" + val + "')\">" + val + "</a></li>";
+                  });                 
+                  html = html + "</ul><br />";
+                  
+                  $("#armorySubNav").html(html);                
+              });
+              break;
 
-    case "skills":
-    $.getJSON("js/skills.json", function (data) {
-        var cleanitems = [];
-        var html = "";
-        html = html + "Skills <a href=\"javascript:loadItems('skills', 'all', 'all')\">[Show All]</a><br />";
-        
-        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
+              case "skills":
+              $.getJSON("js/skills.json", function (data) {
+                  var cleanitems = [];
+                  var html = "";
+                  html = html + "Skills <a href=\"javascript:loadItems('skills', 'all', 'all')\">[Show All]</a><br />";
+                  
+                  html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
 
-        $.each(data, function (index, item) {
-            var val = item.class;
-            if ($.inArray(val, cleanitems) == -1) {
-                cleanitems.push(val);
-            }
-        });
+                  $.each(data, function (index, item) {
+                      var val = item.class;
+                      if ($.inArray(val, cleanitems) == -1) {
+                          cleanitems.push(val);
+                      }
+                  });
 
-        cleanitems.sort();
-        $.each(cleanitems, function (i, val) {
-            html = html + "<li><a href=\"javascript:loadItems('skills', 'class', '" + val + "')\">" + val + "</a></li>";
-        });                 
-        html = html + "</ul><br />";
-        
-        $("#armorySubNav").html(html);                
-    });
-    break;
+                  cleanitems.sort();
+                  $.each(cleanitems, function (i, val) {
+                      html = html + "<li><a href=\"javascript:loadItems('skills', 'class', '" + val + "')\">" + val + "</a></li>";
+                  });                 
+                  html = html + "</ul><br />";
+                  
+                  $("#armorySubNav").html(html);                
+              });
+              break;
             
 
-          case "charmComponents":
-            $.getJSON("js/charmComponents.json", function (data) {
-                // console.log(data); DEBUG
-                var html = "";
-                html = html + "Charm Components <a href=\"javascript:loadItems('charmComponents', 'charm', 'all')\">[Show All]</a><br />";
-                html = html + "<a href=\"javascript:loadItems('charmComponents', 'area', '1')\">[Show Only Area Specific]</a><br />";
-                html = html + "By charm slot:<ul style=\"display: inline; padding-left: 10px;\">";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Primary')\">Primary</a></li>";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Secondary')\">Secondary</a></li>";
-                html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Tertiary')\">Tertiary</a></li>";
-                
-                html = html + "</ul><br />";
+              case "charmComponents":
+                $.getJSON("js/charmComponents.json", function (data) {
+                    // console.log(data); DEBUG
+                    var html = "";
+                    html = html + "Charm Components <a href=\"javascript:loadItems('charmComponents', 'charm', 'all')\">[Show All]</a><br />";
+                    html = html + "<a href=\"javascript:loadItems('charmComponents', 'area', '1')\">[Show Only Area Specific]</a><br />";
+                    html = html + "By charm slot:<ul style=\"display: inline; padding-left: 10px;\">";
+                    html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Primary')\">Primary</a></li>";
+                    html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Secondary')\">Secondary</a></li>";
+                    html = html + "<li><a href=\"javascript:loadItems('charmComponents', 'slot', 'Tertiary')\">Tertiary</a></li>";
+                    
+                    html = html + "</ul><br />";
 
-                $("#armorySubNav").html(html);                
-            });
-            break;                 
-          
-          case "runewords":
-            $.getJSON("js/runewords.json", function (data) {
-                // console.log(data); DEBUG
-                var cleanitems = new Array();
-                var html = "";
-                html = html + "Runewords <a href=\"javascript:loadItems('runewords', 'all', 'all')\">[Show All]</a><br />";
-                
-                html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
-                
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  $.each(value.items, function (i, val) {
-                    if ($.inArray(val, cleanitems) == -1) {
-                      cleanitems.push(val);
-                    }
-                  });               
+                    $("#armorySubNav").html(html);                
                 });
+                break;                 
+              
+                case "runewords":
+                  $.getJSON("js/runewords.json", function (data) {
+                      // console.log(data); DEBUG
+                      var cleanitems = new Array();
+                      var html = "";
+                      html = html + "Runewords <a href=\"javascript:loadItems('runewords', 'all', 'all')\">[Show All]</a><br />";
+                      
+                      html = html + "By item type:<ul style=\"display: inline; padding-left: 10px;\">";
+                      
+                      $.each(data, function (key, value) {
+                        // console.log(value); DEBUG
+                        $.each(value.items, function (i, val) {
+                          if ($.inArray(val, cleanitems) == -1) {
+                            cleanitems.push(val);
+                          }
+                        });               
+                      });
 
-                cleanitems.sort();
-                $.each(cleanitems, function (i, val) {
-                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'itemtype', '" + val + "')\">" + val + "</a></li>";
-                });                 
-                html = html + "</ul><br />";
+                      cleanitems.sort();
+                      $.each(cleanitems, function (i, val) {
+                        html = html + "<li><a href=\"javascript:loadItems('runewords', 'itemtype', '" + val + "')\">" + val + "</a></li>";
+                      });                 
+                      html = html + "</ul><br />";
 
-                html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
+                      html = html + "By Runeword:<ul style=\"display: inline; padding-left: 10px;\">";
 
-                data.sort(firstBy("name"));
-                $.each(data, function (key, value) {
-                  // console.log(value); DEBUG
-                  html = html + "<li><a href=\"javascript:loadItems('runewords', 'runeword', '" + value.index + "')\">" + value.name + "</a></li>";
-                });
-                html = html + "</ul><br />";                
+                      data.sort(firstBy("name"));
+                      $.each(data, function (key, value) {
+                        // console.log(value); DEBUG
+                        html = html + "<li><a href=\"javascript:loadItems('runewords', 'runeword', '" + value.index + "')\">" + value.name + "</a></li>";
+                      });
+                      html = html + "</ul><br />";                
 
 
-                //TODO: allow for selection of runes and then "can make / can almost make"
+                      //TODO: allow for selection of runes and then "can make / can almost make"
 
-                $("#armorySubNav").html(html);                
-            });
-            break;
+                      $("#armorySubNav").html(html);                
+                  });
+                break;
 
-          default:
-            break;
+                default:
+                break;
         }
+
+      //Always load the "Show All" option by default upon click
+      loadItems(cat, 'all', 'all')
+        
     }
 
     function loadItems(source, filterGroup, filters) {

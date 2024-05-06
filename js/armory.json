@@ -2,8 +2,8 @@
 {
 "itemCats": [
     {
-    "itemCatID":"basicItems",
-    "itemCatName":"Basic Items",
+    "itemCatID":"baseItems",
+    "itemCatName":"Base Items",
     "itemCatSubItems":
         [
         {
