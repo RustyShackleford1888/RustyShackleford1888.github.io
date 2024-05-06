@@ -498,6 +498,12 @@
     }
 
     function loadItems(source, filterGroup, filters) {
+
+          // Update the URL with the new parameters
+        var newUrl = window.location.pathname + '?source=' + source + '&filterGroup=' + filterGroup + '&filters=' + filters;
+        window.history.pushState({path: newUrl}, '', newUrl);
+
+        
         $("#armoryContent").empty();
 
         var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
