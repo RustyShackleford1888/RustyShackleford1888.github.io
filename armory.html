@@ -67,9 +67,13 @@
         loadItems(source, filterGroup, filters);
     }
 
-    // Call loadItemsFromURL when the document is ready
+  
     $(document).ready(function() {
-        loadItemsFromURL();
+    // Call the loadItems function with the parsed parameters
+    if(source || filterGroup || filters) {
+              loadItems(source, filterGroup, filters);
+            }
+    
     });  
     
     /*** Copyright 2013 Teun Duynstee Licensed under the Apache License, Version 2.0 ***/
