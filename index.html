@@ -689,6 +689,17 @@ function copyToClipboard(event) {
                     });
                   }
                 }
+
+                case "nv":
+                // Filter the data if needed
+                if (filters != "all") {
+                  // todo: make this a switch (either straight to component or by tier)
+                  if (filterGroup == "class") {
+                    var data = $.grep(data, function (element, index) {
+                      return element.class == filters;
+                    });
+                  }
+                }
                 
                 // TODO: sort by level
                 data.sort(firstBy("index"));
