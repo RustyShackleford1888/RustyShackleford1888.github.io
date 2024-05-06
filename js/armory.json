@@ -418,10 +418,6 @@
                 "itemCatName":"Charms"
                 },
                 {
-                "itemCatID":"valor",
-                "itemCatName":"Nephalem Valors"
-                },
-                {
                 "itemCatID":"jewel",
                 "itemCatName":"Jewels"
                 }
@@ -429,6 +425,11 @@
             ]
         }
         ]
+    },
+    {
+    "itemCatID":"nv",
+    "itemCatName":"Nephalem Valors",
+    "itemCatSubItems":""
     },
     {
     "itemCatID":"sets",
@@ -466,9 +467,9 @@
     "itemCatSubItems":""
     },
     {
-        "itemCatID":"skills",
-        "itemCatName":"Skill IDS for BH",
-        "itemCatSubItems":""
-        }
+    "itemCatID":"skills",
+    "itemCatName":"Skill IDS for BH",
+    "itemCatSubItems":""
+    }
     ]
 }

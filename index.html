@@ -364,6 +364,31 @@ function copyToClipboard(event) {
     });
     break;
 
+    case "nv":
+    $.getJSON("js/nv.json", function (data) {
+        var cleanitems = [];
+        var html = "";
+        html = html + "Nephalem Valors <a href=\"javascript:loadItems('nv', 'all', 'all')\">[Show All]</a><br />";
+        
+        html = html + "By Class:<ul style=\"display: inline; padding-left: 10px;\">";
+
+        $.each(data, function (index, item) {
+            var val = item.class;
+            if ($.inArray(val, cleanitems) == -1) {
+                cleanitems.push(val);
+            }
+        });
+
+        cleanitems.sort();
+        $.each(cleanitems, function (i, val) {
+            html = html + "<li><a href=\"javascript:loadItems('nv', 'class', '" + val + "')\">" + val + "</a></li>";
+        });                 
+        html = html + "</ul><br />";
+        
+        $("#armorySubNav").html(html);                
+    });
+    break;
+
     case "skills":
     $.getJSON("js/skills.json", function (data) {
         var cleanitems = [];
