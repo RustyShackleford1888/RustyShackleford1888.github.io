@@ -3,7 +3,7 @@
 "itemCats": [
     {
     "itemCatID":"baseItems",
-    "itemCatName":"Base Items",
+    "itemCatName":"Basic Items",
     "itemCatSubItems":
         [
         {
@@ -432,7 +432,7 @@
     "itemCatSubItems":""
     },
     {
-    "itemCatID":"sets",
+    "itemCatID":"setItems",
     "itemCatName":"Sets",
     "itemCatSubItems":""
     },
