@@ -47,6 +47,17 @@
       }, 300);
     }
 
+    // JavaScript function to copy URL with anchor to clipboard
+function copyToClipboard(text) {
+    var input = document.createElement('input');
+    input.setAttribute('value', text);
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('URL with Anchor copied to clipboard: ' + text);
+}
+
     // Function to parse URL parameters
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
@@ -1129,12 +1140,13 @@ If (alvl > 99) then alvl=99<br />`;
                   if (filterGroup !== "tier" && jsonItem.root == false) {
                     return;
                   } else if (filterGroup == "tier") {
+                    html = html + "<a id='" + jsonItem.index + "'></a>";
                     html = html + "<div class=\"item row\">";
 
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
-                    html = html + "<a id='" + jsonItem.index + "'></a>";
-                    html = html + "<span class=\"gray\" onclick='copyToClipboard(\"" + window.location.href + "#" + jsonItem.index + "\")'>Copy URL with Anchor</span>";
+                    
+                    
                     html = html + "<div class=\"item-left four columns\">";
                     html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
@@ -1148,6 +1160,7 @@ If (alvl > 99) then alvl=99<br />`;
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
                     }
+                    html = html + "<button onclick='copyToClipboard(\"" + window.location.href + "#" + jsonItem.index + "\")'>Copy URL with Anchor</button>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
