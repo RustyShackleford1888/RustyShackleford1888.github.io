@@ -66,6 +66,7 @@
 
       // Call the loadItems function with the parsed parameters, if at least one exists
       if(source || filterGroup || filters) {
+        loadSubMenu(source)
         loadItems(source, filterGroup, filters);
       }
     }
@@ -498,6 +499,12 @@
     }
 
     function loadItems(source, filterGroup, filters) {
+
+          // Update the URL with the new parameters
+        var newUrl = window.location.pathname + '?source=' + source + '&filterGroup=' + filterGroup + '&filters=' + filters;
+        window.history.pushState({path: newUrl}, '', newUrl);
+
+        
         $("#armoryContent").empty();
 
         var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
@@ -709,6 +716,23 @@
                     });
                   }
                 }
+
+                    // TODO: sort by level
+                    data.sort(firstBy("index"));
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
 
               case "nv":
                 // Filter the data if needed
