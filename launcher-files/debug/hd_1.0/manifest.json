@@ -1,0 +1,20 @@
+{
+    "files":  [
+                  {
+                      "ignore_crc":  false,
+                      "name":  "D2HD.dll",
+                      "deprecated":  false,
+                      "content_length":  214528,
+                      "crc":  "ea6d2dbf",
+                      "last_modified":  "2023-11-28T01:45:38.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "Game.exe",
+                      "deprecated":  false,
+                      "content_length":  69632,
+                      "crc":  "ca843b4d",
+                      "last_modified":  "2023-11-28T01:45:38.0000000-08:00"
+                  }
+              ]
+}
