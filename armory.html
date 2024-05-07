@@ -66,6 +66,7 @@
 
       // Call the loadItems function with the parsed parameters, if at least one exists
       if(source || filterGroup || filters) {
+        loadSubMenu(source)
         loadItems(source, filterGroup, filters);
       }
     }
