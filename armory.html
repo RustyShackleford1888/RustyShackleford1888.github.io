@@ -22,7 +22,30 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.1.1.min.js"></script>
+ 
+
   <script type="text/javascript">
+    // Wait for the page to fully load
+    window.addEventListener('load', function() {
+        // Function to handle anchor behavior after the page has loaded
+        function handleAnchorBehavior() {
+            var anchor = window.location.hash; // Get the anchor from the URL
+            if (anchor) {
+                var target = document.querySelector(anchor);
+                if (target) {
+                    var offset = 50; // Adjust the offset as needed
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Call the function to handle anchor behavior
+        handleAnchorBehavior();
+    });
     function copyToClipboard(event) {
       var element = event.target; // Get the clicked element
       var range = document.createRange(); // Create a new range object
