@@ -1,0 +1,108 @@
+{
+    "files":  [
+                  {
+                      "ignore_crc":  false,
+                      "name":  "D2gfx.dll",
+                      "deprecated":  false,
+                      "content_length":  77824,
+                      "crc":  "f1e0baf6",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "D2MultiRes.mpq",
+                      "deprecated":  false,
+                      "content_length":  543266,
+                      "crc":  "ae0f772d",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "D2Template.dll",
+                      "deprecated":  false,
+                      "content_length":  20480,
+                      "crc":  "d17c1994",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "D2Win.dll",
+                      "deprecated":  false,
+                      "content_length":  147456,
+                      "crc":  "c1bd836d",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "DEP_fix.bat",
+                      "deprecated":  false,
+                      "content_length":  390,
+                      "crc":  "35973ec9",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "glide-init.exe",
+                      "deprecated":  false,
+                      "content_length":  134144,
+                      "crc":  "c05e6ab5",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "glide-readme.txt",
+                      "deprecated":  false,
+                      "content_length":  29535,
+                      "crc":  "6ed25b04",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "glide3x.dll",
+                      "deprecated":  false,
+                      "content_length":  138752,
+                      "crc":  "f36ae7d3",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "Patch_D2.mpq",
+                      "deprecated":  false,
+                      "content_length":  10445319,
+                      "crc":  "30fc25bc",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "SGD2FreeDisplayFix.dll",
+                      "deprecated":  false,
+                      "content_length":  220672,
+                      "crc":  "5b0760fa",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "SlashDiablo.dll",
+                      "deprecated":  false,
+                      "content_length":  23552,
+                      "crc":  "d1bd178a",
+                      "last_modified":  "2023-11-28T01:45:39.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "Storm.dll",
+                      "deprecated":  false,
+                      "content_length":  372736,
+                      "crc":  "06ff4555",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "StormLib.dll",
+                      "deprecated":  false,
+                      "content_length":  1251840,
+                      "crc":  "3baa95a0",
+                      "last_modified":  "2023-11-28T01:45:40.0000000-08:00"
+                  }
+              ]
+}

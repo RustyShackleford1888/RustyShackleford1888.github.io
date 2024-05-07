@@ -1,0 +1,20 @@
+{
+    "files":  [
+                  {
+                      "ignore_crc":  false,
+                      "name":  "BH.cfg",
+                      "deprecated":  false,
+                      "content_length":  71213,
+                      "crc":  "a350a1b8",
+                      "last_modified":  "2023-11-28T01:45:37.0000000-08:00"
+                  },
+                  {
+                      "ignore_crc":  false,
+                      "name":  "BH.dll",
+                      "deprecated":  false,
+                      "content_length":  1290752,
+                      "crc":  "78e95c97",
+                      "last_modified":  "2023-11-28T01:45:37.0000000-08:00"
+                  }
+              ]
+}
