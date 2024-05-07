@@ -716,6 +716,23 @@
                   }
                 }
 
+                    // TODO: sort by level
+                    data.sort(firstBy("index"));
+
+                $.each(data, function (key, jsonItem) {
+                  html = html + "<div class=\"item row\">";
+                  html = html + "<div class=\"item-left four columns\">";
+                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                  html = html + "</div>";
+                  html = html + "<div class=\"item-right eight columns\">";
+                  html = printItem(html, jsonItem);    
+
+                  // close the divs
+                  html = html + "</div></div>";
+                    
+                });
+                break;
+
               case "nv":
                 // Filter the data if needed
                 if (filters != "all") {
