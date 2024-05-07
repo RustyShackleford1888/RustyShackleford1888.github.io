@@ -66,6 +66,10 @@ template {
 
 a {
   background-color: transparent;
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
 }
 
 a:active,
