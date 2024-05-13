@@ -701,7 +701,8 @@
                   $.each(jsonItem.items, function (key, item) {
                     html = html + "<span>" + item + "</span>"
                   })
-                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.index + "</span>";
+                  
+                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.index + "', event)\">" + jsonItem.index + "</span>";
                   html = html + "</div>";
                   html = html + "<div class=\"item-right eight columns\">";
                   html = printItem(html, jsonItem);    
@@ -1041,7 +1042,8 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span></span>";
+                  
+                  html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
@@ -1189,9 +1191,9 @@ If (alvl > 99) then alvl=99<br />`;
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
+                      
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                     }
-                    html = html + "<button onclick='copyToClipboard(\"" + window.location.href + "#" + jsonItem.index + "\")'>Copy URL with Anchor</button>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -1237,8 +1239,8 @@ If (alvl > 99) then alvl=99<br />`;
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + jsonItem.code + "</span>";
-                    }
+                      
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -1261,7 +1263,8 @@ If (alvl > 99) then alvl=99<br />`;
                      
                       html = html + "<span class=\"item-type\">"+ subItem1[0].item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem1[0].code + "</span>";
+                      
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + subItem1[0].code + "', event)\">" + subItem1[0].code + "</span>";
                     }
                       html = html + "</div>";
     
@@ -1284,7 +1287,7 @@ If (alvl > 99) then alvl=99<br />`;
                       }
 	html = html + "<span class=\"item-type\">"+ subItem2[0].item + "</span>";
                     if (jsonItem.code) {
-                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + subItem2[0].code + "</span>";
+                      html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + subItem2[0].code + "', event)\">" + subItem2[0].code + "</span>";
                     }
                       
                       html = html + "</div>";
