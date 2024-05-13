@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs JUST ADDING THIS IN SO MAYBE IT WILL WORK?
+  <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Diablo 2 - Resurgence (unofficial 1.13 mod) - Armory</title>
@@ -1044,6 +1044,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
+                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: " + escapeSingleQuotes(jsonItem.name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
@@ -1194,6 +1195,7 @@ If (alvl > 99) then alvl=99<br />`;
                       
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                     }
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code  + " ILVL>" + jsonItem.ilvl + "]: " + escapeSingleQuotes(jsonItem.name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -1242,6 +1244,7 @@ If (alvl > 99) then alvl=99<br />`;
                       
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                     }
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code  + " ILVL>" + jsonItem.ilvl + "]: " + escapeSingleQuotes(jsonItem.name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                     html = html + "</div>";
                     
                     // print the right side of the item info
@@ -1267,6 +1270,7 @@ If (alvl > 99) then alvl=99<br />`;
                       
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + subItem1[0].code + "', event)\">" + subItem1[0].code + "</span>";
                     }
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + subItem1[0].code  + " ILVL>" + subItem1[0].ilvl + "]: " + escapeSingleQuotes(subItem1[0].name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                       html = html + "</div>";
     
                       
@@ -1290,7 +1294,7 @@ If (alvl > 99) then alvl=99<br />`;
                     if (jsonItem.code) {
                       html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + subItem2[0].code + "', event)\">" + subItem2[0].code + "</span>";
                     }
-                      
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + subItem2[0].code  + " ILVL>" + subItem2[0].ilvl + "]: " + escapeSingleQuotes(subItem2[0].name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                       html = html + "</div>";
     
                       
