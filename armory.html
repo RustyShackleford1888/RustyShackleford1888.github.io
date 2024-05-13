@@ -25,7 +25,7 @@
  
 
   <script type="text/javascript">
-    
+
       document.addEventListener('keydown', function(event) {
           // Get the key code of the pressed key
           const key = event.key.toLowerCase();
@@ -1065,7 +1065,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
-                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: " + escapeSingleQuotes(jsonItem.name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
+                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                   html = html + "</div>";
                   
                   // print the right side of the item info
