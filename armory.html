@@ -26,29 +26,43 @@
 
   <script type="text/javascript">
     // Wait for the page to fully load
-    function copyToClipboard(event) {
-      var element = event.target; // Get the clicked element
-      var range = document.createRange(); // Create a new range object
-      range.selectNodeContents(element); // Select the contents of the element
-      var selection = window.getSelection(); // Get the current selection
-      selection.removeAllRanges(); // Remove any existing selections
-      selection.addRange(range); // Add the new range to the selection
+    function copyToClipboard(textToCopy, event) {
+    var range = document.createRange(); // Create a new range object
+    var selection = window.getSelection(); // Get the current selection
+    
+    // Create a temporary element to hold the text
+    var tempElement = document.createElement("div");
+    tempElement.textContent = textToCopy;
+    document.body.appendChild(tempElement);
+
+    // Select the contents of the temporary element
+    range.selectNodeContents(tempElement);
+    selection.removeAllRanges(); // Remove any existing selections
+    selection.addRange(range); // Add the new range to the selection
+    
+    try {
       document.execCommand('copy'); // Copy the selected contents to the clipboard
-      selection.removeAllRanges(); // Remove the range from the selection
-        var popup = document.createElement("div");
+      // Optionally handle success
+      var popup = document.createElement("div");
       popup.textContent = "Copied!";
       popup.style.color = "#c7b377";
       popup.style.padding = "7px";
       popup.style.position = "fixed";
-      popup.style.top = event.clientY-7 + "px";
+      popup.style.top = event.clientY - 7 + "px";
       popup.style.left = event.clientX + "px";
       popup.style.transform = "translate(-50%, -50%)";
       popup.style.zIndex = "9999";
       document.body.appendChild(popup);
-      setTimeout(function() {
+      setTimeout(function () {
         document.body.removeChild(popup);
       }, 300);
+    } catch (err) {
+      console.error('Unable to copy', err); // Log any errors
+    } finally {
+      selection.removeAllRanges(); // Remove the range from the selection
+      document.body.removeChild(tempElement); // Remove the temporary element
     }
+  }
 
       // Function to parse URL parameters
       function getParameterByName(name, url) {
@@ -574,8 +588,8 @@
                     html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
-	                  html = html + "<span class=\"gray\" onclick=\"copyToClipboard(event)\">" + setItem.code + "</span>";
-                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + setItem.code + " ILVL>" + setItem.ilvl + "]: " + setItem.name + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L" + setItem.ilvl + "]', event)\">Click to Copy</span>";
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + setItem.code + "', event)\">" + setItem.code + "</span>";
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + setItem.code + " ILVL>" + setItem.ilvl + "]: " + setItem.name + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L" + setItem.ilvl + "]', event)\">BH Line Copy</span>";
                     html = html + "</div>";
                     html = html + "<div class=\"item-right eight columns\">";
                     html = printItem(html, setItem);
