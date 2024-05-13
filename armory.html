@@ -25,7 +25,28 @@
  
 
   <script type="text/javascript">
-    // Wait for the page to fully load
+    
+      document.addEventListener('keydown', function(event) {
+          // Get the key code of the pressed key
+          const key = event.key.toLowerCase();
+          
+          // Define actions for specific keys
+          switch(key) {
+              case 'h':
+                  window.location.href = 'index.html';
+                  break;
+              case 'a':
+                  window.location.href = 'armory.html';
+                  break;
+              case 'c':
+                  window.location.href = 'crafting.html';
+                  break;
+          }
+      });
+
+
+
+
     function escapeSingleQuotes(str) {
         return str.replace(/'/g, "\\'");
     }
