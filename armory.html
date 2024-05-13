@@ -26,18 +26,9 @@
 
   <script type="text/javascript">
     // Wait for the page to fully load
-
-
-    
-      // Function to replace %20 with space
-      function replaceSpaces(str) {
-          return str.replace(/%20/g, " ");
-      }
-
-      // Function to escape single quotes
-      function escapeSingleQuotes(str) {
-          return str.replace(/'/g, "\\'");
-      }
+    function escapeSingleQuotes(str) {
+        return str.replace(/'/g, "\\'");
+    }
 
     function copyToClipboard(textToCopy, event) {
     var range = document.createRange(); // Create a new range object
@@ -602,11 +593,7 @@
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
                     html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + setItem.code + "', event)\">" + setItem.code + "</span>";
-                    var encodedName = encodeURIComponent(setItem.name);
-                    var replacedSpaces = replaceSpaces(encodedName);
-                    var escapedName = escapeSingleQuotes(replacedSpaces);
-
-                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + setItem.code + " ILVL>" + setItem.ilvl + "]: " + escapedName + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
+                    html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + setItem.code + " ILVL>" + setItem.ilvl + "]: " + escapeSingleQuotes(setItem.name) + " Alch %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
                     html = html + "</div>";
                     html = html + "<div class=\"item-right eight columns\">";
                     html = printItem(html, setItem);
