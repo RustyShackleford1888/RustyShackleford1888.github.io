@@ -21,8 +21,9 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.1.1.min.js"></script>
+
   <script type="text/javascript">
-    
+
           document.addEventListener('keydown', function(event) {
           // Get the key code of the pressed key
           const key = event.key.toLowerCase();
@@ -40,7 +41,8 @@
                   break;
           }
       });
-
+    </script>
+<script type="text/javascript">
     var anchor_top = $("#crystal-crafting-table").offset().top;
     var anchor_bottom = $("#bottom_anchor").offset().top;
     if (scroll>anchor_top && scroll<anchor_bottom) {
@@ -62,7 +64,7 @@
 }
 $(window).scroll(moveScroll);
     
-  </script>
+  
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
