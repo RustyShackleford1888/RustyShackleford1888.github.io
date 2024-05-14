@@ -21,31 +21,32 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
 
 
-<script type="text/javascript">
-    var anchor_top = $("#crystal-crafting-table").offset().top;
-    var anchor_bottom = $("#bottom_anchor").offset().top;
-    if (scroll>anchor_top && scroll<anchor_bottom) {
-    clone_table = $("#clone");
-    if(clone_table.length == 0){
-        clone_table = $("#crystal-crafting-table").clone();
-        clone_table.attr('id', 'clone');
-        clone_table.css({position:'fixed',
-                 'pointer-events': 'none',
-                 top:0});
-        clone_table.width($("#crystal-crafting-table").width());
-        $("#table-container").append(clone_table);
-        $("#clone").css({visibility:'hidden'});
-        $("#clone thead").css({visibility:'visible'});
-    }
-    } else {
-    $("#clone").remove();
-    }
+
+var anchor_top = $("#crystal-crafting-table").offset().top;
+var anchor_bottom = $("#bottom_anchor").offset().top;
+if (scroll>anchor_top && scroll<anchor_bottom) {
+clone_table = $("#clone");
+if(clone_table.length == 0){
+  clone_table = $("#crystal-crafting-table").clone();
+  clone_table.attr('id', 'clone');
+  clone_table.css({position:'fixed',
+           'pointer-events': 'none',
+           top:0});
+  clone_table.width($("#crystal-crafting-table").width());
+  $("#table-container").append(clone_table);
+  $("#clone").css({visibility:'hidden'});
+  $("#clone thead").css({visibility:'visible'});
 }
+} else {
+$("#clone").remove();
+}
+
 $(window).scroll(moveScroll);
-    
-  
+
+</script>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -481,7 +482,6 @@ $(window).scroll(moveScroll);
 <div id="footer">
 </div>
 
-
 <!-- Sticky the navigation -->
 <script>
 window.onscroll = function() {myFunction()};
@@ -505,8 +505,25 @@ function transmute_crafting() {
   document.getElementById("crafting_cube_results").style.display = "block";
 }
 </script>
-
-
+<script type="text/javascript">
+  document.addEventListener('keydown', function(event) {
+      // Get the key code of the pressed key
+      const key = event.key.toLowerCase();
+      
+      // Define actions for specific keys
+      switch(key) {
+          case 'h':
+              window.location.href = 'index.html';
+              break;
+          case 'a':
+              window.location.href = 'armory.html';
+              break;
+          case 'c':
+              window.location.href = 'crafting.html';
+              break;
+      }
+  });
+</script>
 <!-- End Document
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
