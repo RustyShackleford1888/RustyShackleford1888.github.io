@@ -26,26 +26,31 @@
 
   <script type="text/javascript">
 
-      document.addEventListener('keydown', function(event) {
-          // Get the key code of the pressed key
-          const key = event.key.toLowerCase();
-          
-          // Define actions for specific keys
-          switch(key) {
-              case 'h':
-                  window.location.href = 'index.html';
-                  break;
-              case 'a':
-                  window.location.href = 'armory.html';
-                  break;
-              case 'c':
-                  window.location.href = 'crafting.html';
-                  break;
-          }
-      });
+document.addEventListener('keydown', function(event) {
+    // Get the key code of the pressed key
+    const key = event.key.toLowerCase();
+    
+    // Check if the Ctrl key is not pressed
+    if (!event.ctrlKey) {
+        // Define actions for specific keys
+        switch(key) {
+            case 'h':
+                window.location.href = 'index.html';
+                break;
+            case 'a':
+                window.location.href = 'armory.html';
+                break;
+            case 'c':
+                window.location.href = 'crafting.html';
+                break;
+        }
+    }
+});
 
 
-
+    function createAnchor(name) {
+                  return name.replace(/[' ]/g, "");
+              }
 
     function escapeSingleQuotes(str) {
         return str.replace(/'/g, "\\'");
@@ -129,7 +134,7 @@
           }
 
           // Call the function to handle anchor behavior after a delay of 1.5 seconds
-          setTimeout(handleAnchorBehavior, 1500); // 1500 milliseconds = 1.5 seconds
+          setTimeout(handleAnchorBehavior, 3000); // 1500 milliseconds = 1.5 seconds
       }
 
       $(document).ready(function() {
@@ -1195,7 +1200,6 @@ If (alvl > 99) then alvl=99<br />`;
                   if (filterGroup !== "tier" && jsonItem.root == false) {
                     return;
                   } else if (filterGroup == "tier") {
-                    html = html + "<a id='" + jsonItem.index + "'></a>";
                     html = html + "<div class=\"item row\">";
 
                     // print the left side of the item info
@@ -1206,9 +1210,13 @@ If (alvl > 99) then alvl=99<br />`;
                     html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
+                      var anchor = createAnchor(jsonItem.name);
+                    html = html + "<a id='" + anchor + "'></a>";
                     }
                     else {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
+                      var anchor = createAnchor(jsonItem.name);
+                    html = html + "<a id='" + anchor + "'></a>";
                     }
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
