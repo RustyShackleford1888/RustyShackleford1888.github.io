@@ -1031,23 +1031,26 @@
     </script>
 
 <script type="text/javascript">
-  document.addEventListener('keydown', function(event) {
-      // Get the key code of the pressed key
-      const key = event.key.toLowerCase();
-      
-      // Define actions for specific keys
-      switch(key) {
-          case 'h':
-              window.location.href = 'index.html';
-              break;
-          case 'a':
-              window.location.href = 'armory.html';
-              break;
-          case 'c':
-              window.location.href = 'crafting.html';
-              break;
-      }
-  });
+document.addEventListener('keydown', function(event) {
+    // Get the key code of the pressed key
+    const key = event.key.toLowerCase();
+    
+    // Check if the Ctrl key is not pressed
+    if (!event.ctrlKey) {
+        // Define actions for specific keys
+        switch(key) {
+            case 'h':
+                window.location.href = 'index.html';
+                break;
+            case 'a':
+                window.location.href = 'armory.html';
+                break;
+            case 'c':
+                window.location.href = 'crafting.html';
+                break;
+        }
+    }
+});
 </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
