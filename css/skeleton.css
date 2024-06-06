@@ -7,29 +7,31 @@
 * 12/29/2014
 */
 
+
 /* Table of contents
-––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Grid
-   Base Styles
-   Typography
-   Links
-   Buttons
-   Forms
-   Lists
-   Code
-   Tables
-   Spacing
-   Utilities
-   Clearing
-   Media Queries
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
 */
 
+
 /* Grid
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 .container {
   position: relative;
   width: 100%;
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -42,14 +44,14 @@
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 90%;
+    width: 85%;
     padding: 0; }
 }
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
-    width: 90%; }
+    width: 80%; }
   .column,
   .columns {
     margin-left: 4%; }
@@ -75,37 +77,6 @@
   .two-thirds.column              { width: 65.3333333333%; }
 
   .one-half.column                { width: 48%; }
-
-  /* Media query for screens smaller than 1000px */
-  @media (max-width: 1000px) {
-    /* Switch to top/bottom layout */
-    .eight.columns {
-      width: 100%;
-      float: none;
-      margin-bottom:20px;
-    }
-  }
-
-  /* Media query for screens smaller than 1200px */
-  @media (max-width: 1200px) {
-    /* Switch to top/bottom layout */
-    .six.columns {
-      width: 100%;
-      float: none;
-      margin-bottom:20px;
-    }
-    .six.columns iframe{
-      max-height: 180px;
-    }
-  }
-
-  .six.columns iframe{
-    max-height:360px;
-  }
-
-  .six.columns {
-    text-align:center;
-  }
 
   /* Offsets */
   .offset-by-one.column,
@@ -141,8 +112,9 @@
 
 }
 
+
 /* Base Styles
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 /* NOTE
 html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
@@ -158,7 +130,7 @@ body {
 
 
 /* Typography
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
@@ -185,7 +157,7 @@ p {
 
 
 /* Links
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 a {
   color: #baa76a; }
 a:hover {
@@ -193,7 +165,7 @@ a:hover {
 
 
 /* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 .button,
 button,
 input[type="submit"],
@@ -253,7 +225,7 @@ input[type="button"].button-primary:focus {
 
 
 /* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -315,7 +287,7 @@ label > .label-body {
 
 
 /* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 ul {
   list-style: circle inside; }
 ol {
@@ -334,7 +306,7 @@ li {
 
 
 /* Code
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
@@ -350,7 +322,7 @@ pre > code {
 
 
 /* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 th,
 td {
   padding: 12px 15px;
@@ -365,7 +337,7 @@ td:last-child {
 
 
 /* Spacing
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 button,
 .button {
   margin-bottom: 1rem; }
@@ -387,7 +359,7 @@ form {
 
 
 /* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 .u-full-width {
   width: 100%;
   box-sizing: border-box; }
@@ -401,7 +373,7 @@ form {
 
 
 /* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
@@ -409,7 +381,7 @@ hr {
   border-top: 1px solid #E1E1E1; }
 
 /* Resurgence
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 
 @font-face {
   font-family:"Exocet Light";
@@ -435,134 +407,55 @@ h1, h2, h3, h4, h5, h6, th {
     width: 1024px;
     height: 80px;
     z-index: 14;
+    /* background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0, rgba(0,0,0,1) 13%, rgba(0,0,0,1) 100%); */
+    /*background: -moz-linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(0,0,0,1) 13%, rgba(0,0,0,1) 100%);*/
     background: linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(0,0,0,1) 25%);
     background-position: 50% 50%;
-}
+  }
 
-div#topbar {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  max-width: 2560px;
-  height: 60px;
-  background-image: url("../images/topbar_2560med.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  z-index: 15 !important;
-}
-  
+div#topbar, div#footer  {
+  position: relative;
+  width: 1024px;
+  height: 81px;
+  background-image: url("../images/topbar.png");
+  background-repeat: no-repeat; 
+  z-index: 15 !important; }
+
 div#banner  {
-    display: block;
-    position: relative;
-    width: 100vw;
-    max-width: 1024px;
-    height: 240px;
-    background-image: url("../images/banner.png");
-    background-repeat: no-repeat; 
-    background-position: center bottom; /* Center the background image */
-    z-index: 1 !important; 
-    margin: 0 auto; /* Center the banner horizontally */
-}
+  position: relative;
+  top: -62px;
+  width: 1024px;
+  height: 320px;
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat; 
+  z-index: 1 !important; }
 
-@media (max-width: 1000px) {
-    div#banner {
-        display: none; /* Hide the banner on smaller screens */
-    }
-    div ul.intro_navbar {
-        padding-top:80px;/* Add more margin on top of nav when banner hides so the topbar doesnt cover */
-    }
-}
+div#footer {
+  -webkit-transform:scaleY(-1);
+  -moz-transform:scaleY(-1);
+  -ms-transform:scaleY(-1);
+  -o-transform:scaleY(-1);
+  transform:scaleY(-1); }
 
-#play-container {
-  width:100%;
-  text-align:center;
-  margin:30px 0px 10px;
-  display:block;
-}
-
-#play-container a {
-  text-decoration: none;
-  color: inherit;
-}
-
-#play-button {
-  font-family: 'Exocet Light';
-  font-weight: 600;
-  font-size: 3rem;
-  padding: 10px 0px 0px;
-  background-image: url("../images/button_bg69.png");
-  background-repeat: no-repeat;
-  background-position: left middle;
-  text-align: center; /* Center the text horizontally */
-  width: 289px; /* Set a fixed width for the button */
-  height:69px;
-  margin: 0px auto; /* Center the button horizontally */
-}
-
-#footer {
-  display:block;
-  width: 100vw;
-  max-width: 2560px;
-  height: 60px;
-  background-image: url("../images/topbar_2560med.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  z-index: 15 !important;
-}
-
-#footer {
-  -webkit-transform: scaleY(-1);
-  -moz-transform: scaleY(-1);
-  -ms-transform: scaleY(-1);
-  -o-transform: scaleY(-1);
-  transform: scaleY(-1);
-}
-
-#navbar {
-  width:100%;
-  overflow: hidden;
-  text-align:center;
-  background-color: #000;
-  z-index:10;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  left:0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky {
-  padding-top: 45px;
-}
-
-.stickycontent {
-  padding-top:85px;
-}
-
-/* Page content */
-.content {
-  padding: 16px;
-}
+div#footer * {
+  -webkit-transform:scaleY(-1);
+  -moz-transform:scaleY(-1);
+  -ms-transform:scaleY(-1);
+  -o-transform:scaleY(-1);
+  transform:scaleY(-1); }
 
 ul.intro_navbar {
   list-style: none; 
-  margin: 20px auto 25px;
+  margin: 0;
   padding: 0;
-  overflow: hidden;
-  font-size: 2rem;
-}
+  overflow: hidden; }
 
 ul.intro_navbar li {
   display: inline;
   margin-left: 15px;
   margin-right: 15px;
 }
+
 
 .item_hover {
   vertical-align: middle; 
@@ -584,7 +477,7 @@ a.tooltip div {
     display:none; 
     padding:14px 20px;
     margin-top:-30px;
-    margin-left:-50px;
+    margin-left:28px;
     min-width: 350px;
     max-width: 550px; 
     line-height: 16px;
@@ -600,21 +493,17 @@ a.tooltip:hover div{
 a.tooltip:hover div span.block {
   display:block; }
 
-div.crafting_tooltips a.tooltip div {
-    margin-left: 10px;  }
+div#crafting_tooltips a.tooltip div {
+    margin-left: 150px;  }
 
-div.crafting_tooltips a {
+div#crafting_tooltips a {
     display: block;
     margin: 5px !important;
-    color: #fff;
-    text-align:left;
-  }
+    float: left;  
+    color: #fff; }
 
-div.crafting_tooltips img {
-    vertical-align: middle;
-    width:28px;
-    padding-right:5px;
-  }   
+div#crafting_tooltips img {
+    vertical-align: middle; }   
 
 .diablo_amber, .diablo_subclasses {
   color: #FFC200 !important;
@@ -651,17 +540,15 @@ div.crafting_tooltips img {
 
 .callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
 
-.row {
-  padding-left:5%;
-  padding-right:5%;
-}
+
+
 
 div.separator {
   display: block;
   height: 1px;
   background-color: #aaa;
-  margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-top: 50px;
+  margin-bottom: 75px; }
 
 span.caption {
   display: block;
@@ -673,10 +560,6 @@ span.caption {
 div.neph_valor_row {
   margin-bottom: 50px;  }
 
-.neph_valor_row td {
-  width:25%;
-}
-
 div.horadric_cube_container {
   position: relative; 
   background: url("../images/cube.gif");
@@ -684,27 +567,29 @@ div.horadric_cube_container {
   height: 434px; }
 
 div.horadric_cube_ingredients, div.transmute {
-  position: absolute;
-}
-div.horadric_cube_ingredients img {
-  height:
-}
+  position: absolute; }
 
 /* Crafting
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+
 
 table#crystal-crafting-table tr#crystal-crafting-header-row th  {
   text-align: center;
 }
-
 table#crystal-crafting-table td {
   font-size: 0.9em;
   line-height: 1.3em;
   border: none;
 }
 
+
+
 table#crystal-crafting-table tbody.crystal-crafting-group {
   border-bottom: 1px solid #e1e1e1;
+}
+
+table#crystal-crafting-table tbody.crystal-crafting-group td {
+  border-right: 1px solid #333;
 }
 
 table#crystal-crafting-table tbody.crystal-crafting-group td {
@@ -719,7 +604,7 @@ table#crystal-crafting-table th:first-child, table#crystal-crafting-table td:fir
   padding: 8px !important;
 }
 /* Armory
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 div#armoryNav {
   text-align: center;
 }
@@ -818,7 +703,7 @@ ul.upgradeItems li a {
 
 
 /* Clearing
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 
 /* Self Clearing Goodness */
 .container:after,
@@ -830,7 +715,7 @@ ul.upgradeItems li a {
 
 
 /* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 /*
 Note: The best way to structure the use of media queries is to create the queries
 near the relevant code. For example, if you wanted to change the styles for buttons
@@ -853,7 +738,3 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
-
-}
-
-
