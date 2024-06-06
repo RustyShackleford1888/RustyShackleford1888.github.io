@@ -1204,7 +1204,9 @@ If (alvl > 99) then alvl=99<br />`;
 
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                      console.log("Item name:", jsonItem.name);
                       var anchor = createAnchor(jsonItem.name);
+                      console.log("Before logging anchor");
                       console.log("Generated anchor:", anchor);
                     html = html + "<a id='" + anchor + "'></a>";
                     
