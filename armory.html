@@ -1204,19 +1204,17 @@ If (alvl > 99) then alvl=99<br />`;
 
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                      var anchor = createAnchor(jsonItem.name);
+                    html = html + "<a id='" + anchor + "'></a>";
                     
                     
                     html = html + "<div class=\"item-left four columns\">";
                     html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
-                      var anchor = createAnchor(jsonItem.name);
-                    html = html + "<a id='" + anchor + "'></a>";
                     }
                     else {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                      var anchor = createAnchor(jsonItem.name);
-                    html = html + "<a id='" + anchor + "'></a>";
                     }
                     
                     html = html + "<span class=\"item-type\">"+ jsonItem.item + "</span>";
