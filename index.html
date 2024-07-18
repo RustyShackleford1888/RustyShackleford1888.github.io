@@ -49,16 +49,7 @@
       </div>
     </div>
     <div class="row">
-      <div id="navbar">
-        <ul class="intro_navbar">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="armory.html">Armory</a></li>
-          <li><a href="crafting.html">Crafting</a></li>
-          <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia" target="_blank">Wiki</a></li>
-          <li><a href="https://discord.gg/0cDYwWrMLIImycvz" target="_blank">Discord</a></li>
-          <li><a href="https://github.com/DoctorWoot420/resurgence-launcher/releases/download/v1.1.0/Resurgence.Launcher.msi" target="_blank">Download</a></li>
-        </ul>
-      </div>
+      <div id="navbar"></div> <!-- Navbar container -->
     </div>
     <div id="content">
       <div class="row">
@@ -83,7 +74,7 @@
         </div>
         <div class="six columns" style="text-align: justify">
           <p>
-            Preserving the atmosphere of the original Diablo II game is a key element of Resurgence. The majority of changes are centered around providing a fair game for all skills and classes. Players shouldn’t feel bad for building non-traditional characters because ‘meta’ builds such as Blizzard Sorceress and Blessed Hammer Paladin are so much more powerful in comparison.
+            Preserving the atmosphere of the original Diablo II game is a key element of Resurgence. The majority of changes are centered around providing a fair game for all skills and classes. Players shouldn't feel bad for building non-traditional characters because 'meta' builds such as Blizzard Sorceress and Blessed Hammer Paladin are so much more powerful in comparison.
           </p>
           <p>
             These changes are made through a number of ways:
@@ -464,7 +455,7 @@
             Beyond providing balance to the original game, Resurgence has a distinct focus on giving players a variety of new options for end-game content. This comes through new content and new combat mechanics. Act 5 Nightmare and Hell have received a significant monster overhaul and keep players thinking on their feet. Many non-essential side areas have also been made into zones for end-game activity, such as The Killing Fields which replaces The Hole Level 2. The area is aptly named and is the graveyard for many fallen heroes.
           </p>
           <p>
-            The bber system has been revised with a focus on making the uber portals more easily accessible but with more challenges and rewarding loot! The hellish red portals must also traversed if you wish to find Diablo’s Soulstone - a trinket that must be sold in order to summon Diablo Clone (instead of The Stone of Jordan as required in the original Diablo II).
+            The uber system has been revised with a focus on making the uber portals more easily accessible but with more challenges and rewarding loot! The hellish red portals must also traversed if you wish to find Diablo's Soulstone - a trinket that must be sold in order to summon Diablo Clone (instead of The Stone of Jordan as required in the original Diablo II).
           </p>
         </div>
       </div>
@@ -1051,6 +1042,9 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
+$(function(){
+      $("#navbar").load("navbar.html");
+    });
 </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
