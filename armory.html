@@ -1508,16 +1508,7 @@ If (alvl > 99) then alvl=99<br />`;
       </div>
     </div>
     <div class="row">
-      <div id="navbar">
-        <ul class="intro_navbar">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="armory.html">Armory</a></li>
-          <li><a href="crafting.html">Crafting</a></li>
-          <li><a href="http://diablo2resurgence.wikia.com/wiki/Diablo2Resurgence_Wikia" target="_blank">Wiki</a></li>
-          <li><a href="https://discord.gg/0cDYwWrMLIImycvz" target="_blank">Discord</a></li>
-          <li><a href="https://github.com/DoctorWoot420/resurgence-launcher/releases/download/v1.1.0/Resurgence.Launcher.msi" target="_blank">Download</a></li>
-        </ul>
-      </div>
+      <div id="navbar"></div>
     </div>
     <div class="row">
       <div class="u-full-width">
@@ -1595,6 +1586,58 @@ If (alvl > 99) then alvl=99<br />`;
     document.getElementById("crafting_cube_ingredients").style.display = "none";
     document.getElementById("crafting_cube_results").style.display = "block";
   }
+
+  </script>
+  <script type="text/javascript">
+document.addEventListener('keydown', function(event) {
+    // Get the key code of the pressed key
+    const key = event.key.toLowerCase();
+    
+    // Check if the Ctrl key is not pressed
+    if (!event.ctrlKey) {
+        // Define actions for specific keys
+        switch(key) {
+            case 'h':
+                window.location.href = 'index.html';
+                break;
+            case 'a':
+                window.location.href = 'armory.html';
+                break;
+            case 'c':
+                window.location.href = 'crafting.html';
+                break;
+        }
+    }
+});
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('keydown', function(event) {
+      // Get the key code of the pressed key
+      const key = event.key.toLowerCase();
+      
+      // Check if the Ctrl key is not pressed
+      if (!event.ctrlKey) {
+          // Define actions for specific keys
+          switch(key) {
+              case 'h':
+                  window.location.href = 'index.html';
+                  break;
+              case 'a':
+                  window.location.href = 'armory.html';
+                  break;
+              case 'c':
+                  window.location.href = 'crafting.html';
+                  break;
+          }
+      }
+  });
+  
+  
+  
+  $(function(){
+        $("#navbar").load("navbar.html");
+      });
   </script>
 <!-- End Document
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
