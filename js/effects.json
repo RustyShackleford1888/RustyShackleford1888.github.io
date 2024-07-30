@@ -1,0 +1,138 @@
+[
+  {
+    "index": "Empower",
+    "Props": [
+      ["5 all skills"]
+    ]
+  },
+  {
+    "index": "Diamond Skin",
+    "Props": [
+      ["30 magic resistance"],
+      ["+4000 defense"]
+    ]
+  },
+  {
+    "index": "Clarity",
+    "Props": [
+      ["300% increased mana recovery"],
+      ["20% faster cast rate"]
+    ]
+  },
+  {
+    "index": "Conduction",
+    "Props": [
+      ["20% lightning damage"],
+      ["20% lightning pierce"],
+      ["20% faster cast rate"]
+    ]
+  },
+  {
+    "index": "Avalanche",
+    "Props": [
+      ["20% increased attack speed"],
+      ["30% cold damage"]
+    ]
+  },
+  {
+    "index": "Hellfire",
+    "Props": [
+      ["40% fire damage"],
+      ["15% fire absorb"]
+    ]
+  },
+  {
+    "index": "Brutality",
+    "Props": [
+      ["35% crushing blow"],
+      ["+40 stun duration"]
+    ]
+  },
+  {
+    "index": "Purity",
+    "Props": [
+      ["50% fire/cold/lit resistance"],
+      ["10% fire/cold/lit maximum resistance"]
+    ]
+  },
+  {
+    "index": "Corruption",
+    "Props": [
+      ["40% poison damage"],
+      ["20% magic pierce"]
+    ]
+  },
+  {
+    "index": "Carnage",
+    "Props": [
+      ["400% enhanced damage"]
+    ]
+  },
+  {
+    "index": "Resurgence",
+    "Props": [
+      ["3 all skills"],
+      ["15% increased attack speed"],
+      ["100% enhanced damage"]
+    ]
+  },
+  {
+    "index": "Grace",
+    "Props": [
+      ["80% faster hit recovery"],
+      ["+1000 attack rating"],
+      ["33% deadly strike"],
+      ["80% faster block rate"]
+    ]
+  },
+  {
+    "index": "Aegis",
+    "Props": [
+      ["60% faster block rate"],
+      ["30% increased block chance"],
+      ["100% enhanced defense"],
+      ["50% physical resistance"]
+    ]
+  },
+  {
+    "index": "Blood Rage",
+    "Props": [
+      ["80% hit rating"],
+      ["5% life leech"],
+      ["prevent monster heal"],
+      ["25% increased attack speed"]
+    ]
+  },
+  {
+    "index": "Good Fortune",
+    "Props": [
+      ["200% magic find"],
+      ["500% gold find"]
+    ]
+  },
+  {
+    "index": "Haste",
+    "Props": [
+      ["40% movement velocity"],
+      ["+10 weapon speed"]
+    ]
+  },
+  {
+    "index": "Elemental Adaption",
+    "Props": [
+      ["1% elemental resistance per 1% elemental mastery, for each element"]
+    ]
+  },
+  {
+    "index": "Elemental Volatility",
+    "Props": [
+      ["1% elemental pierce per 4% elemental mastery, for each element"]
+    ]
+  },
+  {
+    "index": "Elemental Destruction",
+    "Props": [
+      ["1% elemental mastery per 4% elemental resistance, for each element"]
+    ]
+  }
+]
