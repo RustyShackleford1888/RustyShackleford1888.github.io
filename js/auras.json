@@ -1,0 +1,112 @@
+[
+  {
+    "index": "Enchantment of Fire/Cold/Lightning",
+    "Props": [
+      ["100-200 elemental damage for the respective element per level"],
+      ["Radius: 24"],
+      ["Affected by Aura Mastery"]
+    ]
+  },
+  {
+    "index": "Enchantment of Bones",
+    "Props": [
+      ["1 Crushing Blow per level"],
+      ["20% Enhanced Damage per level"],
+      ["4 Physical Damage Reduction per level"],
+      ["Radius: 24"]
+    ]
+  },
+  {
+    "index": "Enchantment of Vigor",
+    "Props": [
+      ["1 Weapon Speed per level"],
+      ["2 Velocity per level"],
+      ["Radius: 24"]
+    ]
+  },
+  {
+    "index": "Void Field",
+    "Props": [
+      ["65% Slow, +5% per level (includes movement, attack rate, and animations)"],
+      ["Radius: 24"]
+    ]
+  },
+  {
+    "index": "Pestilence",
+    "Props": [
+      ["-8% Poison Resistance Reduction on Monsters, +1% per level"],
+      ["??? Poison Damage per second per level"],
+      ["Affected by Aura Mastery & Offensive Aura Mastery"],
+      ["Radius: 18"]
+    ]
+  },
+  {
+    "index": "Vulnerability",
+    "Props": [
+      ["-8% Physical/Magic Resistance Reduction on Monsters, +1% per level"],
+      ["Affected by Aura Mastery & Offensive Aura Mastery"],
+      ["Radius: 32"]
+    ]
+  },
+  {
+    "index": "Inner Fire/Frost/Charge",
+    "Props": [
+      ["8% + 1% per level Elemental Pierce"],
+      ["Affected by Aura Mastery"],
+      ["Radius: 32"]
+    ]
+  },
+  {
+    "index": "Poise",
+    "Props": [
+      ["40% + 3% per level Attack Rating"],
+      ["5% + 1% per level Deadly Strike"],
+      ["6% + 1% per level Increased Attack Speed"],
+      ["Affected by Aura Mastery"],
+      ["Radius: 36"]
+    ]
+  },
+  {
+    "index": "Rampage",
+    "Props": [
+      ["50% + 10% per level Enhanced Defense"],
+      ["50% + 10% per level Enhanced Damage"],
+      ["Affected by Aura Mastery"],
+      ["Radius: 36"]
+    ]
+  },
+  {
+    "index": "Thornflesh",
+    "Props": [
+      ["Deals Magic damage equal to 100% of your Base Defense to nearby enemies every second. Each skill level adds Magic damage equal to 5% of your Base Defense."],
+      ["Affected by Aura Mastery"],
+      ["Radius: 9"]
+    ]
+  },
+  {
+    "index": "Levinblood",
+    "Props": [
+      ["Deals Lightning damage equal to your Maximum Life to nearby enemies every second. Each skill level adds 6% increased Aura radius."],
+      ["Affected by Aura Mastery"],
+      ["Radius: 9 (base), +6% per skill level"]
+    ]
+  },
+  {
+    "index": "Wintertide",
+    "Props": [
+      ["Deals Cold damage equal to 5% of your Maximum Mana to nearby enemies five times per second."],
+      ["Slows nearby enemies by 20% (increases to 60% if you are on Low Life)"],
+      ["Affected by Aura Mastery"],
+      ["Radius: 6 (base), +3% per skill level"]
+    ]
+  },
+  {
+    "index": "Scorchveil",
+    "Props": [
+      ["Deals Fire damage equal to 80% of your Strength to nearby enemies five times per second."],
+      ["Reduces nearby enemy Defense and Damage by 30% (increases to 60% if you are on Low Life)"],
+      ["Affected by Aura Mastery"],
+      ["Radius: 6 (base), +3% per skill level"]
+    ]
+  }
+]
