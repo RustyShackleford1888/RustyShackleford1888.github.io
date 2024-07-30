@@ -52,7 +52,6 @@
     "index": "Inner Fire/Frost/Charge",
     "Props": [
       ["8% + 1% per level Elemental Pierce"],
-      ["Affected by Aura Mastery"],
       ["Radius: 32"]
     ]
   },
@@ -62,7 +61,6 @@
       ["40% + 3% per level Attack Rating"],
       ["5% + 1% per level Deadly Strike"],
       ["6% + 1% per level Increased Attack Speed"],
-      ["Affected by Aura Mastery"],
       ["Radius: 36"]
     ]
   },
@@ -71,7 +69,6 @@
     "Props": [
       ["50% + 10% per level Enhanced Defense"],
       ["50% + 10% per level Enhanced Damage"],
-      ["Affected by Aura Mastery"],
       ["Radius: 36"]
     ]
   },
@@ -86,7 +83,7 @@
   {
     "index": "Levinblood",
     "Props": [
-      ["Deals Lightning damage equal to your Maximum Life to nearby enemies every second. Each skill level adds 6% increased Aura radius."],
+      ["Deals Lightning damage equal to your Maximum Life to nearby enemies every second.."],
       ["Affected by Aura Mastery"],
       ["Radius: 9 (base), +6% per skill level"]
     ]
