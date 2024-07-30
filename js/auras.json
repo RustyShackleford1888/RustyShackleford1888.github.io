@@ -1,8 +1,24 @@
 [
   {
-    "index": "Enchantment of Fire/Cold/Lightning",
+    "index": "Enchantment of Fire",
     "Props": [
-      ["100-200 elemental damage for the respective element per level"],
+      ["100-200 fire damage per level"],
+      ["Radius: 24"],
+      ["Affected by Aura Mastery"]
+    ]
+  },
+  {
+    "index": "Enchantment of Cold",
+    "Props": [
+      ["100-200 cold damage per level"],
+      ["Radius: 24"],
+      ["Affected by Aura Mastery"]
+    ]
+  },
+  {
+    "index": "Enchantment of Lightning",
+    "Props": [
+      ["100-200 lightning damage per level"],
       ["Radius: 24"],
       ["Affected by Aura Mastery"]
     ]
@@ -49,9 +65,23 @@
     ]
   },
   {
-    "index": "Inner Fire/Frost/Charge",
+    "index": "Inner Fire",
     "Props": [
-      ["8% + 1% per level Elemental Pierce"],
+      ["-8% Enemy fire resistance -1 per level"],
+      ["Radius: 32"]
+    ]
+  },
+  {
+    "index": "Inner Frost",
+    "Props": [
+      ["-8% Enemy cold resistance -1 per level"],
+      ["Radius: 32"]
+    ]
+  },
+  {
+    "index": "Inner Charge",
+    "Props": [
+      ["-8% Enemy lightning resistance -1 per level"],
       ["Radius: 32"]
     ]
   },
