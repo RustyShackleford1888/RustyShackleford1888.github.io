@@ -41,7 +41,7 @@
     "props": [
       [
         "amber",
-        "Warlord "
+        "Titan "
       ],
       [
         "white",
@@ -49,15 +49,15 @@
       ],
       [
         "blue",
-        "Damage pierces 15% Physical Resistance"
+        "+250 to Life"
       ],
       [
         "blue",
-        "20% Chance of Crushing Blow"
+        "0.1% Increased Attack Speed [based on Strength]"
       ],
       [
         "blue",
-        "+30 Physical Damage reduction"
+        "Cannot Be Frozen"
       ]
     ]
   },
@@ -107,7 +107,7 @@
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
@@ -165,23 +165,23 @@
     "props": [
       [
         "amber",
-        "Shadow "
+        "Saboteur "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "20% Chance to gain 4 seconds of Haste on kill"
+        "+2 to maximum number of Traps"
       ],
       [
         "blue",
-        "+2000 to Attack Rating"
+        "+10% Maximum Lightning Resistance"
       ],
       [
         "blue",
-        "33% Deadly Strike"
+        "+50% chance for Attack Missiles to pierce targets"
       ]
     ]
   },
@@ -224,28 +224,7 @@
         "Keep in Inventory to Gain Bonus"
       ]
     ],
-    "props": [
-      [
-        "amber",
-        "Hierophant "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "40% Faster Cast Rate"
-      ],
-      [
-        "blue",
-        "+1 to Starfire"
-      ],
-      [
-        "blue",
-        "+20% Magic Absorb"
-      ]
-    ]
+    "props": []
   },
   {
     "index": "NV SOR 4",
@@ -297,13 +276,15 @@
       ],
       [
         "blue",
-        "5% Chance to gain 8 seconds of Fire Immunity on kill"
+        "+10% Maximum Cold Resistance"
       ],
       [
         "blue",
-        "Damage pierces 15% Cold Resistance"
+        "+25% Increased Energy Shield efficiency"
       ],
       [
+        "black",
+        "1 ",
         "blue",
         "Freeze nearby enemies when damaged"
       ]
@@ -359,7 +340,7 @@
       ],
       [
         "blue",
-        "8% Chance to gain 6 seconds of Empower on kill"
+        "9% Chance to gain 6 seconds of Empower on kill"
       ],
       [
         "blue",
@@ -413,23 +394,23 @@
     "props": [
       [
         "amber",
-        "Shieldmaiden "
+        "Matriarch "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "+30% Chance to Block"
+        "20% Increased Maximum Life"
       ],
       [
         "blue",
-        "30% Increased Attack Speed"
+        "+1 to maximum number of Valkyries"
       ],
       [
         "blue",
-        "+30% Physical Resistance"
+        "+75 Magic and Elemental Damage reduction"
       ]
     ]
   },
@@ -479,7 +460,7 @@
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
@@ -549,11 +530,11 @@
       ],
       [
         "blue",
-        "25% Increased Attack Speed"
+        "33% Deadly Strike"
       ],
       [
         "blue",
-        "7% of Life replenished on kill"
+        "10% of Life replenished on kill"
       ]
     ]
   },
@@ -599,27 +580,27 @@
     "props": [
       [
         "amber",
-        "Saboteur "
+        "Viper "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "Replenish Life +125"
+        "-(-25 - 0)% Increased Attack Speed"
       ],
       [
         "blue",
-        "+2 to maximum number of Traps"
+        "20% Increased Poison Damage"
       ],
       [
         "blue",
-        "+10% Maximum Lightning Resistance"
+        "+40 Life gained on striking"
       ],
       [
         "blue",
-        "+100% chance for Attack Missiles to pierce targets"
+        "+10 Mana gained on striking"
       ]
     ]
   },
@@ -665,7 +646,7 @@
     "props": [
       [
         "amber",
-        "Clairvoyant "
+        "Arcanist "
       ],
       [
         "white",
@@ -673,15 +654,15 @@
       ],
       [
         "blue",
-        "30% Faster Cast Rate"
+        "8% Chance to cast level 12 Elemental Weakness on striking"
       ],
       [
         "blue",
-        "-15% Reduced Skill cooldown"
+        "Triggered Class Skills deal 20% more damage"
       ],
       [
         "blue",
-        "+20% Increased Energy Shield efficiency"
+        "+1 to Dancing Blade"
       ]
     ]
   },
@@ -724,16 +705,7 @@
         "Keep in Inventory to Gain Bonus"
       ]
     ],
-    "props": [
-      [
-        "amber",
-        "TBA "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ]
-    ]
+    "props": []
   },
   {
     "index": "NV DRU 2",
@@ -777,23 +749,23 @@
     "props": [
       [
         "amber",
-        "Shaman "
+        "Cerberus "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "+1 to maximum number of Spirits"
+        "5% Chance to gain 10 seconds of Carnage on kill"
       ],
       [
         "blue",
-        "15% Faster Run/Walk"
+        "20% Chance of Crushing Blow"
       ],
       [
         "blue",
-        "50% increased duration of Gained Buffs"
+        "+20% Physical Resistance"
       ]
     ]
   },
@@ -839,7 +811,7 @@
     "props": [
       [
         "amber",
-        "Titan "
+        "Conqueror "
       ],
       [
         "white",
@@ -847,15 +819,15 @@
       ],
       [
         "blue",
-        "+1000 Defense"
+        "15% Chance of Crushing Blow"
       ],
       [
         "blue",
-        "+150 to Life"
+        "20% increased Warcry effect"
       ],
       [
         "blue",
-        "Cannot Be Frozen"
+        "10% of Mana replenished on kill"
       ]
     ]
   },
@@ -901,23 +873,23 @@
     "props": [
       [
         "amber",
-        "Matriarch "
+        "Ranger "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "20% Increased Maximum Life"
+        "40% Faster Run/Walk"
       ],
       [
         "blue",
-        "+2 to maximum number of Valkyries"
+        "+10% Maximum Poison Resistance"
       ],
       [
         "blue",
-        "+75 Magic and Elemental Damage reduction"
+        "+100% Magic Find"
       ]
     ]
   },
@@ -971,7 +943,7 @@
       ],
       [
         "blue",
-        "8% Chance to cast level 30 Fist of the Heavens when struck"
+        "5% Chance to cast level 30 Fist of the Heavens when struck"
       ],
       [
         "blue",
@@ -1033,11 +1005,23 @@
     "props": [
       [
         "amber",
-        "TBA "
+        "Purifier "
       ],
       [
         "white",
         "(you may only have 1 sub-class)"
+      ],
+      [
+        "blue",
+        "+1 to Purifying Spin"
+      ],
+      [
+        "blue",
+        "+10% Maximum Fire Resistance"
+      ],
+      [
+        "blue",
+        "+20% Magic Resistance"
       ]
     ]
   },
@@ -1083,11 +1067,23 @@
     "props": [
       [
         "amber",
-        "TBA "
+        "Enchantress "
       ],
       [
         "white",
         "(you may only have 1 sub-class)"
+      ],
+      [
+        "blue",
+        "+2000 to Attack Rating"
+      ],
+      [
+        "blue",
+        "+20 to Enchant"
+      ],
+      [
+        "blue",
+        "+2000 Defense"
       ]
     ]
   },
@@ -1133,23 +1129,23 @@
     "props": [
       [
         "amber",
-        "Warlock "
+        "Diabolist "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "30% Faster Cast Rate"
+        "25% Faster Cast Rate"
       ],
       [
         "blue",
-        "80% Increased Minion Damage"
+        "Damage pierces 30% Fire Resistance"
       ],
       [
         "blue",
-        "Gain 50% of Magic Skill damage as extra Physical damage"
+        "+1 to Vampiric Spirits"
       ]
     ]
   },
@@ -1195,7 +1191,7 @@
     "props": [
       [
         "amber",
-        "Conqueror "
+        "Warlord "
       ],
       [
         "white",
@@ -1203,15 +1199,15 @@
       ],
       [
         "blue",
-        "6% Chance to gain 4 seconds of Resurgence on kill"
+        "-40% Target Defense"
       ],
       [
         "blue",
-        "20% increased Warcry effect"
+        "Damage pierces 15% Physical Resistance"
       ],
       [
         "blue",
-        "20% increased effect of Gained Buffs"
+        "33% increased effect of Gained Buffs"
       ]
     ]
   },
@@ -1254,16 +1250,7 @@
         "Keep in Inventory to Gain Bonus"
       ]
     ],
-    "props": [
-      [
-        "amber",
-        "TBA "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ]
-    ]
+    "props": []
   },
   {
     "index": "NV DRU 1",
@@ -1307,23 +1294,23 @@
     "props": [
       [
         "amber",
-        "Destructionist "
+        "Shaman "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "Adds 1000-2000 Fire Damage"
+        "+1 to maximum number of Spirits"
       ],
       [
         "blue",
-        "Damage pierces 15% Fire Resistance"
+        "35% Increased Minion Damage"
       ],
       [
         "blue",
-        "+10% Maximum Fire Resistance"
+        "50% increased duration of Gained Buffs"
       ]
     ]
   },
@@ -1385,7 +1372,7 @@
       ],
       [
         "blue",
-        "Poison Length Reduced by 50%"
+        "25% increased Fortify effect"
       ],
       [
         "blue",
@@ -1435,7 +1422,7 @@
     "props": [
       [
         "amber",
-        "Mage "
+        "Clairvoyant "
       ],
       [
         "white",
@@ -1443,15 +1430,15 @@
       ],
       [
         "blue",
-        "+150 to Mana"
+        "-10% Reduced Skill cooldown"
       ],
       [
         "blue",
-        "50% Increased Mana Regeneration"
+        "+1 to Teleport"
       ],
       [
         "blue",
-        "+5% Maximum Elemental Resistances"
+        "100% Damage Taken Goes To Mana"
       ]
     ]
   },
@@ -1494,16 +1481,7 @@
         "Keep in Inventory to Gain Bonus"
       ]
     ],
-    "props": [
-      [
-        "amber",
-        "TBA "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ]
-    ]
+    "props": []
   },
   {
     "index": "NV AMA 3",
@@ -1547,23 +1525,23 @@
     "props": [
       [
         "amber",
-        "Ranger "
+        "Shieldmaiden "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "40% Faster Run/Walk"
+        "+30% Chance to Block"
       ],
       [
         "blue",
-        "+10% Maximum Poison Resistance"
+        "30% Increased Attack Speed"
       ],
       [
         "blue",
-        "+100% Magic Find"
+        "+30% Physical Resistance"
       ]
     ]
   },
@@ -1609,11 +1587,35 @@
     "props": [
       [
         "amber",
-        "TBA "
+        "Hematurge "
       ],
       [
         "white",
         "(you may only have 1 sub-class)"
+      ],
+      [
+        "blue",
+        "20% Chance to cast level 1 Goreburst on melee attack"
+      ],
+      [
+        "blue",
+        "+25 Goreburst Physical damage per Vitality "
+      ],
+      [
+        "blue",
+        "+30 Physical Damage reduction"
+      ],
+      [
+        "blue",
+        "+80 Life gained on kill"
+      ],
+      [
+        "gray",
+        "Level 1 Goreburst (",
+        "white",
+        "100 per Sec",
+        "gray",
+        ")"
       ]
     ]
   },
@@ -1659,23 +1661,23 @@
     "props": [
       [
         "amber",
-        "Diabolist "
+        "Occultist "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "Damage pierces 15% Magic Resistance"
+        "25% increased Curse effect"
       ],
       [
         "blue",
-        "+1 to Vampiric Spirits"
+        "100% Reduced duration of Curses on you"
       ],
       [
         "blue",
-        "+25% Magic Resistance"
+        "100% Reduced duration of Curses on your minions"
       ]
     ]
   },
@@ -1721,23 +1723,23 @@
     "props": [
       [
         "amber",
-        "Reaper "
+        "Shadow "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "30% Increased Attack Speed"
+        "20% Chance to gain 4 seconds of Haste on kill"
       ],
       [
         "blue",
-        "Adds 200-400 Damage"
+        "+1500 to Attack Rating"
       ],
       [
         "blue",
-        "5% Chance to reanimate corpses as Eternal Horror"
+        "50% Deadly Strike"
       ]
     ]
   },
@@ -1791,7 +1793,7 @@
       ],
       [
         "blue",
-        "8% Chance to gain 6 seconds of Purity on kill"
+        "9% Chance to gain 6 seconds of Purity on kill"
       ],
       [
         "blue",
@@ -1845,23 +1847,23 @@
     "props": [
       [
         "amber",
-        "Cerberus "
+        "Hierophant "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "4% Chance to gain 10 seconds of Carnage on kill"
+        "40% Faster Cast Rate"
       ],
       [
         "blue",
-        "50% Faster Hit Recovery"
+        "+1 to Starfire"
       ],
       [
         "blue",
-        "Damage pierces 10% Physical Resistance"
+        "+20% Magic Absorb"
       ]
     ]
   },
@@ -1907,7 +1909,7 @@
     "props": [
       [
         "amber",
-        "Arcanist "
+        "Mage "
       ],
       [
         "white",
@@ -1915,15 +1917,15 @@
       ],
       [
         "blue",
-        "8% Chance to cast level 12 Elemental Weakness on striking"
+        "30% Faster Cast Rate"
       ],
       [
         "blue",
-        "+1 to Dancing Blade"
+        "+150 to Mana"
       ],
       [
         "blue",
-        "7% of Mana replenished on kill"
+        "+5% Maximum Elemental Resistances"
       ]
     ]
   },
@@ -1981,11 +1983,11 @@
       ],
       [
         "blue",
-        "-40% Target Defense"
+        "+1 to Six-sided Star"
       ],
       [
         "blue",
-        "Damage pierces 10% Physical Resistance"
+        "+40% Enhanced Defense"
       ]
     ]
   },
@@ -2031,23 +2033,23 @@
     "props": [
       [
         "amber",
-        "Occultist "
+        "Warlock "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "30% increased Curse effect"
+        "-15% Reduced Skill cooldown"
       ],
       [
         "blue",
-        "100% Reduced duration of Curses on you"
+        "80% Increased Minion Damage"
       ],
       [
         "blue",
-        "100% Reduced duration of Curses on your minions"
+        "Gain 50% of Magic Skill damage as extra Physical damage"
       ]
     ]
   },
@@ -2093,27 +2095,23 @@
     "props": [
       [
         "amber",
-        "Viper "
+        "Reaper "
       ],
       [
         "white",
-        "(you may only have 1 sub-class)"
+        "(you may only have (0 - 1) sub-class)"
       ],
       [
         "blue",
-        "10% Increased Poison Damage"
+        "7% Chance to cast level 20 Decrepify on striking"
       ],
       [
         "blue",
-        "Damage pierces 10% Poison Resistance"
+        "Adds 200-400 Damage"
       ],
       [
         "blue",
-        "+40 Life gained on striking"
-      ],
-      [
-        "blue",
-        "+10 Mana gained on striking"
+        "5% Chance to reanimate corpses as Eternal Horror"
       ]
     ]
   }
