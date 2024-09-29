@@ -821,8 +821,16 @@ document.addEventListener('keydown', function(event) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
                   html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                  html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
-                  html = html + "</div>";
+                  html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
+                  html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Augments: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
+                    if (jsonItem.Augments && jsonItem.Augments.length > 0) {
+                        $.each(jsonItem.Augments, function (i, value) {
+                            html = html + value;
+                            if (i + 1 != jsonItem.Augments.length)
+                                html = html + ", ";
+                        });
+                    }
+                    html = html + "</span></div>";
                   html = html + "<div class=\"item-right eight columns\">";
                   html = printItem(html, jsonItem);    
 

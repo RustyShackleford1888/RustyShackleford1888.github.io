@@ -1,2118 +1,2242 @@
 [
   {
-    "index": "NV BAR 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvbar_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Barbarian",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Bar",
-      "Charm",
-      "Miscellaneous",
-      "Barbarian Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Barbarian Only)"
+      "index": "NV BAR 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvbar_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Barbarian",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Bar",
+          "Charm",
+          "Miscellaneous",
+          "Barbarian Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Barbarian Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Titan "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "+250 to Life"
+          ],
+          [
+              "blue",
+              "0.1% Increased Attack Speed [based on Strength]"
+          ],
+          [
+              "blue",
+              "Cannot Be Frozen"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Strength",
+          "Words of Heart of the Oak"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Titan "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "+250 to Life"
-      ],
-      [
-        "blue",
-        "0.1% Increased Attack Speed [based on Strength]"
-      ],
-      [
-        "blue",
-        "Cannot Be Frozen"
-      ]
-    ]
   },
   {
-    "index": "NV NEC 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvnec_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Necromancer",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Nec",
-      "Charm",
-      "Miscellaneous",
-      "Necromancer Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Necromancer Only)"
+      "index": "NV NEC 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvnec_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Necromancer",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Nec",
+          "Charm",
+          "Miscellaneous",
+          "Necromancer Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Necromancer Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Plaguelord "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "Damage pierces 15% Poison Resistance"
+          ],
+          [
+              "blue",
+              "+1 to Poison Explosion"
+          ],
+          [
+              "blue",
+              "3% Life regenerated per second"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Madness",
+          "Words of Malice"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Plaguelord "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "Damage pierces 15% Poison Resistance"
-      ],
-      [
-        "blue",
-        "+1 to Poison Explosion"
-      ],
-      [
-        "blue",
-        "3% Life regenerated per second"
-      ]
-    ]
   },
   {
-    "index": "NV ASS 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvass_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Assassin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ass",
-      "Charm",
-      "Miscellaneous",
-      "Assassin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Assassin Only)"
+      "index": "NV ASS 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvass_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Assassin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ass",
+          "Charm",
+          "Miscellaneous",
+          "Assassin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Assassin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Saboteur "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "+2 to maximum number of Traps"
+          ],
+          [
+              "blue",
+              "+10% Maximum Lightning Resistance"
+          ],
+          [
+              "blue",
+              "+50% chance for Attack Missiles to pierce targets"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Blood",
+          "Words of Duress"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Saboteur "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "+2 to maximum number of Traps"
-      ],
-      [
-        "blue",
-        "+10% Maximum Lightning Resistance"
-      ],
-      [
-        "blue",
-        "+50% chance for Attack Missiles to pierce targets"
-      ]
-    ]
   },
   {
-    "index": "NV DRU 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvdru_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Druid",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Dru",
-      "Charm",
-      "Miscellaneous",
-      "Druid Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Druid Only)"
+      "index": "NV DRU 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvdru_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Druid",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Dru",
+          "Charm",
+          "Miscellaneous",
+          "Druid Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Druid Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
-      ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
-      ]
-    ],
-    "props": []
+      "props": []
   },
   {
-    "index": "NV SOR 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvsor_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Sorceress",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Sor",
-      "Charm",
-      "Miscellaneous",
-      "Sorceress Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Sorceress Only)"
+      "index": "NV SOR 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvsor_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Sorceress",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Sor",
+          "Charm",
+          "Miscellaneous",
+          "Sorceress Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Sorceress Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Cryomancer "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "+10% Maximum Cold Resistance"
+          ],
+          [
+              "blue",
+              "+25% Increased Energy Shield efficiency"
+          ],
+          [
+              "black",
+              "1 ",
+              "blue",
+              "Freeze nearby enemies when damaged"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Smoke",
+          "Words of Spirit"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Cryomancer "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "+10% Maximum Cold Resistance"
-      ],
-      [
-        "blue",
-        "+25% Increased Energy Shield efficiency"
-      ],
-      [
-        "black",
-        "1 ",
-        "blue",
-        "Freeze nearby enemies when damaged"
-      ]
-    ]
   },
   {
-    "index": "NV PAL 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvpal_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Paladin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Pal",
-      "Charm",
-      "Miscellaneous",
-      "Paladin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Paladin Only)"
+      "index": "NV PAL 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvpal_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Paladin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Pal",
+          "Charm",
+          "Miscellaneous",
+          "Paladin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Paladin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Inquisitor "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "9% Chance to gain 6 seconds of Empower on kill"
+          ],
+          [
+              "blue",
+              "Slain Monsters Rest in Peace"
+          ],
+          [
+              "blue",
+              "Attacks ignore Resistances of Undead"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Humility",
+          "Words of Peace"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Inquisitor "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "9% Chance to gain 6 seconds of Empower on kill"
-      ],
-      [
-        "blue",
-        "Slain Monsters Rest in Peace"
-      ],
-      [
-        "blue",
-        "Attacks ignore Resistances of Undead"
-      ]
-    ]
   },
   {
-    "index": "NV AMA 4",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valor",
-    "imageFile": "inv_nvama_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Amazon",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ama",
-      "Charm",
-      "Miscellaneous",
-      "Amazon Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Amazon Only)"
+      "index": "NV AMA 4",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valor",
+      "imageFile": "inv_nvama_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Amazon",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ama",
+          "Charm",
+          "Miscellaneous",
+          "Amazon Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Amazon Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Matriarch "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "20% Increased Maximum Life"
+          ],
+          [
+              "blue",
+              "+1 to maximum number of Valkyries"
+          ],
+          [
+              "blue",
+              "+75 Magic and Elemental Damage reduction"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Duress",
+          "Words of Prudence"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Matriarch "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "20% Increased Maximum Life"
-      ],
-      [
-        "blue",
-        "+1 to maximum number of Valkyries"
-      ],
-      [
-        "blue",
-        "+75 Magic and Elemental Damage reduction"
-      ]
-    ]
   },
   {
-    "index": "NV AMA 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvama_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Amazon",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ama",
-      "Charm",
-      "Miscellaneous",
-      "Amazon Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Amazon Only)"
+      "index": "NV AMA 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvama_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Amazon",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ama",
+          "Charm",
+          "Miscellaneous",
+          "Amazon Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Amazon Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Huntress "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "100% increased Attack Rating"
+          ],
+          [
+              "blue",
+              "Knockback"
+          ],
+          [
+              "blue",
+              "+35% chance for Attack Missiles to pierce targets"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Hesitation",
+          "Words of Valor"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Huntress "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "100% increased Attack Rating"
-      ],
-      [
-        "blue",
-        "Knockback"
-      ],
-      [
-        "blue",
-        "+35% chance for Attack Missiles to pierce targets"
-      ]
-    ]
   },
   {
-    "index": "NV BAR 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvbar_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Barbarian",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Bar",
-      "Charm",
-      "Miscellaneous",
-      "Barbarian Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Barbarian Only)"
+      "index": "NV BAR 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvbar_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Barbarian",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Bar",
+          "Charm",
+          "Miscellaneous",
+          "Barbarian Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Barbarian Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Slayer "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "Melee attacks deal splash damage"
+          ],
+          [
+              "blue",
+              "33% Deadly Strike"
+          ],
+          [
+              "blue",
+              "10% of Life replenished on kill"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Malice",
+          "Words of Myth"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Slayer "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "Melee attacks deal splash damage"
-      ],
-      [
-        "blue",
-        "33% Deadly Strike"
-      ],
-      [
-        "blue",
-        "10% of Life replenished on kill"
-      ]
-    ]
   },
   {
-    "index": "NV ASS 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvass_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Assassin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ass",
-      "Charm",
-      "Miscellaneous",
-      "Assassin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Assassin Only)"
+      "index": "NV ASS 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvass_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Assassin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ass",
+          "Charm",
+          "Miscellaneous",
+          "Assassin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Assassin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Viper "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "-(-25 - 0)% Increased Attack Speed"
+          ],
+          [
+              "blue",
+              "20% Increased Poison Damage"
+          ],
+          [
+              "blue",
+              "+40 Life gained on striking"
+          ],
+          [
+              "blue",
+              "+10 Mana gained on striking"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Delirium",
+          "Words of Enlightenment"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Viper "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "-(-25 - 0)% Increased Attack Speed"
-      ],
-      [
-        "blue",
-        "20% Increased Poison Damage"
-      ],
-      [
-        "blue",
-        "+40 Life gained on striking"
-      ],
-      [
-        "blue",
-        "+10 Mana gained on striking"
-      ]
-    ]
   },
   {
-    "index": "NV SOR 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvsor_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Sorceress",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Sor",
-      "Charm",
-      "Miscellaneous",
-      "Sorceress Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Sorceress Only)"
+      "index": "NV SOR 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvsor_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Sorceress",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Sor",
+          "Charm",
+          "Miscellaneous",
+          "Sorceress Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Sorceress Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Arcanist "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "8% Chance to cast level 12 Elemental Weakness on striking"
+          ],
+          [
+              "blue",
+              "Triggered Class Skills deal 20% more damage"
+          ],
+          [
+              "blue",
+              "+1 to Dancing Blade"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Pattern",
+          "Words of Prudence"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Arcanist "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "8% Chance to cast level 12 Elemental Weakness on striking"
-      ],
-      [
-        "blue",
-        "Triggered Class Skills deal 20% more damage"
-      ],
-      [
-        "blue",
-        "+1 to Dancing Blade"
-      ]
-    ]
   },
   {
-    "index": "NV AMA 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvama_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Amazon",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ama",
-      "Charm",
-      "Miscellaneous",
-      "Amazon Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Amazon Only)"
+      "index": "NV AMA 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvama_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Amazon",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ama",
+          "Charm",
+          "Miscellaneous",
+          "Amazon Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Amazon Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
-      ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
-      ]
-    ],
-    "props": []
+      "props": []
   },
   {
-    "index": "NV DRU 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvdru_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Druid",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Dru",
-      "Charm",
-      "Miscellaneous",
-      "Druid Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Druid Only)"
+      "index": "NV DRU 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvdru_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Druid",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Dru",
+          "Charm",
+          "Miscellaneous",
+          "Druid Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Druid Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Cerberus "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "5% Chance to gain 10 seconds of Carnage on kill"
+          ],
+          [
+              "blue",
+              "20% Chance of Crushing Blow"
+          ],
+          [
+              "blue",
+              "+20% Physical Resistance"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Night",
+          "Words of Smoke"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Cerberus "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "5% Chance to gain 10 seconds of Carnage on kill"
-      ],
-      [
-        "blue",
-        "20% Chance of Crushing Blow"
-      ],
-      [
-        "blue",
-        "+20% Physical Resistance"
-      ]
-    ]
   },
   {
-    "index": "NV BAR 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvbar_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Barbarian",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Bar",
-      "Charm",
-      "Miscellaneous",
-      "Barbarian Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Barbarian Only)"
+      "index": "NV BAR 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvbar_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Barbarian",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Bar",
+          "Charm",
+          "Miscellaneous",
+          "Barbarian Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Barbarian Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Conqueror "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "15% Chance of Crushing Blow"
+          ],
+          [
+              "blue",
+              "20% increased Warcry effect"
+          ],
+          [
+              "blue",
+              "10% of Mana replenished on kill"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Wisdom",
+          "Words of Strength"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Conqueror "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "15% Chance of Crushing Blow"
-      ],
-      [
-        "blue",
-        "20% increased Warcry effect"
-      ],
-      [
-        "blue",
-        "10% of Mana replenished on kill"
-      ]
-    ]
   },
   {
-    "index": "NV AMA 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvama_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Amazon",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ama",
-      "Charm",
-      "Miscellaneous",
-      "Amazon Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Amazon Only)"
+      "index": "NV AMA 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvama_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Amazon",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ama",
+          "Charm",
+          "Miscellaneous",
+          "Amazon Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Amazon Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Ranger "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "40% Faster Run/Walk"
+          ],
+          [
+              "blue",
+              "+10% Maximum Poison Resistance"
+          ],
+          [
+              "blue",
+              "+100% Magic Find"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Nadir",
+          "Words of Stealth"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Ranger "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "40% Faster Run/Walk"
-      ],
-      [
-        "blue",
-        "+10% Maximum Poison Resistance"
-      ],
-      [
-        "blue",
-        "+100% Magic Find"
-      ]
-    ]
   },
   {
-    "index": "NV PAL 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvpal_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Paladin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Pal",
-      "Charm",
-      "Miscellaneous",
-      "Paladin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Paladin Only)"
+      "index": "NV PAL 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvpal_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Paladin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Pal",
+          "Charm",
+          "Miscellaneous",
+          "Paladin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Paladin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Templar "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "5% Chance to cast level 30 Fist of the Heavens when struck"
+          ],
+          [
+              "blue",
+              "Adds 500-1000 Magic Damage"
+          ],
+          [
+              "blue",
+              "20% increased Aura effect"
+          ],
+          [
+              "gray",
+              "Level 30 Fist of the Heavens (",
+              "yellow",
+              "6030-7542",
+              "gray",
+              ")"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Lionheart",
+          "Words of Prudence"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Templar "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "5% Chance to cast level 30 Fist of the Heavens when struck"
-      ],
-      [
-        "blue",
-        "Adds 500-1000 Magic Damage"
-      ],
-      [
-        "blue",
-        "20% increased Aura effect"
-      ],
-      [
-        "gray",
-        "Level 30 Fist of the Heavens (",
-        "yellow",
-        "6030-7542",
-        "gray",
-        ")"
-      ]
-    ]
   },
   {
-    "index": "NV PAL 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvpal_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Paladin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Pal",
-      "Charm",
-      "Miscellaneous",
-      "Paladin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Paladin Only)"
+      "index": "NV PAL 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvpal_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Paladin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Pal",
+          "Charm",
+          "Miscellaneous",
+          "Paladin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Paladin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Purifier "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "+1 to Purifying Spin"
+          ],
+          [
+              "blue",
+              "+10% Maximum Fire Resistance"
+          ],
+          [
+              "blue",
+              "+20% Magic Resistance"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Wisdom",
+          "Words of Silence"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Purifier "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "+1 to Purifying Spin"
-      ],
-      [
-        "blue",
-        "+10% Maximum Fire Resistance"
-      ],
-      [
-        "blue",
-        "+20% Magic Resistance"
-      ]
-    ]
   },
   {
-    "index": "NV SOR 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvsor_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Sorceress",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Sor",
-      "Charm",
-      "Miscellaneous",
-      "Sorceress Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Sorceress Only)"
+      "index": "NV SOR 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvsor_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Sorceress",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Sor",
+          "Charm",
+          "Miscellaneous",
+          "Sorceress Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Sorceress Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Enchantress "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "+2000 to Attack Rating"
+          ],
+          [
+              "blue",
+              "+20 to Enchant"
+          ],
+          [
+              "blue",
+              "+2000 Defense"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Death",
+          "Words of Hearth"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Enchantress "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "+2000 to Attack Rating"
-      ],
-      [
-        "blue",
-        "+20 to Enchant"
-      ],
-      [
-        "blue",
-        "+2000 Defense"
-      ]
-    ]
   },
   {
-    "index": "NV NEC 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvnec_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Necromancer",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Nec",
-      "Charm",
-      "Miscellaneous",
-      "Necromancer Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Necromancer Only)"
+      "index": "NV NEC 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvnec_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Necromancer",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Nec",
+          "Charm",
+          "Miscellaneous",
+          "Necromancer Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Necromancer Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Diabolist "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "25% Faster Cast Rate"
+          ],
+          [
+              "blue",
+              "Damage pierces 30% Fire Resistance"
+          ],
+          [
+              "blue",
+              "+1 to Vampiric Spirits"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Terror",
+          "Words of Night"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Diabolist "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "25% Faster Cast Rate"
-      ],
-      [
-        "blue",
-        "Damage pierces 30% Fire Resistance"
-      ],
-      [
-        "blue",
-        "+1 to Vampiric Spirits"
-      ]
-    ]
   },
   {
-    "index": "NV BAR 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvbar_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Barbarian",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Bar",
-      "Charm",
-      "Miscellaneous",
-      "Barbarian Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Barbarian Only)"
+      "index": "NV BAR 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvbar_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Barbarian",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Bar",
+          "Charm",
+          "Miscellaneous",
+          "Barbarian Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Barbarian Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Warlord "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "-40% Target Defense"
+          ],
+          [
+              "blue",
+              "Damage pierces 15% Physical Resistance"
+          ],
+          [
+              "blue",
+              "33% increased effect of Gained Buffs"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Peace",
+          "Words of Treachery"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Warlord "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "-40% Target Defense"
-      ],
-      [
-        "blue",
-        "Damage pierces 15% Physical Resistance"
-      ],
-      [
-        "blue",
-        "33% increased effect of Gained Buffs"
-      ]
-    ]
   },
   {
-    "index": "NV BAR 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvbar_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Barbarian",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Bar",
-      "Charm",
-      "Miscellaneous",
-      "Barbarian Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Barbarian Only)"
+      "index": "NV BAR 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvbar_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Barbarian",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Bar",
+          "Charm",
+          "Miscellaneous",
+          "Barbarian Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Barbarian Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
-      ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
-      ]
-    ],
-    "props": []
+      "props": []
   },
   {
-    "index": "NV DRU 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvdru_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Druid",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Dru",
-      "Charm",
-      "Miscellaneous",
-      "Druid Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Druid Only)"
+      "index": "NV DRU 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvdru_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Druid",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Dru",
+          "Charm",
+          "Miscellaneous",
+          "Druid Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Druid Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Shaman "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "+1 to maximum number of Spirits"
+          ],
+          [
+              "blue",
+              "35% Increased Minion Damage"
+          ],
+          [
+              "blue",
+              "50% increased duration of Gained Buffs"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Kingslayer",
+          "Words of Obedience"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Shaman "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "+1 to maximum number of Spirits"
-      ],
-      [
-        "blue",
-        "35% Increased Minion Damage"
-      ],
-      [
-        "blue",
-        "50% increased duration of Gained Buffs"
-      ]
-    ]
   },
   {
-    "index": "NV PAL 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvpal_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Paladin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Pal",
-      "Charm",
-      "Miscellaneous",
-      "Paladin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Paladin Only)"
+      "index": "NV PAL 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvpal_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Paladin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Pal",
+          "Charm",
+          "Miscellaneous",
+          "Paladin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Paladin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Guardian "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "Melee attacks Fortify"
+          ],
+          [
+              "blue",
+              "Attacks slow enemies by 20%"
+          ],
+          [
+              "blue",
+              "25% increased Fortify effect"
+          ],
+          [
+              "blue",
+              "33% Reduced duration of Curses on you"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Hesitation",
+          "Words of Woe"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Guardian "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "Melee attacks Fortify"
-      ],
-      [
-        "blue",
-        "Attacks slow enemies by 20%"
-      ],
-      [
-        "blue",
-        "25% increased Fortify effect"
-      ],
-      [
-        "blue",
-        "33% Reduced duration of Curses on you"
-      ]
-    ]
   },
   {
-    "index": "NV SOR 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvsor_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Sorceress",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Sor",
-      "Charm",
-      "Miscellaneous",
-      "Sorceress Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Sorceress Only)"
+      "index": "NV SOR 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvsor_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Sorceress",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Sor",
+          "Charm",
+          "Miscellaneous",
+          "Sorceress Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Sorceress Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Clairvoyant "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "-10% Reduced Skill cooldown"
+          ],
+          [
+              "blue",
+              "+1 to Teleport"
+          ],
+          [
+              "blue",
+              "100% Damage Taken Goes To Mana"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Innocence",
+          "Words of Memory"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Clairvoyant "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "-10% Reduced Skill cooldown"
-      ],
-      [
-        "blue",
-        "+1 to Teleport"
-      ],
-      [
-        "blue",
-        "100% Damage Taken Goes To Mana"
-      ]
-    ]
   },
   {
-    "index": "NV NEC 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvnec_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Necromancer",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Nec",
-      "Charm",
-      "Miscellaneous",
-      "Necromancer Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Necromancer Only)"
+      "index": "NV NEC 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvnec_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Necromancer",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Nec",
+          "Charm",
+          "Miscellaneous",
+          "Necromancer Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Necromancer Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
-      ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
-      ]
-    ],
-    "props": []
+      "props": []
   },
   {
-    "index": "NV AMA 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvama_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Amazon",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ama",
-      "Charm",
-      "Miscellaneous",
-      "Amazon Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Amazon Only)"
+      "index": "NV AMA 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvama_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Amazon",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ama",
+          "Charm",
+          "Miscellaneous",
+          "Amazon Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Amazon Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Shieldmaiden "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "+30% Chance to Block"
+          ],
+          [
+              "blue",
+              "30% Increased Attack Speed"
+          ],
+          [
+              "blue",
+              "+30% Physical Resistance"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Humility",
+          "Words of Radiance"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Shieldmaiden "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "+30% Chance to Block"
-      ],
-      [
-        "blue",
-        "30% Increased Attack Speed"
-      ],
-      [
-        "blue",
-        "+30% Physical Resistance"
-      ]
-    ]
   },
   {
-    "index": "NV DRU 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvdru_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Druid",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Dru",
-      "Charm",
-      "Miscellaneous",
-      "Druid Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Druid Only)"
+      "index": "NV DRU 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvdru_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Druid",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Dru",
+          "Charm",
+          "Miscellaneous",
+          "Druid Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Druid Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Hematurge "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "20% Chance to cast level 1 Goreburst on melee attack"
+          ],
+          [
+              "blue",
+              "+25 Goreburst Physical damage per Vitality "
+          ],
+          [
+              "blue",
+              "+30 Physical Damage reduction"
+          ],
+          [
+              "blue",
+              "+80 Life gained on kill"
+          ],
+          [
+              "gray",
+              "Level 1 Goreburst (",
+              "white",
+              "100 per Sec",
+              "gray",
+              ")"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Leaf",
+          "Words of Myth"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Hematurge "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "20% Chance to cast level 1 Goreburst on melee attack"
-      ],
-      [
-        "blue",
-        "+25 Goreburst Physical damage per Vitality "
-      ],
-      [
-        "blue",
-        "+30 Physical Damage reduction"
-      ],
-      [
-        "blue",
-        "+80 Life gained on kill"
-      ],
-      [
-        "gray",
-        "Level 1 Goreburst (",
-        "white",
-        "100 per Sec",
-        "gray",
-        ")"
-      ]
-    ]
   },
   {
-    "index": "NV NEC 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvnec_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Necromancer",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Nec",
-      "Charm",
-      "Miscellaneous",
-      "Necromancer Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Necromancer Only)"
+      "index": "NV NEC 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvnec_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Necromancer",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Nec",
+          "Charm",
+          "Miscellaneous",
+          "Necromancer Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Necromancer Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Occultist "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "25% increased Curse effect"
+          ],
+          [
+              "blue",
+              "100% Reduced duration of Curses on you"
+          ],
+          [
+              "blue",
+              "100% Reduced duration of Curses on your minions"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Blood",
+          "Words of Oath"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Occultist "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "25% increased Curse effect"
-      ],
-      [
-        "blue",
-        "100% Reduced duration of Curses on you"
-      ],
-      [
-        "blue",
-        "100% Reduced duration of Curses on your minions"
-      ]
-    ]
   },
   {
-    "index": "NV ASS 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvass_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Assassin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ass",
-      "Charm",
-      "Miscellaneous",
-      "Assassin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Assassin Only)"
+      "index": "NV ASS 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvass_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Assassin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ass",
+          "Charm",
+          "Miscellaneous",
+          "Assassin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Assassin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Shadow "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "20% Chance to gain 4 seconds of Haste on kill"
+          ],
+          [
+              "blue",
+              "+1500 to Attack Rating"
+          ],
+          [
+              "blue",
+              "50% Deadly Strike"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Ancient's Pledge",
+          "Words of Beauty"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Shadow "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "20% Chance to gain 4 seconds of Haste on kill"
-      ],
-      [
-        "blue",
-        "+1500 to Attack Rating"
-      ],
-      [
-        "blue",
-        "50% Deadly Strike"
-      ]
-    ]
   },
   {
-    "index": "NV PAL 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvpal_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Paladin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Pal",
-      "Charm",
-      "Miscellaneous",
-      "Paladin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Paladin Only)"
+      "index": "NV PAL 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvpal_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Paladin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Pal",
+          "Charm",
+          "Miscellaneous",
+          "Paladin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Paladin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Justicar "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "9% Chance to gain 6 seconds of Purity on kill"
+          ],
+          [
+              "blue",
+              "Prevent Monster Heal"
+          ],
+          [
+              "blue",
+              "Attacks ignore Resistances of Demons"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Honor",
+          "Words of Zephyr"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Justicar "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "9% Chance to gain 6 seconds of Purity on kill"
-      ],
-      [
-        "blue",
-        "Prevent Monster Heal"
-      ],
-      [
-        "blue",
-        "Attacks ignore Resistances of Demons"
-      ]
-    ]
   },
   {
-    "index": "NV DRU 3",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvdru_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Druid",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Dru",
-      "Charm",
-      "Miscellaneous",
-      "Druid Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Druid Only)"
+      "index": "NV DRU 3",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvdru_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Druid",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Dru",
+          "Charm",
+          "Miscellaneous",
+          "Druid Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Druid Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Hierophant "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "40% Faster Cast Rate"
+          ],
+          [
+              "blue",
+              "+1 to Starfire"
+          ],
+          [
+              "blue",
+              "+20% Magic Absorb"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Kingslayer",
+          "Words of Unbending Will"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Hierophant "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "40% Faster Cast Rate"
-      ],
-      [
-        "blue",
-        "+1 to Starfire"
-      ],
-      [
-        "blue",
-        "+20% Magic Absorb"
-      ]
-    ]
   },
   {
-    "index": "NV SOR 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvsor_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Sorceress",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Sor",
-      "Charm",
-      "Miscellaneous",
-      "Sorceress Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Sorceress Only)"
+      "index": "NV SOR 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvsor_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Sorceress",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Sor",
+          "Charm",
+          "Miscellaneous",
+          "Sorceress Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Sorceress Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Mage "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "30% Faster Cast Rate"
+          ],
+          [
+              "blue",
+              "+150 to Mana"
+          ],
+          [
+              "blue",
+              "+5% Maximum Elemental Resistances"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Insight",
+          "Words of Leaf"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Mage "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "30% Faster Cast Rate"
-      ],
-      [
-        "blue",
-        "+150 to Mana"
-      ],
-      [
-        "blue",
-        "+5% Maximum Elemental Resistances"
-      ]
-    ]
   },
   {
-    "index": "NV ASS 5",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvass_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Assassin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ass",
-      "Charm",
-      "Miscellaneous",
-      "Assassin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Assassin Only)"
+      "index": "NV ASS 5",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvass_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Assassin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ass",
+          "Charm",
+          "Miscellaneous",
+          "Assassin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Assassin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Martialist "
+          ],
+          [
+              "white",
+              "(you may only have 1 sub-class)"
+          ],
+          [
+              "blue",
+              "Triggered Claw Skills deal no damage"
+          ],
+          [
+              "blue",
+              "+1 to Six-sided Star"
+          ],
+          [
+              "blue",
+              "+40% Enhanced Defense"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Humility",
+          "Words of Melody"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Martialist "
-      ],
-      [
-        "white",
-        "(you may only have 1 sub-class)"
-      ],
-      [
-        "blue",
-        "Triggered Claw Skills deal no damage"
-      ],
-      [
-        "blue",
-        "+1 to Six-sided Star"
-      ],
-      [
-        "blue",
-        "+40% Enhanced Defense"
-      ]
-    ]
   },
   {
-    "index": "NV NEC 1",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvnec_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Necromancer",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Nec",
-      "Charm",
-      "Miscellaneous",
-      "Necromancer Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Necromancer Only)"
+      "index": "NV NEC 1",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvnec_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Necromancer",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Nec",
+          "Charm",
+          "Miscellaneous",
+          "Necromancer Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Necromancer Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Warlock "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "-15% Reduced Skill cooldown"
+          ],
+          [
+              "blue",
+              "80% Increased Minion Damage"
+          ],
+          [
+              "blue",
+              "Gain 50% of Magic Skill damage as extra Physical damage"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Splendor",
+          "Words of Treachery"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Warlock "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "-15% Reduced Skill cooldown"
-      ],
-      [
-        "blue",
-        "80% Increased Minion Damage"
-      ],
-      [
-        "blue",
-        "Gain 50% of Magic Skill damage as extra Physical damage"
-      ]
-    ]
   },
   {
-    "index": "NV ASS 2",
-    "upgradeIndex": "",
-    "root": true,
-    "name": "Nephalem's Valour",
-    "imageFile": "inv_nvass_0.png",
-    "item": "Nephalem's Valour",
-    "itemType": "nvs",
-    "class": "Assassin",
-    "category": "nvs",
-    "subCategories": [
-      "Nephalem Ass",
-      "Charm",
-      "Miscellaneous",
-      "Assassin Item",
-      "Class Specific"
-    ],
-    "tier": "",
-    "ilvl": "99",
-    "lvlreq": "80",
-    "version": "100",
-    "baseProps": [
-      [
-        "white",
-        "(Assassin Only)"
+      "index": "NV ASS 2",
+      "upgradeIndex": "",
+      "root": true,
+      "name": "Nephalem's Valour",
+      "imageFile": "inv_nvass_0.png",
+      "item": "Nephalem's Valour",
+      "itemType": "nvs",
+      "class": "Assassin",
+      "category": "nvs",
+      "subCategories": [
+          "Nephalem Ass",
+          "Charm",
+          "Miscellaneous",
+          "Assassin Item",
+          "Class Specific"
       ],
-      [
-        "white",
-        "Required Level: 80"
+      "tier": "",
+      "ilvl": "99",
+      "lvlreq": "80",
+      "version": "100",
+      "baseProps": [
+          [
+              "white",
+              "(Assassin Only)"
+          ],
+          [
+              "white",
+              "Required Level: 80"
+          ],
+          [
+              "white",
+              "Item Level: 99"
+          ],
+          [
+              "white",
+              "Keep in Inventory to Gain Bonus"
+          ]
       ],
-      [
-        "white",
-        "Item Level: 99"
+      "props": [
+          [
+              "amber",
+              "Reaper "
+          ],
+          [
+              "white",
+              "(you may only have (0 - 1) sub-class)"
+          ],
+          [
+              "blue",
+              "7% Chance to cast level 20 Decrepify on striking"
+          ],
+          [
+              "blue",
+              "Adds 200-400 Damage"
+          ],
+          [
+              "blue",
+              "5% Chance to reanimate corpses as Eternal Horror"
+          ]
       ],
-      [
-        "white",
-        "Keep in Inventory to Gain Bonus"
+      "Augments": [
+          "Words of Crescent Moon",
+          "Words of Death"
       ]
-    ],
-    "props": [
-      [
-        "amber",
-        "Reaper "
-      ],
-      [
-        "white",
-        "(you may only have (0 - 1) sub-class)"
-      ],
-      [
-        "blue",
-        "7% Chance to cast level 20 Decrepify on striking"
-      ],
-      [
-        "blue",
-        "Adds 200-400 Damage"
-      ],
-      [
-        "blue",
-        "5% Chance to reanimate corpses as Eternal Horror"
-      ]
-    ]
   }
 ]
