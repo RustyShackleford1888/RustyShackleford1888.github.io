@@ -806,7 +806,6 @@ document.addEventListener('keydown', function(event) {
                 case "nv":
                     // Filter the data if needed
                     if (filters != "all") {
-                        // Make this a switch (either straight to component or by tier)
                         if (filterGroup == "class") {
                             data = $.grep(data, function (element, index) {
                                 return element.class == filters;
@@ -814,42 +813,40 @@ document.addEventListener('keydown', function(event) {
                         }
                     }
 
-                    // Sort by index (or any other sorting criteria)
+                    // Sort by index or other criteria
                     data.sort(firstBy("index"));
 
                     $.each(data, function (key, jsonItem) {
+                        // Start the item row
                         html = html + "<div class=\"item row\">";
 
-                        // Left column with item image and name
+                        // Left column (image + name)
                         html = html + "<div class=\"item-left four columns\">";
                         html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                         html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
 
-                        // Augments section
+                        // Check if augments exist and display them
                         if (jsonItem.Augments && jsonItem.Augments.length > 0) {
-                            html = html + "<div style=\"text-align: center; display: block;\">";
-                            html = html + "<span class=\"diablo_white\" style=\"display: inline;\">Augments: </span>";
-                            html = html + "<span class=\"diablo_unique\" style=\"display: inline;\">";
-                            $.each(jsonItem.Augments, function (i, value) {
-                                html = html + value;
-                                if (i + 1 != jsonItem.Augments.length) {
-                                    html = html + ", ";
-                                }
-                            });
-                            html = html + "</span></div>";
+                            html += "<div style=\"text-align: center; display: block;\">";
+                            html += "<span class=\"diablo_white\" style=\"display: inline;\">Augments: </span>";
+                            html += "<span class=\"diablo_unique\" style=\"display: inline;\">";
+                            html += jsonItem.Augments.join(", "); // Joining the augment names
+                            html += "</span></div>";  // Close augments div
                         }
 
-                        html = html + "</div>"; // Close item-left div
+                        html += "</div>";  // Close item-left (image and name) div
 
-                        // Right column with item properties
-                        html = html + "<div class=\"item-right eight columns\">";
+                        // Right column (properties)
+                        html += "<div class=\"item-right eight columns\">";
                         html = printItem(html, jsonItem);
-                        html = html + "</div>"; // Close item-right div
+                        html += "</div>";  // Close item-right div
 
-                        html = html + "</div>"; // Close item row div
-
+                        // Close the entire item row
+                        html += "</div>";  // Close item row div
                     });
+
                     break;
+
 
                 
               case "skills":
