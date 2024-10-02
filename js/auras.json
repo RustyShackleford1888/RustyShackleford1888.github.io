@@ -51,7 +51,7 @@
     "index": "Pestilence",
     "Props": [
       ["-8% Poison Resistance Reduction on Monsters, +1% per level"],
-      ["400 Poison Damage every 3 seconds for 1 second per level"],
+      ["150 Poison Damage every 3 seconds for 1 second per level(reduced to +50 per level after skill level 29)"],
       ["Affected by Aura Mastery & Offensive Aura Mastery"],
       ["Radius: 18"]
     ]
