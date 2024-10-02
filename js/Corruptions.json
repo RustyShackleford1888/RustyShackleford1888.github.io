@@ -69,7 +69,7 @@
       ["white", "10-13% Faster Cast Rate"],
       ["white", "+1 To All Skills"],
       ["white", "+6-8% Magic Resistance"],
-      ["white", "30-40% Magic Find"],
+      ["white", "+15-20% increased fortify effect"],
       ["white", "3% Maximum Fire Resistance"]
     ]
   },
@@ -115,7 +115,7 @@
       ["white", "20-25% Faster Hit Recovery"],
       ["white", "25-30 to Life"],
       ["white", "3% Maximum Poison Resistance"],
-      ["white", "4-6% Physical Resistance"]
+      ["white", "6-7% Physical Resistance"]
     ]
   },
   {
@@ -140,11 +140,11 @@
     "imageFile": "",
     "slot": "Rings",
     "props": [
-      ["white", "7-9% Elemental Resistances"],
-      ["white", "3% Physical Resistance"],
+      ["white", "8-10% Elemental Resistances"],
+      ["white", "4-5% Physical Resistance"],
       ["white", "40-50% Magic Find"],
       ["white", "3% to Experience Gained"],
-      ["white", "+2 to random Class Skill from any of the class trees"]
+      ["white", "+2 to random Class Skilltab from any of the class trees"]
     ]
   },
   {
