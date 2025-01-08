@@ -8,8 +8,8 @@
   {
     "index": "Diamond Skin",
     "Props": [
-      ["30 magic resistance"],
-      ["+4000 defense"]
+      ["35 magic resistance"],
+      ["+6000 defense"]
     ]
   },
   {
@@ -44,7 +44,8 @@
   {
     "index": "Brutality",
     "Props": [
-      ["35% crushing blow"],
+      ["40% crushing blow"],
+      ["100% enhanced damage"],
       ["+40 stun duration"]
     ]
   },
@@ -97,10 +98,10 @@
   {
     "index": "Blood Rage",
     "Props": [
-      ["80% hit rating"],
-      ["5% life leech"],
+      ["200% hit rating"],
+      ["15% life leech"],
       ["prevent monster heal"],
-      ["25% increased attack speed"]
+      ["30% increased attack speed"]
     ]
   },
   {
