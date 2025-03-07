@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333; /* Darker gray background */
+            margin: 0;
+            padding: 20px;
+            color: #f4f4f4; /* Light text color for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        h1 {
+            color: #f4f4f4; /* Light color for headings */
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            text-align: center; /* Center the heading */
+        }
+
+        .runeword {
+            margin-bottom: 20px;
+            background-color: #444; /* Slightly lighter gray for each runeword */
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 100%; /* Make the runeword div take full width */
+            max-width: 800px; /* Increased maximum width */
+        }
+
+        .stat-container {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+    .stat-label {
+            width: 400px; /* Fixed width for consistency */
+            color: #f4f4f4;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+    }
+
+        .bar-container {
+            width: 200px; /* Fixed width for the bar container */
+            background-color: #ddd; /* Background for the bar container */
+            margin: 0 10px; /* Margin for spacing */
+            flex: 1; /* Allow bar container to take available space */
+        }
+
+        .stat-bar {
+            background-color: #4CAF50;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .stat-value {
+            min-width: 70px; /* Fixed width for percentage values */
+            margin-left: 10px;
+            color: #f4f4f4; /* Light color for values */
+            text-align: right; /* Align text to the right */
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Add margin to separate from results */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            width: 100%; /* Make results container take full width */
+            max-width: 800px; /* Increased maximum width */
+        }
+    </style>
+    <script>
+        async function getVotes() {
+            try {
+                const response = await fetch('/votes.json', {
+                    cache: 'no-store',
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const votes = await response.json();
+                displayResults(votes);
+            } catch (error) {
+                console.error('Error loading votes:', error);
+                document.getElementById('results').innerHTML = 
+                    '<p>Error loading results. Please try again later. (Error: ' + error.message + ')</p>';
+            }
+        }
+
+        function displayResults(votes) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+
+            if (!votes || Object.keys(votes).length === 0) {
+                resultsContainer.innerHTML = '<p>No votes have been cast yet.</p>';
+                return;
+            }
+
+            const runewordVotes = {};
+            for (const key in votes) {
+                const [runeword, stat] = key.split('|');
+                if (!runewordVotes[runeword]) {
+                    runewordVotes[runeword] = {};
+                }
+                runewordVotes[runeword][stat] = votes[key];
+            }
+
+            // Sort runewords alphabetically
+            const sortedRunewords = Object.keys(runewordVotes).sort();
+
+            for (const runeword of sortedRunewords) {
+                const runewordDiv = document.createElement('div');
+                runewordDiv.className = 'runeword';
+                
+                const title = document.createElement('h3');
+                title.textContent = runeword;
+                runewordDiv.appendChild(title);
+
+                const stats = runewordVotes[runeword];
+                const totalVotes = Object.values(stats).reduce((a, b) => a + b, 0);
+
+                const sortedStats = Object.entries(stats).sort((a, b) => b[1] - a[1]);
+
+                for (const [stat, voteCount] of sortedStats) {
+                    const percentage = (voteCount / (totalVotes / 3)) * 100;
+
+                    const statContainer = document.createElement('div');
+                    statContainer.className = 'stat-container';
+
+                    const statLabel = document.createElement('div');
+                    statLabel.className = 'stat-label';
+                    statLabel.textContent = stat;
+
+                    const barContainer = document.createElement('div');
+                    barContainer.className = 'bar-container';
+
+                    const bar = document.createElement('div');
+                    bar.className = 'stat-bar';
+                    bar.style.width = `${percentage}%`;
+
+                    const statValue = document.createElement('div');
+                    statValue.className = 'stat-value';
+                    statValue.textContent = `${voteCount} (${percentage.toFixed(1)}%)`;
+
+                    barContainer.appendChild(bar);
+                    statContainer.appendChild(statLabel);
+                    statContainer.appendChild(barContainer);
+                    statContainer.appendChild(statValue);
+                    runewordDiv.appendChild(statContainer);
+                }
+
+                resultsContainer.appendChild(runewordDiv);
+            }
+        }
+
+        window.onload = getVotes;
+    </script>
+</head>
+<body>
+    <h1>Poll Results</h1>
+    <div id="results"></div>
+    <button onclick="getVotes()">Refresh Results</button>
+</body>
+</html>
