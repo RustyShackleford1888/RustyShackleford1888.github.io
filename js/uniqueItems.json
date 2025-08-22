@@ -110,8 +110,6 @@
         "+(5 - 10)% Magic Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Adaptation"
       ],
@@ -3866,8 +3864,6 @@
         "+(50 - 75)% Elemental Resistances"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Volatility"
       ],
@@ -5770,8 +5766,6 @@
         "(20 - 25)% Increased Dexterity"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Fastest Hit Recovery on Full Life (+60% otherwise)"
       ],
@@ -7093,8 +7087,6 @@
         "2% Life regenerated per second"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Adaptation"
       ],
@@ -13667,8 +13659,6 @@
         "(10 - 20)% Increased Maximum Life"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Werewolf"
       ],
@@ -17415,8 +17405,6 @@
         "0.05% Physical Resistance [based on Dexterity]"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Fastest Hit Recovery below Full Life (+40% otherwise)"
       ],
@@ -18781,8 +18769,6 @@
         "0.05% Physical Resistance [based on Dexterity]"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Fastest Hit Recovery below Full Life (+40% otherwise)"
       ],
@@ -19691,8 +19677,6 @@
         "Reflect 2000 Fire Damage against melee attackers"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Nearby enemies gain your Fire Resistance"
       ],
@@ -19767,8 +19751,6 @@
         "(40 - 50)% Increased Mana Regeneration"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "40% Increased Movement Velocity when on Full Life"
       ],
@@ -19821,8 +19803,6 @@
         "+750 to Life"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Fire Absorb if Mana is more than Life (15% otherwise)"
       ],
@@ -19875,8 +19855,6 @@
         "+750 to Mana"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Cold Absorb if Life is more than Mana (15% otherwise)"
       ],
@@ -20413,8 +20391,6 @@
         "Cannot Be Frozen"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Freeze nearby enemies when damaged"
       ],
@@ -21736,8 +21712,6 @@
         "+(15 - 20)% Magic Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Fastest Hit Recovery below Full Life (+40% otherwise)"
       ],
@@ -22625,8 +22599,6 @@
         "5% Life regenerated per second"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Destruction"
       ],
@@ -24054,8 +24026,6 @@
         "-(25 - 15)% Poison Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Cold damage is doubled on Low Life"
       ],
@@ -27853,8 +27823,6 @@
         "+(10 - 15) Life gained on striking"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Webweaver"
       ],
@@ -29465,8 +29433,6 @@
         "+(10 - 15) Life gained on striking"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Webweaver"
       ],
@@ -32005,8 +31971,6 @@
         "Curses have (5 - 10)% Reduced Duration on you"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Adaptation"
       ],
@@ -32469,8 +32433,6 @@
         "Curses have (10 - 15)% Reduced Duration on you"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Adaptation"
       ],
@@ -32710,8 +32672,6 @@
         "Curses have (15 - 25)% Reduced Duration on you"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Adaptation"
       ],
@@ -54125,8 +54085,6 @@
         "  100% Fire Absorb on Low Life (5% otherwise)"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "-100% Maximum Fire Resistance on Low Life (+10% otherwise)"
       ],
@@ -54209,8 +54167,6 @@
         "20% Increased Energy"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Lightning damage is doubled"
       ],
@@ -58494,8 +58450,6 @@
         "+3% Maximum Elemental Resistances"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "+400 Magic and Elemental Damage reduction on Full Mana"
       ],
@@ -58950,8 +58904,6 @@
         "+4% Maximum Elemental Resistances"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "+400 Magic and Elemental Damage reduction on Full Mana"
       ],
@@ -60190,8 +60142,6 @@
         "+5% Maximum Elemental Resistances"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "+400 Magic and Elemental Damage reduction on Full Mana"
       ],
@@ -72408,8 +72358,6 @@
         "+1 to Psychic Scream"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Harpyform"
       ],
@@ -78434,8 +78382,6 @@
         "(10 - 20)% Increased Mana Regeneration"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Magic Absorb on Low Life (25% otherwise)"
       ],
@@ -79039,8 +78985,6 @@
         "(10 - 20)% Increased Mana Regeneration"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Magic Absorb on Low Life (25% otherwise)"
       ],
@@ -79313,8 +79257,6 @@
         "-5% Maximum Lightning Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Lightning absorb on Full Mana (25% otherwise)"
       ],
@@ -80033,8 +79975,6 @@
         "(20 - 30)% Increased Mana Regeneration"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "100% Magic Absorb on Low Life (25% otherwise)"
       ],
@@ -81424,8 +81364,6 @@
         "+(3 - 5) to Feral Rage"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Werewolf"
       ],
@@ -82064,8 +82002,6 @@
         "+(6 - 8) to Feral Rage"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Werewolf"
       ],
@@ -82315,8 +82251,6 @@
         "+10% Maximum Cold Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Werewolf"
       ],
@@ -84145,8 +84079,6 @@
         "Damage pierces (5 - 10)% Magic Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Volatility"
       ],
@@ -84869,8 +84801,6 @@
         "Damage pierces (10 - 14)% Magic Resistance"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Elemental Volatility"
       ],
@@ -87841,8 +87771,6 @@
         "+25% Increased Energy Shield efficiency"
       ],
       [
-        "black",
-        "1 ",
         "blue",
         "Freeze nearby enemies when damaged"
       ]
