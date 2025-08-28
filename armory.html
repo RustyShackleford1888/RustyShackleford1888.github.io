@@ -1531,26 +1531,34 @@ If (alvl > 99) then alvl=99<br />`;
       return html;
     }
 
-    function loadNVTier(itemIndex, itemName, subclassName) {
-        // Load the specific tier item data
-        $.getJSON("js/nv.json", function (data) {
-            var item = $.grep(data, function(e){ return e.index == itemIndex; })[0];
-            if (item) {
-                var html = "";
-                
-                // Single centered column for image and properties
-                html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
-                html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
-                html += "<br /><br />";  // Add some spacing between image and properties
-                html = printItem(html, item);
-                html += "</div>";  // Close single column div
+         function loadNVTier(itemIndex, itemName, subclassName) {
+         // Load the specific tier item data
+         $.getJSON("js/nv.json", function (data) {
+             var item = $.grep(data, function(e){ return e.index == itemIndex; })[0];
+             if (item) {
+                 var html = "";
+                 
+                 // Single centered column for image and properties
+                 html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
+                 html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
+                 html += "<br /><br />";  // Add some spacing between image and properties
+                 html = printItem(html, item);
+                 html += "</div>";  // Close single column div
 
-                // Update only the specific subclass display area
-                var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
-                $("#" + displayId).html(html);
-            }
-        });
-    }
+                 // Update only the specific subclass display area
+                 var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
+                 $("#" + displayId).html(html);
+                 
+                 // Update tier button colors to show which one is selected
+                 var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
+                 tierButtons.removeClass("diablo_unique").addClass("diablo_white");
+                 
+                 // Find the clicked tier button and highlight it
+                 var clickedTierButton = $("a[onclick*='loadNVTier'][onclick*='" + itemIndex + "']");
+                 clickedTierButton.removeClass("diablo_white").addClass("diablo_unique");
+             }
+         });
+     }
   </script>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
