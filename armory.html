@@ -851,17 +851,17 @@ document.addEventListener('keydown', function(event) {
                         if (mainItem.Augments && mainItem.Augments.length > 0) {
                             html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
                             html = html + "<div class=\"twelve columns\">";
-                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 10px;\">Augments:</span>";
+                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 5px;\">Augments:</span>";
                             
                             // Iterate through the augments array
                             $.each(mainItem.Augments, function (augmentKey, augmentObj) {
                                 // Display augment name in diablo_unique
-                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 5px;\">";
+                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 2px;\">";
                                 html += augmentObj.name + ":";
                                 html += "</span>";  // Close augment name span
                                 
                                 // Display runes in diablo_white
-                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 15px;\">";
+                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 5px;\">";
                                 html += augmentObj.runes.join(", ");
                                 html += "</span>";  // Close runes span
                             });
@@ -1567,7 +1567,7 @@ If (alvl > 99) then alvl=99<br />`;
                   // Single centered column for image and properties
                   html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
                   html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
-                  html += "<br /><br />";  // Add some spacing between image and properties
+                  html += "<br />";  // Add some spacing between image and properties
                   html = printItem(html, item);
                   
                   html += "</div>";  // Close single column div
@@ -1576,17 +1576,7 @@ If (alvl > 99) then alvl=99<br />`;
                  var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
                  $("#" + displayId).html(html);
                  
-                 // Hide/show augments section based on tier
-                 var itemContainer = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']").closest('.item.row');
-                 var augmentsRow = itemContainer.find('.row').eq(1); // The augments row
-                 
-                 if (item.tier === "1") {
-                     augmentsRow.show();
-                 } else {
-                     augmentsRow.hide();
-                 }
-                 
-                 // Update tier button colors to show which one is selected
+                                   // Update tier button colors to show which one is selected
                   var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
                   tierButtons.removeClass("diablo_unique").addClass("diablo_white");
                   
