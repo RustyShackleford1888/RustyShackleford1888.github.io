@@ -860,18 +860,15 @@ document.addEventListener('keydown', function(event) {
                       html = html + "</div>";
                       html = html + "</div>";
 
-                                             // Main item display area
+                                                                    // Main item display area - centered single column
                        html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\" style=\"text-align: center;\">";
                        
-                       // Left column (image only, centered)
-                       html = html + "<div class=\"item-left four columns\" style=\"text-align: center;\">";
+                       // Single centered column for image and properties
+                       html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
                        html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
-                       html += "</div>";  // Close item-left div
-
-                      // Right column (properties)
-                      html += "<div class=\"item-right eight columns\">";
-                      html = printItem(html, mainItem);
-                      html += "</div>";  // Close item-right div
+                       html += "<br /><br />";  // Add some spacing between image and properties
+                       html = printItem(html, mainItem);
+                       html += "</div>";  // Close single column div
 
                       html += "</div>";  // Close main item display area
                       html += "</div>";  // Close item row div
@@ -1541,15 +1538,12 @@ If (alvl > 99) then alvl=99<br />`;
             if (item) {
                 var html = "";
                 
-                // Left column (image only, centered)
-                html = html + "<div class=\"item-left four columns\" style=\"text-align: center;\">";
+                // Single centered column for image and properties
+                html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
                 html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
-                html += "</div>";  // Close item-left div
-
-                // Right column (properties)
-                html += "<div class=\"item-right eight columns\">";
+                html += "<br /><br />";  // Add some spacing between image and properties
                 html = printItem(html, item);
-                html += "</div>";  // Close item-right div
+                html += "</div>";  // Close single column div
 
                 // Update only the specific subclass display area
                 var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
