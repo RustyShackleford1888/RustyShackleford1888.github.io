@@ -1549,13 +1549,13 @@ If (alvl > 99) then alvl=99<br />`;
                  var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
                  $("#" + displayId).html(html);
                  
-                 // Update tier button colors to show which one is selected
-                 var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
-                 tierButtons.removeClass("diablo_unique").addClass("diablo_white");
-                 
-                 // Find the clicked tier button and highlight it
-                 var clickedTierButton = $("a[onclick*='loadNVTier'][onclick*='" + itemIndex + "']");
-                 clickedTierButton.removeClass("diablo_white").addClass("diablo_unique");
+                                   // Update tier button colors to show which one is selected
+                  var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
+                  tierButtons.removeClass("diablo_unique").addClass("diablo_white");
+                  
+                  // Find the clicked tier button and highlight it - use exact match to avoid substring issues
+                  var clickedTierButton = $("a[onclick*='loadNVTier(\"" + itemIndex + "\"'][onclick*='" + subclassName + "']");
+                  clickedTierButton.removeClass("diablo_white").addClass("diablo_unique");
              }
          });
      }
