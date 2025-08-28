@@ -851,17 +851,17 @@ document.addEventListener('keydown', function(event) {
                         if (mainItem.Augments && mainItem.Augments.length > 0) {
                             html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
                             html = html + "<div class=\"twelve columns\">";
-                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 2px;\">Augments:</span>";
+                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 10px;\">Augments:</span>";
                             
                             // Iterate through the augments array
                             $.each(mainItem.Augments, function (augmentKey, augmentObj) {
                                 // Display augment name in diablo_unique
-                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 1px;\">";
+                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 5px;\">";
                                 html += augmentObj.name + ":";
                                 html += "</span>";  // Close augment name span
                                 
                                 // Display runes in diablo_white
-                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 2px;\">";
+                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 15px;\">";
                                 html += augmentObj.runes.join(", ");
                                 html += "</span>";  // Close runes span
                             });
@@ -874,7 +874,7 @@ document.addEventListener('keydown', function(event) {
                        html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
                        html = html + "<div class=\"twelve columns\">";
                        html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
-                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 4px;\">";
+                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
                        
                                               $.each(items, function (key, item) {
                             var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
@@ -891,7 +891,7 @@ document.addEventListener('keydown', function(event) {
                        // Single centered column for image and properties
                        html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
                        html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
-                       html += "<br />";  // Add some spacing between image and properties
+                       html += "<br /><br />";  // Add some spacing between image and properties
                        html = printItem(html, mainItem);
                        
                        html += "</div>";  // Close single column div
