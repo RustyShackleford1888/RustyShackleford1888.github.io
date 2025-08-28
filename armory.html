@@ -842,42 +842,17 @@ document.addEventListener('keydown', function(event) {
 
                       html = html + "<div class=\"item row\" style=\"margin-bottom: 30px; border: 2px solid #666; padding: 20px; border-radius: 8px;\">";
                       
-                      // Header with subclass name
-                      html = html + "<div class=\"row\" style=\"margin-bottom: 20px;\">";
-                      html = html + "<h3 class=\"diablo_unique\" style=\"text-align: center; width: 100%; margin: 0;\">" + subclassName + "</h3>";
-                      html = html + "</div>";
+                                             // Header with subclass name
+                       html = html + "<div class=\"row\" style=\"margin-bottom: 20px;\">";
+                       html = html + "<h3 class=\"diablo_unique\" style=\"text-align: center; width: 100%; margin: 0;\">" + subclassName + "</h3>";
+                       html = html + "</div>";
 
-                      // Tier numbers row
-                      html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
-                      html = html + "<div class=\"twelve columns\">";
-                      html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
-                      html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
-                      
-                                             $.each(items, function (key, item) {
-                           var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
-                           html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; line-height: 1; font-size: 14px; font-weight: bold; text-align: center; vertical-align: middle;\">" + item.tier + "</a>";
-                       });
-                      
-                      html += "</div>";
-                      html = html + "</div>";
-                      html = html + "</div>";
-
-                                                                    // Main item display area - centered single column
-                       html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\" style=\"text-align: center;\">";
-                       
-                       // Single centered column for image and properties
-                       html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
-                       html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
-                       html += "<br /><br />";  // Add some spacing between image and properties
-                       html = printItem(html, mainItem);
-                       
-                       // Add augments display for tier 1 items
+                       // Augments + runes section (if they exist)
                        if (mainItem.Augments && mainItem.Augments.length > 0) {
-                           html += "<br />";  // Add spacing before augments
-                           html += "<div style=\"text-align: center; display: block;\">";
-                           
-                           // Augments header
-                           html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+                           html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
+                           html = html + "<div class=\"twelve columns\">";
+                           html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Augments:</span>";
+                           html += "<div style=\"display: inline-block; text-align: left; margin-top: 10px;\">";
                            
                            // Iterate through the augments array
                            $.each(mainItem.Augments, function (augmentKey, augmentObj) {
@@ -887,17 +862,43 @@ document.addEventListener('keydown', function(event) {
                                html += "</span>";  // Close augment name span
                                
                                // Display runes in diablo_white
-                               html += "<span class=\"diablo_white\" style=\"display: block;\">";
+                               html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 10px;\">";
                                html += augmentObj.runes.join(", ");
                                html += "</span>";  // Close runes span
                            });
                            
                            html += "</div>";
+                           html = html + "</div>";
+                           html = html + "</div>";
                        }
+
+                       // Tier numbers row
+                       html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
+                       html = html + "<div class=\"twelve columns\">";
+                       html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
+                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
+                       
+                                              $.each(items, function (key, item) {
+                            var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
+                            html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; line-height: 1; font-size: 14px; font-weight: bold; text-align: center; vertical-align: middle;\">" + item.tier + "</a>";
+                        });
+                       
+                       html += "</div>";
+                       html = html + "</div>";
+                       html = html + "</div>";
+
+                       // Stats section - centered single column
+                       html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\" style=\"text-align: center;\">";
+                       
+                       // Single centered column for image and properties
+                       html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
+                       html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
+                       html += "<br /><br />";  // Add some spacing between image and properties
+                       html = printItem(html, mainItem);
                        
                        html += "</div>";  // Close single column div
 
-                      html += "</div>";  // Close main item display area
+                       html += "</div>";  // Close stats section
                       html += "</div>";  // Close item row div
                   });
 
@@ -1558,44 +1559,20 @@ If (alvl > 99) then alvl=99<br />`;
       return html;
     }
 
-         function loadNVTier(itemIndex, itemName, subclassName) {
-         // Load the specific tier item data
-         $.getJSON("js/nv.json", function (data) {
-             var item = $.grep(data, function(e){ return e.index == itemIndex; })[0];
-             if (item) {
-                 var html = "";
-                 
-                 // Single centered column for image and properties
-                 html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
-                 html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
-                 html += "<br /><br />";  // Add some spacing between image and properties
-                 html = printItem(html, item);
-                 
-                 // Add augments display for all tiers
-                 if (item.Augments && item.Augments.length > 0) {
-                     html += "<br />";  // Add spacing before augments
-                     html += "<div style=\"text-align: center; display: block;\">";
-                     
-                     // Augments header
-                     html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
-                     
-                     // Iterate through the augments array
-                     $.each(item.Augments, function (augmentKey, augmentObj) {
-                         // Display augment name in diablo_unique
-                         html += "<span class=\"diablo_unique\" style=\"display: block;\">";
-                         html += augmentObj.name + ": ";
-                         html += "</span>";  // Close augment name span
-                         
-                                                    // Display runes in diablo_white
-                           html += "<span class=\"diablo_white\" style=\"display: block;\">";
-                           html += augmentObj.runes.join(", ");
-                           html += "</span>";  // Close runes span
-                     });
-                     
-                     html += "</div>";
-                 }
-                 
-                 html += "</div>";  // Close single column div
+                   function loadNVTier(itemIndex, itemName, subclassName) {
+          // Load the specific tier item data
+          $.getJSON("js/nv.json", function (data) {
+              var item = $.grep(data, function(e){ return e.index == itemIndex; })[0];
+              if (item) {
+                  var html = "";
+                  
+                  // Single centered column for image and properties
+                  html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
+                  html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
+                  html += "<br /><br />";  // Add some spacing between image and properties
+                  html = printItem(html, item);
+                  
+                  html += "</div>";  // Close single column div
 
                  // Update only the specific subclass display area
                  var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
