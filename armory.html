@@ -847,30 +847,28 @@ document.addEventListener('keydown', function(event) {
                        html = html + "<h3 class=\"diablo_unique\" style=\"text-align: center; width: 100%; margin: 0;\">" + subclassName + "</h3>";
                        html = html + "</div>";
 
-                       // Augments + runes section (if they exist)
-                       if (mainItem.Augments && mainItem.Augments.length > 0) {
-                           html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
-                           html = html + "<div class=\"twelve columns\">";
-                           html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Augments:</span>";
-                           html += "<div style=\"display: inline-block; text-align: left; margin-top: 10px;\">";
-                           
-                           // Iterate through the augments array
-                           $.each(mainItem.Augments, function (augmentKey, augmentObj) {
-                               // Display augment name in diablo_unique
-                               html += "<span class=\"diablo_unique\" style=\"display: block;\">";
-                               html += augmentObj.name + ": ";
-                               html += "</span>";  // Close augment name span
-                               
-                               // Display runes in diablo_white
-                               html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 10px;\">";
-                               html += augmentObj.runes.join(", ");
-                               html += "</span>";  // Close runes span
-                           });
-                           
-                           html += "</div>";
-                           html = html + "</div>";
-                           html = html + "</div>";
-                       }
+                                               // Augments + runes section (if they exist)
+                        if (mainItem.Augments && mainItem.Augments.length > 0) {
+                            html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
+                            html = html + "<div class=\"twelve columns\">";
+                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 10px;\">Augments:</span>";
+                            
+                            // Iterate through the augments array
+                            $.each(mainItem.Augments, function (augmentKey, augmentObj) {
+                                // Display augment name in diablo_unique
+                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 5px;\">";
+                                html += augmentObj.name + ":";
+                                html += "</span>";  // Close augment name span
+                                
+                                // Display runes in diablo_white
+                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 15px;\">";
+                                html += augmentObj.runes.join(", ");
+                                html += "</span>";  // Close runes span
+                            });
+                            
+                            html = html + "</div>";
+                            html = html + "</div>";
+                        }
 
                        // Tier numbers row
                        html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
