@@ -63,6 +63,23 @@
                 "blue",
                 "+4% chance for Attack Missiles to pierce targets"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Valor",
+                "runes": [
+                    "Lem",
+                    "Fal"
+                ]
+            },
+            {
+                "name": "Words of Hesitation",
+                "runes": [
+                    "Tir",
+                    "Eld",
+                    "Nef"
+                ]
+            }
         ]
     },
     {
@@ -723,6 +740,23 @@
                 "blue",
                 "+8 Magic and Elemental Damage reduction"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Prudence",
+                "runes": [
+                    "Mal",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Duress",
+                "runes": [
+                    "Shael",
+                    "Um",
+                    "Thul"
+                ]
+            }
         ]
     },
     {
@@ -1383,6 +1417,22 @@
                 "blue",
                 "+30% Magic Find"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Nadir",
+                "runes": [
+                    "Nef",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Stealth",
+                "runes": [
+                    "Tal",
+                    "Eth"
+                ]
+            }
         ]
     },
     {
@@ -2043,6 +2093,24 @@
                 "blue",
                 "+3% Physical Resistance"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Radiance",
+                "runes": [
+                    "Nef",
+                    "Sol",
+                    "Ith"
+                ]
+            },
+            {
+                "name": "Words of Humility",
+                "runes": [
+                    "El",
+                    "El",
+                    "El"
+                ]
+            }
         ]
     },
     {
@@ -2703,6 +2771,25 @@
                 "blue",
                 "Poison Length Reduced by 5%"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Stone",
+                "runes": [
+                    "Shael",
+                    "Um",
+                    "Pul",
+                    "Lum"
+                ]
+            },
+            {
+                "name": "Words of Rain",
+                "runes": [
+                    "Ort",
+                    "Mal",
+                    "Ith"
+                ]
+            }
         ]
     },
     {
@@ -3367,6 +3454,24 @@
                 "blue",
                 "+275 to Life"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Humility",
+                "runes": [
+                    "El",
+                    "El",
+                    "El"
+                ]
+            },
+            {
+                "name": "Words of Melody",
+                "runes": [
+                    "Shael",
+                    "Ko",
+                    "Nef"
+                ]
+            }
         ]
     },
     {
@@ -4063,6 +4168,26 @@
                 "blue",
                 "2% Chance to reanimate corpses as Eternal Horror"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Death",
+                "runes": [
+                    "Hel",
+                    "El",
+                    "Vex",
+                    "Ort",
+                    "Gul"
+                ]
+            },
+            {
+                "name": "Words of Crescent Moon",
+                "runes": [
+                    "Shael",
+                    "Um",
+                    "Tir"
+                ]
+            }
         ]
     },
     {
@@ -4723,6 +4848,25 @@
                 "blue",
                 "+20% chance for Attack Missiles to pierce targets"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Blood",
+                "runes": [
+                    "Tal",
+                    "Mal",
+                    "Ral",
+                    "Mal"
+                ]
+            },
+            {
+                "name": "Words of Duress",
+                "runes": [
+                    "Shael",
+                    "Um",
+                    "Thul"
+                ]
+            }
         ]
     },
     {
@@ -5383,6 +5527,20 @@
                 "blue",
                 "15% Deadly Strike"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Ancient's Pledge",
+                "runes": []
+            },
+            {
+                "name": "Words of Beauty",
+                "runes": [
+                    "Nef",
+                    "Thul",
+                    "Amn"
+                ]
+            }
         ]
     },
     {
@@ -6047,6 +6205,24 @@
                 "blue",
                 "+5 Mana gained on striking"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Delirium",
+                "runes": [
+                    "Lem",
+                    "Ist",
+                    "Io"
+                ]
+            },
+            {
+                "name": "Words of Enlightenment",
+                "runes": [
+                    "Pul",
+                    "Ral",
+                    "Sol"
+                ]
+            }
         ]
     },
     {
@@ -6743,6 +6919,24 @@
                 "blue",
                 "2% of Mana replenished on kill"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Strength",
+                "runes": [
+                    "Amn",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Wisdom",
+                "runes": [
+                    "Ist",
+                    "Hel",
+                    "Io",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -7403,6 +7597,24 @@
                 "blue",
                 "2% of Life replenished on kill"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Malice",
+                "runes": [
+                    "Ith",
+                    "Eth",
+                    "Eth"
+                ]
+            },
+            {
+                "name": "Words of Myth",
+                "runes": [
+                    "Hel",
+                    "Amn",
+                    "Nef"
+                ]
+            }
         ]
     },
     {
@@ -8063,6 +8275,24 @@
                 "blue",
                 "Cannot Be Frozen"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Strength",
+                "runes": [
+                    "Amn",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Heart of the Oak",
+                "runes": [
+                    "Ko",
+                    "Vex",
+                    "Pul",
+                    "Thul"
+                ]
+            }
         ]
     },
     {
@@ -8723,6 +8953,24 @@
                 "blue",
                 "7% increased effect of Gained Buffs"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Treachery",
+                "runes": [
+                    "Shael",
+                    "Thul",
+                    "Lem"
+                ]
+            },
+            {
+                "name": "Words of Peace",
+                "runes": [
+                    "Shael",
+                    "Thul",
+                    "Amn"
+                ]
+            }
         ]
     },
     {
@@ -9387,6 +9635,24 @@
                 "blue",
                 "-0.031% Target Defense [based on Strength]"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Strength",
+                "runes": [
+                    "Amn",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Stone",
+                "runes": [
+                    "Shael",
+                    "Um",
+                    "Pul",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -10083,6 +10349,22 @@
                 "blue",
                 "+5% Physical Resistance"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Night",
+                "runes": [
+                    "Tir",
+                    "Io"
+                ]
+            },
+            {
+                "name": "Words of Smoke",
+                "runes": [
+                    "Nef",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -10755,6 +11037,23 @@
                 "gray",
                 ")"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Myth",
+                "runes": [
+                    "Hel",
+                    "Amn",
+                    "Nef"
+                ]
+            },
+            {
+                "name": "Words of Leaf",
+                "runes": [
+                    "Tir",
+                    "Ral"
+                ]
+            }
         ]
     },
     {
@@ -11523,6 +11822,25 @@
                 "blue",
                 "+5% Magic Absorb"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Unbending Will",
+                "runes": [
+                    "Pul",
+                    "Nef",
+                    "Ohm"
+                ]
+            },
+            {
+                "name": "Words of Kingslayer",
+                "runes": [
+                    "Mal",
+                    "Um",
+                    "Gul",
+                    "Fal"
+                ]
+            }
         ]
     },
     {
@@ -12183,6 +12501,27 @@
                 "blue",
                 "10% increased duration of Gained Buffs"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Obedience",
+                "runes": [
+                    "Hel",
+                    "Ko",
+                    "Thul",
+                    "Eth",
+                    "Fal"
+                ]
+            },
+            {
+                "name": "Words of Kingslayer",
+                "runes": [
+                    "Mal",
+                    "Um",
+                    "Gul",
+                    "Fal"
+                ]
+            }
         ]
     },
     {
@@ -12843,6 +13182,25 @@
                 "blue",
                 "Modifiers to Fire Damage also apply to Lightning Damage"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Innocence",
+                "runes": [
+                    "Ist",
+                    "Ist",
+                    "Ith"
+                ]
+            },
+            {
+                "name": "Words of Insight",
+                "runes": [
+                    "Ral",
+                    "Tir",
+                    "Tal",
+                    "Sol"
+                ]
+            }
         ]
     },
     {
@@ -13503,6 +13861,22 @@
                 "blue",
                 "+1 to Vampiric Spirits"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Night",
+                "runes": [
+                    "Tir",
+                    "Io"
+                ]
+            },
+            {
+                "name": "Words of Terror",
+                "runes": [
+                    "Ith",
+                    "Eth"
+                ]
+            }
         ]
     },
     {
@@ -14163,6 +14537,25 @@
                 "blue",
                 "5% Life Leech"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Black",
+                "runes": [
+                    "Thul",
+                    "Io",
+                    "Nef"
+                ]
+            },
+            {
+                "name": "Words of Oath",
+                "runes": [
+                    "Shael",
+                    "Pul",
+                    "Mal",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -14823,6 +15216,26 @@
                 "blue",
                 "Curses have 40% Reduced Duration on your Minions"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Blood",
+                "runes": [
+                    "Tal",
+                    "Mal",
+                    "Ral",
+                    "Mal"
+                ]
+            },
+            {
+                "name": "Words of Oath",
+                "runes": [
+                    "Shael",
+                    "Pul",
+                    "Mal",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -15483,6 +15896,24 @@
                 "blue",
                 "1% Life regenerated per second"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Malice",
+                "runes": [
+                    "Ith",
+                    "Eth",
+                    "Eth"
+                ]
+            },
+            {
+                "name": "Words of Madness",
+                "runes": [
+                    "El",
+                    "Ort",
+                    "El"
+                ]
+            }
         ]
     },
     {
@@ -16143,6 +16574,23 @@
                 "blue",
                 "Gain 20% of Magic Skill damage as extra Physical damage"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Treachery",
+                "runes": [
+                    "Shael",
+                    "Thul",
+                    "Lem"
+                ]
+            },
+            {
+                "name": "Words of Splendor",
+                "runes": [
+                    "Eth",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -16803,6 +17251,23 @@
                 "blue",
                 "Curses have 7% Reduced Duration on you"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Hesitation",
+                "runes": [
+                    "Tir",
+                    "Eld",
+                    "Nef"
+                ]
+            },
+            {
+                "name": "Words of Woe",
+                "runes": [
+                    "Ko",
+                    "Eth"
+                ]
+            }
         ]
     },
     {
@@ -17463,6 +17928,24 @@
                 "blue",
                 "Attacks ignore Resistances of Undead"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Humility",
+                "runes": [
+                    "El",
+                    "El",
+                    "El"
+                ]
+            },
+            {
+                "name": "Words of Peace",
+                "runes": [
+                    "Shael",
+                    "Thul",
+                    "Amn"
+                ]
+            }
         ]
     },
     {
@@ -18123,6 +18606,25 @@
                 "blue",
                 "Attacks ignore Resistances of Demons"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Honor",
+                "runes": [
+                    "Amn",
+                    "El",
+                    "Ith",
+                    "Tir",
+                    "Sol"
+                ]
+            },
+            {
+                "name": "Words of Zephyr",
+                "runes": [
+                    "Ort",
+                    "Eth"
+                ]
+            }
         ]
     },
     {
@@ -18779,6 +19281,28 @@
                 "blue",
                 "+3% Maximum Fire Resistance"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Silence",
+                "runes": [
+                    "Dol",
+                    "Eld",
+                    "Hel",
+                    "Ist",
+                    "Tir",
+                    "Vex"
+                ]
+            },
+            {
+                "name": "Words of Wisdom",
+                "runes": [
+                    "Ist",
+                    "Hel",
+                    "Io",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -19411,6 +19935,23 @@
                 "gray",
                 ")"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Lionheart",
+                "runes": [
+                    "Hel",
+                    "Lum",
+                    "Fal"
+                ]
+            },
+            {
+                "name": "Words of Prudence",
+                "runes": [
+                    "Mal",
+                    "Tir"
+                ]
+            }
         ]
     },
     {
@@ -20143,6 +20684,23 @@
                 "blue",
                 "+1 to Dancing Blade"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Prudence",
+                "runes": [
+                    "Mal",
+                    "Tir"
+                ]
+            },
+            {
+                "name": "Words of Pattern",
+                "runes": [
+                    "Tal",
+                    "Ort",
+                    "Tir"
+                ]
+            }
         ]
     },
     {
@@ -20803,6 +21361,25 @@
                 "blue",
                 "20% Damage Taken Goes To Mana"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Innocence",
+                "runes": [
+                    "Ist",
+                    "Ist",
+                    "Ith"
+                ]
+            },
+            {
+                "name": "Words of Memory",
+                "runes": [
+                    "Lum",
+                    "Io",
+                    "Sol",
+                    "Eth"
+                ]
+            }
         ]
     },
     {
@@ -21465,6 +22042,24 @@
                 "blue",
                 "Freeze nearby enemies when damaged"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Spirit",
+                "runes": [
+                    "Tal",
+                    "Thul",
+                    "Ort",
+                    "Amn"
+                ]
+            },
+            {
+                "name": "Words of Smoke",
+                "runes": [
+                    "Nef",
+                    "Lum"
+                ]
+            }
         ]
     },
     {
@@ -22143,6 +22738,26 @@
                 "blue",
                 "+400 Defense"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Hearth",
+                "runes": [
+                    "Thul",
+                    "Amn",
+                    "Ber"
+                ]
+            },
+            {
+                "name": "Words of Death",
+                "runes": [
+                    "Hel",
+                    "El",
+                    "Vex",
+                    "Ort",
+                    "Gul"
+                ]
+            }
         ]
     },
     {
@@ -22803,6 +23418,24 @@
                 "blue",
                 "+1% Maximum Elemental Resistances"
             ]
+        ],
+        "Augments": [
+            {
+                "name": "Words of Insight",
+                "runes": [
+                    "Ral",
+                    "Tir",
+                    "Tal",
+                    "Sol"
+                ]
+            },
+            {
+                "name": "Words of Leaf",
+                "runes": [
+                    "Tir",
+                    "Ral"
+                ]
+            }
         ]
     },
     {

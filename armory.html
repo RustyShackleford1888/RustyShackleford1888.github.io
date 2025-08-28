@@ -870,6 +870,31 @@ document.addEventListener('keydown', function(event) {
                        html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
                        html += "<br /><br />";  // Add some spacing between image and properties
                        html = printItem(html, mainItem);
+                       
+                       // Add augments display for tier 1 items
+                       if (mainItem.Augments && mainItem.Augments.length > 0) {
+                           html += "<br />";  // Add spacing before augments
+                           html += "<div style=\"text-align: center; display: block;\">";
+                           
+                           // Augments header
+                           html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+                           
+                           // Iterate through the augments array
+                           $.each(mainItem.Augments, function (augmentKey, augmentObj) {
+                               // Display augment name in diablo_unique
+                               html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                               html += augmentObj.name + ": ";
+                               html += "</span>";  // Close augment name span
+                               
+                               // Display runes in diablo_white
+                               html += "<span class=\"diablo_white\" style=\"display: block;\">";
+                               html += augmentObj.runes.join(", ");
+                               html += "</span>";  // Close runes span
+                           });
+                           
+                           html += "</div>";
+                       }
+                       
                        html += "</div>";  // Close single column div
 
                       html += "</div>";  // Close main item display area
@@ -1545,6 +1570,31 @@ If (alvl > 99) then alvl=99<br />`;
                  html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
                  html += "<br /><br />";  // Add some spacing between image and properties
                  html = printItem(html, item);
+                 
+                 // Add augments display for all tiers
+                 if (item.Augments && item.Augments.length > 0) {
+                     html += "<br />";  // Add spacing before augments
+                     html += "<div style=\"text-align: center; display: block;\">";
+                     
+                     // Augments header
+                     html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+                     
+                     // Iterate through the augments array
+                     $.each(item.Augments, function (augmentKey, augmentObj) {
+                         // Display augment name in diablo_unique
+                         html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                         html += augmentObj.name + ": ";
+                         html += "</span>";  // Close augment name span
+                         
+                         // Display runes in diablo_white
+                         html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                         html += augmentObj.runes.join(", ");
+                         html += "</span>";  // Close runes span
+                     });
+                     
+                     html += "</div>";
+                 }
+                 
                  html += "</div>";  // Close single column div
 
                  // Update only the specific subclass display area
