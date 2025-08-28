@@ -855,7 +855,7 @@ document.addEventListener('keydown', function(event) {
                       
                                              $.each(items, function (key, item) {
                            var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
-                           html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; line-height: 1;\">" + item.tier + "</a>";
+                           html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; line-height: 1; font-size: 14px; font-weight: bold; text-align: center; vertical-align: middle;\">" + item.tier + "</a>";
                        });
                       
                       html += "</div>";
