@@ -874,7 +874,7 @@ document.addEventListener('keydown', function(event) {
                        html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
                        html = html + "<div class=\"twelve columns\">";
                        html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
-                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
+                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 4px;\">";
                        
                                               $.each(items, function (key, item) {
                             var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
@@ -891,7 +891,7 @@ document.addEventListener('keydown', function(event) {
                        // Single centered column for image and properties
                        html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
                        html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
-                       html += "<br /><br />";  // Add some spacing between image and properties
+                       html += "<br />";  // Add some spacing between image and properties
                        html = printItem(html, mainItem);
                        
                        html += "</div>";  // Close single column div
