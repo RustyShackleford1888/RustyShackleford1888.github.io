@@ -851,12 +851,14 @@ document.addEventListener('keydown', function(event) {
                       html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
                       html = html + "<div class=\"twelve columns\">";
                       html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
+                      html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
                       
                       $.each(items, function (key, item) {
                           var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
-                          html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0 5px; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer;\">" + item.tier + "</a>";
+                          html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0;\">" + item.tier + "</a>";
                       });
                       
+                      html += "</div>";
                       html = html + "</div>";
                       html = html + "</div>";
 
