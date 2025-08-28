@@ -1397,106 +1397,106 @@ If (alvl > 99) then alvl=99<br />`;
       });
     }
 
-    function printItem(html, jsonItem) {
-            // base properties
-            $.each(jsonItem.baseProps, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
+         function printItem(html, jsonItem) {
+             // base properties
+             $.each(jsonItem.baseProps, function (key, value) {
+               html = html + "<span class=\"item-property\" style=\"display: block; margin-bottom: 5px;\">";
+               $.each(value, function (key, value) {
+                 if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                 {
+                   switch(value)
+                   {
+                     case "white":
+                       html = html + "<span class=\"no-wrap diablo_white\">";
+                       break;
 
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
+                     case "blue":
+                       html = html + "<span class=\"no-wrap diablo_blue\">";
+                       break;
 
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
+                     case "red":
+                       html = html + "<span class=\"no-wrap diablo_red\">";
+                       break;
 
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;
-                      
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
+                     case "amber":
+                       html = html + "<span class=\"no-wrap diablo_amber\">";
+                       break;
+                       
+                     case "yellow":
+                       html = html + "<span class=\"no-wrap diablo_yellow\">";
+                       break;
+                       
+                     case "green":
+                       html = html + "<span class=\"no-wrap diablo_green\">";
+                       break;
 
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
+                     case "orange":
+                     html = html + "<span class=\"no-wrap orange\">";
+                     break;
 
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";
-            });
+                     case "gray":
+                       html = html + "<span class=\"no-wrap gray\">";
+                       break;    
+                     
+                   }
+                 }
+                 else /* index is odd ==> asdlogic dictatates this is a property */ 
+                 {
+                   html = html + value + "</span>";
+                 }
+               });
+               html = html + "</span>";
+             });
 
-            // extra properties
-            $.each(jsonItem.props, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
+                         // extra properties
+             $.each(jsonItem.props, function (key, value) {
+               html = html + "<span class=\"item-property\" style=\"display: block; margin-bottom: 5px;\">";
+               $.each(value, function (key, value) {
+                 if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                 {
+                   switch(value)
+                   {
+                     case "white":
+                       html = html + "<span class=\"no-wrap diablo_white\">";
+                       break;
 
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
+                     case "blue":
+                       html = html + "<span class=\"no-wrap diablo_blue\">";
+                       break;
 
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
+                     case "red":
+                       html = html + "<span class=\"no-wrap diablo_red\">";
+                       break;
 
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;                    
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
+                     case "amber":
+                       html = html + "<span class=\"no-wrap diablo_amber\">";
+                       break;                    
+                       
+                     case "green":
+                       html = html + "<span class=\"no-wrap diablo_green\">";
+                       break;
 
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
+                     case "orange":
+                     html = html + "<span class=\"no-wrap orange\">";
+                     break;
 
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
+                     case "yellow":
+                       html = html + "<span class=\"no-wrap diablo_yellow\">";
+                       break;
 
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";  
-            });
+                     case "gray":
+                       html = html + "<span class=\"no-wrap gray\">";
+                       break;    
+                     
+                   }
+                 }
+                 else /* index is odd ==> asdlogic dictatates this is a property */ 
+                 {
+                   html = html + value + "</span>";
+                 }
+               });
+               html = html + "</span>";  
+             });
 
             // extra properties ** RUNEWORD ONLY
             if (typeof jsonItem.weaponProps !== "undefined" && jsonItem.weaponProps.length > 0) {
