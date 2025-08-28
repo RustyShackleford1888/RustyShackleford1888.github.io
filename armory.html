@@ -854,20 +854,19 @@ document.addEventListener('keydown', function(event) {
                       
                       $.each(items, function (key, item) {
                           var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
-                          html = html + "<a href=\"#\" onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "')\" class=\"" + tierClass + "\" style=\"margin: 0 5px; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none;\">" + item.tier + "</a>";
+                          html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0 5px; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer;\">" + item.tier + "</a>";
                       });
                       
                       html = html + "</div>";
                       html = html + "</div>";
 
-                      // Main item display area
-                      html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\">";
-                      
-                      // Left column (image + name)
-                      html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
-                      html = html + "<span class=\"item-name diablo_unique\">" + mainItem.name + "</span>";
-                      html += "</div>";  // Close item-left div
+                                             // Main item display area
+                       html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\" style=\"text-align: center;\">";
+                       
+                       // Left column (image only, centered)
+                       html = html + "<div class=\"item-left four columns\" style=\"text-align: center;\">";
+                       html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
+                       html += "</div>";  // Close item-left div
 
                       // Right column (properties)
                       html += "<div class=\"item-right eight columns\">";
@@ -1542,10 +1541,9 @@ If (alvl > 99) then alvl=99<br />`;
             if (item) {
                 var html = "";
                 
-                // Left column (image + name)
-                html = html + "<div class=\"item-left four columns\">";
+                // Left column (image only, centered)
+                html = html + "<div class=\"item-left four columns\" style=\"text-align: center;\">";
                 html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
-                html = html + "<span class=\"item-name diablo_unique\">" + item.name + "</span>";
                 html += "</div>";  // Close item-left div
 
                 // Right column (properties)
