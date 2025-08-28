@@ -1576,7 +1576,17 @@ If (alvl > 99) then alvl=99<br />`;
                  var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
                  $("#" + displayId).html(html);
                  
-                                   // Update tier button colors to show which one is selected
+                 // Hide/show augments section based on tier
+                 var itemContainer = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']").closest('.item.row');
+                 var augmentsRow = itemContainer.find('.row').eq(1); // The augments row
+                 
+                 if (item.tier === "1") {
+                     augmentsRow.show();
+                 } else {
+                     augmentsRow.hide();
+                 }
+                 
+                 // Update tier button colors to show which one is selected
                   var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
                   tierButtons.removeClass("diablo_unique").addClass("diablo_white");
                   
