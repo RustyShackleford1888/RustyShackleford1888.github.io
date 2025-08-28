@@ -817,47 +817,198 @@ document.addEventListener('keydown', function(event) {
                   data.sort(firstBy("index"));
 
                   $.each(data, function (key, jsonItem) {
-                      // Start the item row
-                      html = html + "<div class=\"item row\">";
+                      // don't render upgrades, but do render them if we've filtered by tier
+                      if (filterGroup !== "tier" && jsonItem.root == false) {
+                          return;
+                      } else if (filterGroup == "tier") {
+                          // Start the item row
+                          html = html + "<div class=\"item row\">";
 
-                      // Left column (image + name)
-                      html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
-                      html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
+                          // Left column (image + name)
+                          html = html + "<div class=\"item-left four columns\">";
+                          html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                          html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
 
-                      // Assuming every item has augments
-                      html += "<div style=\"text-align: center; display: block;\">";
-                      
-                      // Augments header
-                      html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+                          // Assuming every item has augments
+                          html += "<div style=\"text-align: center; display: block;\">";
+                          
+                          // Augments header
+                          html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
 
-                      // Iterate through the augments array
-                      $.each(jsonItem.Augments, function (augmentKey, augmentObj) {
-                          // Check if augmentObj has name and runes
-                          if (augmentObj.name && augmentObj.runes) {
-                              // Display augment name in diablo_unique
-                              html += "<span class=\"diablo_unique\" style=\"display: block;\">";
-                              html += augmentObj.name + ": ";
-                              html += "</span>";  // Close augment name span
+                          // Iterate through the augments array
+                          $.each(jsonItem.Augments, function (augmentKey, augmentObj) {
+                              // Check if augmentObj has name and runes
+                              if (augmentObj.name && augmentObj.runes) {
+                                  // Display augment name in diablo_unique
+                                  html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                  html += augmentObj.name + ": ";
+                                  html += "</span>";  // Close augment name span
 
-                              // Display runes in diablo_white
-                              html += "<span class=\"diablo_white\" style=\"display: block;\">";
-                              html += augmentObj.runes.join(", ");
-                              html += "</span>";  // Close runes span
+                                  // Display runes in diablo_white
+                                  html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                  html += augmentObj.runes.join(", ");
+                                  html += "</span>";  // Close runes span
+                              }
+                          });
+
+                          html += "</div>";  // Close augments div
+
+                          html += "</div>";  // Close item-left (image and name) div
+
+                          // Right column (properties)
+                          html += "<div class=\"item-right eight columns\">";
+                          html = printItem(html, jsonItem);
+                          html += "</div>";  // Close item-right div
+
+                          // Close the entire item row
+                          html += "</div>";  // Close item row div
+                      } else {
+                          // get the upgrades
+                          var subItem1;
+                          var subItem2;
+                          if (jsonItem.upgradeIndex !== "") {
+                              subItem1 = $.grep(data, function(e){ return e.index == jsonItem.upgradeIndex; });
+                              if (subItem1[0].upgradeIndex !== "") {
+                                  subItem2 = $.grep(data, function(e){ return e.index == subItem1[0].upgradeIndex; });
+                              }
                           }
-                      });
 
-                      html += "</div>";  // Close augments div
+                          html = html + "<div class=\"item row\">";
+                          html = html + "<div class=\"row\">";
+                          html = html + "<ul class=\"upgradeItems\">";
+                          html = html + `<li><a onclick="$('[id^=\\'${jsonItem.index.substring(0, jsonItem.index.length-4)}\\'').hide();$('[id=\\'${jsonItem.index}\\']').show();">${jsonItem.name}</a><br />${jsonItem.tier}</li>`;
+                          
+                          if (typeof subItem1 !== 'undefined') 
+                              html = html + `<li><a onclick="$('[id^=\\'${subItem1[0].index.substring(0, subItem1[0].index.length-4)}\\'').hide();$('[id=\\'${subItem1[0].index}\\']').show();">${subItem1[0].name}</a><br />${subItem1[0].tier}</li>`;
+                          if (typeof subItem2 !== 'undefined') 
+                              html = html + `<li><a onclick="$('[id^=\\'${subItem2[0].index.substring(0, subItem2[0].index.length-4)}\\'').hide();$('[id=\\'${subItem2[0].index}\\']').show();">${subItem2[0].name}</a><br />${subItem2[0].tier}</li>`;
+                          html = html + "</ul>";
+                          html = html + "</div>";
 
-                      html += "</div>";  // Close item-left (image and name) div
+                          // print the left side of the item info
+                          html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
+                          html = html + "<div class=\"item-left four columns\">";
+                          html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                          html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
 
-                      // Right column (properties)
-                      html += "<div class=\"item-right eight columns\">";
-                      html = printItem(html, jsonItem);
-                      html += "</div>";  // Close item-right div
+                          // Assuming every item has augments
+                          html += "<div style=\"text-align: center; display: block;\">";
+                          
+                          // Augments header
+                          html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
 
-                      // Close the entire item row
-                      html += "</div>";  // Close item row div
+                          // Iterate through the augments array
+                          $.each(jsonItem.Augments, function (augmentKey, augmentObj) {
+                              // Check if augmentObj has name and runes
+                              if (augmentObj.name && augmentObj.runes) {
+                                  // Display augment name in diablo_unique
+                                  html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                  html += augmentObj.name + ": ";
+                                  html += "</span>";  // Close augment name span
+
+                                  // Display runes in diablo_white
+                                  html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                  html += augmentObj.runes.join(", ");
+                                  html += "</span>";  // Close runes span
+                              }
+                          });
+
+                          html += "</div>";  // Close augments div
+
+                          html += "</div>";  // Close item-left (image and name) div
+
+                          // Right column (properties)
+                          html += "<div class=\"item-right eight columns\">";
+                          html = printItem(html, jsonItem);
+                          html += "</div>";  // Close item-right div
+
+                          html += "</div>";
+
+                          if (jsonItem.upgradeIndex !== "") {
+                              // print the left side of the item info
+                              html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
+                              html = html + "<div class=\"item-left four columns\">";
+                              html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
+                              html = html + "<span class=\"item-name diablo_unique\">" + subItem1[0].name + "</span>";
+
+                              // Assuming every item has augments
+                              html += "<div style=\"text-align: center; display: block;\">";
+                              
+                              // Augments header
+                              html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+
+                              // Iterate through the augments array
+                              $.each(subItem1[0].Augments, function (augmentKey, augmentObj) {
+                                  // Check if augmentObj has name and runes
+                                  if (augmentObj.name && augmentObj.runes) {
+                                      // Display augment name in diablo_unique
+                                      html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                      html += augmentObj.name + ": ";
+                                      html += "</span>";  // Close augment name span
+
+                                      // Display runes in diablo_white
+                                      html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                      html += augmentObj.runes.join(", ");
+                                      html += "</span>";  // Close runes span
+                                  }
+                              });
+
+                              html += "</div>";  // Close augments div
+
+                              html += "</div>";  // Close item-left (image and name) div
+
+                              // Right column (properties)
+                              html += "<div class=\"item-right eight columns\">";
+                              html = printItem(html, subItem1[0]);
+                              html += "</div>";  // Close item-right div
+
+                              html += "</div>";
+
+                              if (subItem1[0].upgradeIndex !== "") {
+                                  // print the left side of the item info
+                                  html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
+                                  html = html + "<div class=\"item-left four columns\">";
+                                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
+                                  html = html + "<span class=\"item-name diablo_unique\">" + subItem2[0].name + "</span>";
+
+                                  // Assuming every item has augments
+                                  html += "<div style=\"text-align: center; display: block;\">";
+                                  
+                                  // Augments header
+                                  html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
+
+                                  // Iterate through the augments array
+                                  $.each(subItem2[0].Augments, function (augmentKey, augmentObj) {
+                                      // Check if augmentObj has name and runes
+                                      if (augmentObj.name && augmentObj.runes) {
+                                          // Display augment name in diablo_unique
+                                          html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                          html += augmentObj.name + ": ";
+                                          html += "</span>";  // Close augment name span
+
+                                          // Display runes in diablo_white
+                                          html += "<span class=\"diablo_unique\" style=\"display: block;\">";
+                                          html += augmentObj.runes.join(", ");
+                                          html += "</span>";  // Close runes span
+                                      }
+                                  });
+
+                                  html += "</div>";  // Close augments div
+
+                                  html += "</div>";  // Close item-left (image and name) div
+
+                                  // Right column (properties)
+                                  html += "<div class=\"item-right eight columns\">";
+                                  html = printItem(html, subItem2[0]);
+                                  html += "</div>";  // Close item-right div
+
+                                  html += "</div>";
+                              }
+                          }
+
+                          // close the divs
+                          html = html + "</div></div>";
+                      }
                   });
 
                   break;
