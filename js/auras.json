@@ -1,6 +1,7 @@
 [
   {
     "index": "Enchantment of Fire",
+    "name": "Enchantment of Fire",
     "Props": [
       ["100-200 fire damage per level"],
       ["Radius: 24"],
@@ -9,6 +10,7 @@
   },
   {
     "index": "Enchantment of Cold",
+    "name": "Enchantment of Cold",
     "Props": [
       ["100-200 cold damage per level"],
       ["Radius: 24"],
@@ -17,6 +19,7 @@
   },
   {
     "index": "Enchantment of Lightning",
+    "name": "Enchantment of Lightning",
     "Props": [
       ["100-200 lightning damage per level"],
       ["Radius: 24"],
@@ -25,6 +28,7 @@
   },
   {
     "index": "Enchantment of Bones",
+    "name": "Enchantment of Bones",
     "Props": [
       ["1 Crushing Blow per level"],
       ["20% Enhanced Damage per level"],
@@ -34,6 +38,7 @@
   },
   {
     "index": "Enchantment of Vigor",
+    "name": "Enchantment of Vigor",
     "Props": [
       ["1 Weapon Speed per level"],
       ["2 Velocity per level"],
@@ -42,6 +47,7 @@
   },
   {
     "index": "Void Field",
+    "name": "Void Field",
     "Props": [
       ["65% Slow, +5% per level (includes movement, attack rate, and animations)"],
       ["Radius: 24"]
@@ -49,6 +55,7 @@
   },
   {
     "index": "Pestilence",
+    "name": "Pestilence",
     "Props": [
       ["-8% Poison Resistance Reduction on Monsters, +1% per level"],
       ["150 Poison Damage every 3 seconds for 1 second per level(reduced to +50 per level after skill level 29)"],
@@ -58,6 +65,7 @@
   },
   {
     "index": "Vulnerability",
+    "name": "Vulnerability",
     "Props": [
       ["-8% Physical/Magic Resistance Reduction on Monsters, +1% per level"],
       ["Affected by Aura Mastery & Offensive Aura Mastery"],
@@ -66,6 +74,7 @@
   },
   {
     "index": "Inner Fire",
+    "name": "Inner Fire",
     "Props": [
       ["-8% Enemy fire resistance -1 per level"],
       ["Radius: 32"]
@@ -73,6 +82,7 @@
   },
   {
     "index": "Inner Frost",
+    "name": "Inner Frost",
     "Props": [
       ["-8% Enemy cold resistance -1 per level"],
       ["Radius: 32"]
@@ -80,6 +90,7 @@
   },
   {
     "index": "Inner Charge",
+    "name": "Inner Charge",
     "Props": [
       ["-8% Enemy lightning resistance -1 per level"],
       ["Radius: 32"]
@@ -87,6 +98,7 @@
   },
   {
     "index": "Poise",
+    "name": "Poise",
     "Props": [
       ["40% + 3% per level Attack Rating"],
       ["5% + 1% per level Deadly Strike"],
@@ -96,6 +108,7 @@
   },
   {
     "index": "Rampage",
+    "name": "Rampage",
     "Props": [
       ["50% + 10% per level Enhanced Defense"],
       ["50% + 10% per level Enhanced Damage"],
@@ -104,6 +117,7 @@
   },
   {
     "index": "Thornflesh",
+    "name": "Thornflesh",
     "Props": [
       ["Deals Magic damage equal to 100% of your Base Defense to nearby enemies every second. Each skill level adds Magic damage equal to 5% of your Base Defense."],
       ["Affected by Aura Mastery"],
@@ -112,6 +126,7 @@
   },
   {
     "index": "Levinblood",
+    "name": "Levinblood",
     "Props": [
       ["Deals Lightning damage equal to your Maximum Life to nearby enemies every second.."],
       ["Affected by Aura Mastery"],
@@ -120,6 +135,7 @@
   },
   {
     "index": "Wintertide",
+    "name": "Wintertide",
     "Props": [
       ["Deals Cold damage equal to 5% of your Maximum Mana to nearby enemies five times per second."],
       ["Slows nearby enemies by 20% (increases to 60% if you are on Low Life)"],
@@ -129,6 +145,7 @@
   },
   {
     "index": "Scorchveil",
+    "name": "Scorchveil",
     "Props": [
       ["Deals Fire damage equal to 80% of your Strength to nearby enemies five times per second."],
       ["Reduces nearby enemy Defense and Damage by 30% (increases to 60% if you are on Low Life)"],
