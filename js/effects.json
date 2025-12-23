@@ -1,12 +1,14 @@
 [
   {
     "index": "Empower",
+    "name": "Empower",
     "Props": [
       ["5 all skills"]
     ]
   },
   {
     "index": "Diamond Skin",
+    "name": "Diamond Skin",
     "Props": [
       ["35 magic resistance"],
       ["+6000 defense"]
@@ -14,6 +16,7 @@
   },
   {
     "index": "Clarity",
+    "name": "Clarity",
     "Props": [
       ["300% increased mana recovery"],
       ["20% faster cast rate"]
@@ -21,6 +24,7 @@
   },
   {
     "index": "Conduction",
+    "name": "Conduction",
     "Props": [
       ["20% lightning damage"],
       ["20% lightning pierce"],
@@ -29,6 +33,7 @@
   },
   {
     "index": "Avalanche",
+    "name": "Avalanche",
     "Props": [
       ["20% increased attack speed"],
       ["30% cold damage"]
@@ -36,6 +41,7 @@
   },
   {
     "index": "Hellfire",
+    "name": "Hellfire",
     "Props": [
       ["40% fire damage"],
       ["15% fire absorb"]
@@ -43,6 +49,7 @@
   },
   {
     "index": "Brutality",
+    "name": "Brutality",
     "Props": [
       ["40% crushing blow"],
       ["100% enhanced damage"],
@@ -51,6 +58,7 @@
   },
   {
     "index": "Purity",
+    "name": "Purity",
     "Props": [
       ["50% fire/cold/lit resistance"],
       ["10% fire/cold/lit maximum resistance"]
@@ -58,6 +66,7 @@
   },
   {
     "index": "Corruption",
+    "name": "Corruption",
     "Props": [
       ["40% poison damage"],
       ["20% magic pierce"]
@@ -65,12 +74,14 @@
   },
   {
     "index": "Carnage",
+    "name": "Carnage",
     "Props": [
       ["400% enhanced damage"]
     ]
   },
   {
     "index": "Resurgence",
+    "name": "Resurgence",
     "Props": [
       ["3 all skills"],
       ["15% increased attack speed"],
@@ -79,6 +90,7 @@
   },
   {
     "index": "Grace",
+    "name": "Grace",
     "Props": [
       ["80% faster hit recovery"],
       ["+1000 attack rating"],
@@ -88,6 +100,7 @@
   },
   {
     "index": "Aegis",
+    "name": "Aegis",
     "Props": [
       ["60% faster block rate"],
       ["30% increased block chance"],
@@ -97,6 +110,7 @@
   },
   {
     "index": "Blood Rage",
+    "name": "Blood Rage",
     "Props": [
       ["200% hit rating"],
       ["15% life leech"],
@@ -106,6 +120,7 @@
   },
   {
     "index": "Good Fortune",
+    "name": "Good Fortune",
     "Props": [
       ["200% magic find"],
       ["500% gold find"]
@@ -113,6 +128,7 @@
   },
   {
     "index": "Haste",
+    "name": "Haste",
     "Props": [
       ["40% movement velocity"],
       ["+10 weapon speed"]
@@ -120,18 +136,21 @@
   },
   {
     "index": "Elemental Adaption",
+    "name": "Elemental Adaption",
     "Props": [
       ["1% elemental resistance per 1% elemental mastery, for each element"]
     ]
   },
   {
     "index": "Elemental Volatility",
+    "name": "Elemental Volatility",
     "Props": [
       ["1% elemental pierce per 4% elemental mastery, for each element"]
     ]
   },
   {
     "index": "Elemental Destruction",
+    "name": "Elemental Destruction",
     "Props": [
       ["1% elemental mastery per 4% elemental resistance, for each element"]
     ]
